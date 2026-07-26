@@ -15,7 +15,6 @@ known_limitations:
   - simulation_only
   - no_physical_robot_validation
   - no_simulator_implementation
-  - docker_container_not_verified_locally
   - no_licence_audit_yet
 protected_files:
   - MASTER_BUILD_GUIDE.md

@@ -11,6 +11,8 @@ All notable project changes will be documented here.
 - P01 CPU-first Python 3.12 bootstrap with a locked `uv` environment, linting,
   typing, tests, pre-commit hooks, Docker/Compose recipes, CI, `ora doctor`,
   and deterministic seed utilities.
+- A network-isolated CPU container smoke path using the already-built,
+  lockfile-pinned environment.
 
 ### Approved
 

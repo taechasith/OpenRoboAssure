@@ -14,4 +14,4 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY src ./src
 RUN uv sync --frozen --no-dev
 
-CMD ["uv", "run", "ora", "doctor", "--offline"]
+CMD ["uv", "run", "--no-sync", "ora", "doctor", "--offline"]
