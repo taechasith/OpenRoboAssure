@@ -2,7 +2,7 @@
   "project": "OpenRoboAssure",
   "generated_at": "2026-07-26T14:00:00+07:00",
   "current_phase": "P03",
-  "current_version": "0.2.0",
+  "current_version": "0.3.0",
   "status": "completed",
   "next_required_gate": "GATE-P04-ROBOT-SIMULATOR",
   "validation_level": "none",
@@ -10,6 +10,8 @@
   "known_limitations": [
     "simulation_only",
     "no_physical_robot_validation",
-    "no_simulator_implementation"
+    "single_simulator",
+    "kinematic_scripted_baseline",
+    "no_learned_policy"
   ]
 }

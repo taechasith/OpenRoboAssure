@@ -9,3 +9,4 @@ build/
 *.egg-info/
 reports/environment/*.json
 !reports/environment/.gitkeep
+MUJOCO_LOG.TXT

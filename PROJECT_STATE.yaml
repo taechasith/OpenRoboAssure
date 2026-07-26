@@ -13,7 +13,9 @@ open_blockers: []
 known_limitations:
   - simulation_only
   - no_physical_robot_validation
-  - no_simulator_implementation
+  - single_simulator
+  - kinematic_scripted_baseline
+  - no_learned_policy
 protected_files:
   - MASTER_BUILD_GUIDE.md
   - README.md

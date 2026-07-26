@@ -13,12 +13,12 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 - Current version: `v0.3.0`
 - Current phase: `P03 — MuJoCo primary simulator and first task`
-- Status: MuJoCo ORA-4A baseline complete; P04 approval is next
+- Status: MuJoCo ORA-4A baseline complete; pending review before the v0.3.0 release
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
 - Required paid services: None
-- Licence audit: Passed — 23 approved, 0 blocked, 0 unknown
+- Licence audit: Passed — 31 approved, 0 blocked, 0 unknown
 
 ## Scope proposed for v1.0
 
@@ -43,10 +43,9 @@ support for arbitrary robots without adapters.
 
 ## Governance
 
-The P00 charter is deliberately not approved yet. Before implementation starts,
-the project owner must approve the project name, simulation-only scope,
-free-data policy, licences, research questions, proposed robots and tasks, and
-prohibited claims through `GATE-P00-CHARTER`.
+The project charter and free-data policy have been approved. The next
+directional decision is `GATE-P04-ROBOT-SIMULATOR`, which selects the second
+simulator and imported robot-model sources.
 
 The active charter materials are:
 
@@ -66,14 +65,15 @@ its original recorded licence.
 Run `ora licence audit` to write the machine-readable audit report. The core
 benchmark permits Apache-2.0, MIT, BSD-2/3-Clause, Zlib, ISC, CC0-1.0,
 CC-BY-4.0, PSF-2.0, and 0BSD. Any other licence requires a documented human-approved
-exception; the sole current exception is development-only `pathspec` under
-MPL-2.0.
+exception. Current narrow exceptions are development-only `pathspec` under
+MPL-2.0 and runtime-only `PyOpenGL` with verified BSD package metadata.
 
 ## Current limitation
 
-This repository currently contains the P00 charter package and the P01
-development bootstrap. It has no simulator implementation, experiment results,
-or licence-audit result.
+The current evidence is a deterministic, scripted and kinematic MuJoCo
+pick-and-place baseline. It is not a learned policy, does not establish contact
+physics fidelity, and has only one simulator backend; it makes no physical
+robot or safety claim.
 
 ## Development quick start
 
@@ -92,3 +92,17 @@ ora doctor --offline
 On Windows, `make.bat` provides the same commands when GNU Make is not
 installed. Docker is optional and CPU-compatible by default; the `gpu` Compose
 profile is opt-in and never required for installation or smoke reproduction.
+
+## First simulation demo
+
+Run the deterministic ORA-4A Pick-and-Place baseline locally:
+
+```text
+make setup
+ora baseline --seeds 1000
+```
+
+The recorded `EXP-SIM-BASELINE-001` run completed all 1,000 procedural seeds
+with a 100% scripted task-success rate, zero invalid resets and collisions, and
+100% deterministic replay. These are smoke-level kinematic baseline metrics,
+not evidence of learned-policy robustness or physical performance.
