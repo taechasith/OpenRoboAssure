@@ -1,0 +1,14 @@
+approval_id: GATE-P02-DATA-POLICY
+project_version: 0.1.0
+decision: approved
+approved_by: taechasith
+approved_at: "2026-07-26T13:15:00+07:00"
+approval_source: user_conversation
+scope:
+  allowed_licenses: [Apache-2.0, MIT, BSD-2-Clause, BSD-3-Clause, Zlib, ISC, CC0-1.0, CC-BY-4.0]
+  blocked_licenses: [CC-BY-NC-*, CC-BY-ND-*, research-only, academic-use-only, evaluation-only, unknown]
+  generated_data_license: CC-BY-4.0
+  third_party_assets: explicit_source_license_checksum_and_review_required
+  exceptions: explicit_human_approval_required
+expires_when: [allow_list_changes, block_list_changes, generated_data_license_changes, exception_policy_changes]
+notes: The repository owner approved the P02 data-policy gate in the project conversation.

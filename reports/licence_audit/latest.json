@@ -1,0 +1,172 @@
+{
+  "findings": [
+    {
+      "identifier": "cfgv",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "colorama",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "distlib",
+      "licence": "PSF-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "filelock",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "identify",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "iniconfig",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "librt",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "mypy",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "mypy_extensions",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "nodeenv",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "openroboassure",
+      "licence": "Apache-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "packaging",
+      "licence": "Apache-2.0 OR BSD-2-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "pathspec",
+      "licence": "MPL-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "platformdirs",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "pluggy",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "pre_commit",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "Pygments",
+      "licence": "BSD-2-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "pytest",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "python-discovery",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "PyYAML",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "ruff",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "typing_extensions",
+      "licence": "PSF-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "virtualenv",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    }
+  ],
+  "passed": true,
+  "schema_version": 1,
+  "summary": {
+    "approved": 23,
+    "blocked": 0,
+    "unknown": 0
+  }
+}

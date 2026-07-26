@@ -13,6 +13,8 @@ All notable project changes will be documented here.
   and deterministic seed utilities.
 - A network-isolated CPU container smoke path using the already-built,
   lockfile-pinned environment.
+- P02 asset schema, policy allow/block lists, dependency and source-header
+  licence audit, asset registration command, CI enforcement, and audit report.
 
 ### Approved
 

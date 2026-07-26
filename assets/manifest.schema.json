@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenRoboAssure asset manifest",
+  "type": "object",
+  "required": ["schema_version", "assets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "name", "kind", "source_repository", "source_commit", "source_subdirectory", "spdx_license", "redistributed", "retrieval_method", "sha256", "review_status", "reviewed_by", "review_date", "notes"]
+      }
+    }
+  }
+}
