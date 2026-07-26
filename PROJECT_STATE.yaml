@@ -1,12 +1,12 @@
 project: OpenRoboAssure
-current_phase: P02
-current_version: 0.1.0
+current_phase: P03
+current_version: 0.3.0
 status: completed
 validation_level: none
-latest_commit: 718b741
-active_branch: phase/p02-licence-enforcement
+latest_commit: d20458d
+active_branch: phase/p03-mujoco-baseline
 protected_benchmark_frozen: false
-licence_audit: not_run
+licence_audit: passed
 last_completed_gate: GATE-P02-DATA-POLICY
 next_required_gate: GATE-P04-ROBOT-SIMULATOR
 open_blockers: []

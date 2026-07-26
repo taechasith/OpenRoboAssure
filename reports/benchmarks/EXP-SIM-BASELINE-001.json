@@ -1,0 +1,13 @@
+{
+  "collision_rate": 0.0,
+  "deterministic_replay_rate": 1.0,
+  "experiment_id": "EXP-SIM-BASELINE-001",
+  "failures": [],
+  "invalid_reset_rate": 0.0,
+  "policy": "scripted",
+  "robot": "ora_4a",
+  "runtime_seconds": 4.981114999973215,
+  "seed_count": 1000,
+  "success_rate": 1.0,
+  "task": "pick_place_v1"
+}

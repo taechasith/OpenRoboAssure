@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.1.0`
-- Current phase: `P02 — Free-data and licence enforcement`
-- Status: Licence enforcement complete; pending review and `v0.2.0` publication
+- Current version: `v0.3.0`
+- Current phase: `P03 — MuJoCo primary simulator and first task`
+- Status: MuJoCo ORA-4A baseline complete; P04 approval is next
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -65,7 +65,7 @@ its original recorded licence.
 
 Run `ora licence audit` to write the machine-readable audit report. The core
 benchmark permits Apache-2.0, MIT, BSD-2/3-Clause, Zlib, ISC, CC0-1.0,
-CC-BY-4.0, and PSF-2.0. Any other licence requires a documented human-approved
+CC-BY-4.0, PSF-2.0, and 0BSD. Any other licence requires a documented human-approved
 exception; the sole current exception is development-only `pathspec` under
 MPL-2.0.
 
