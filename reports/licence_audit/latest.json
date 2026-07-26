@@ -1,6 +1,13 @@
 {
   "findings": [
     {
+      "identifier": "absl-py",
+      "licence": "Apache-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "cfgv",
       "licence": "MIT",
       "message": "Package metadata licence",
@@ -22,7 +29,28 @@
       "status": "approved"
     },
     {
+      "identifier": "etils",
+      "licence": null,
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "filelock",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "fsspec",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "glfw",
       "licence": "MIT",
       "message": "Package metadata licence",
       "source": "python_dependency",
@@ -50,6 +78,13 @@
       "status": "approved"
     },
     {
+      "identifier": "mujoco",
+      "licence": "Apache-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "mypy",
       "licence": "MIT",
       "message": "Package metadata licence",
@@ -66,6 +101,13 @@
     {
       "identifier": "nodeenv",
       "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "numpy",
+      "licence": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
@@ -120,6 +162,13 @@
       "status": "approved"
     },
     {
+      "identifier": "PyOpenGL",
+      "licence": "BSD",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "pytest",
       "licence": "MIT",
       "message": "Package metadata licence",
@@ -160,12 +209,19 @@
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
+    },
+    {
+      "identifier": "zipp",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
     }
   ],
   "passed": true,
   "schema_version": 1,
   "summary": {
-    "approved": 23,
+    "approved": 31,
     "blocked": 0,
     "unknown": 0
   }

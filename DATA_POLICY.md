@@ -13,7 +13,7 @@ subscription, a hosted API after setup, or a physical robot.
 Core data and assets must have an explicit, reproducible provenance and a
 licence compatible with redistribution and machine-learning use. The proposed
 default allow-list is Apache-2.0, MIT, BSD-2-Clause, BSD-3-Clause, Zlib, ISC,
-CC0-1.0, CC-BY-4.0, and PSF-2.0. Every imported robot model, texture, mesh, and dataset
+CC0-1.0, CC-BY-4.0, PSF-2.0, and 0BSD. Every imported robot model, texture, mesh, and dataset
 will be recorded with its exact subdirectory or source licence, retrieval
 method, checksum, and review status.
 

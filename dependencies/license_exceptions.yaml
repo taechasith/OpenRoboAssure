@@ -7,3 +7,10 @@ exceptions:
     obligations: Preserve MPL-2.0 notice; do not copy or modify MPL-covered files.
     approved_by: taechasith
     approved_at: "2026-07-26T13:35:00+07:00"
+  - package: pyopengl
+    spdx_license: BSD
+    scope: runtime_dependency_only
+    reason: Required transitively by MuJoCo 3.10.0; PyPI verifies its BSD licence metadata.
+    obligations: Preserve upstream BSD notice if redistributed; do not treat generic BSD metadata as globally approved.
+    approved_by: taechasith
+    approved_at: "2026-07-26T14:15:00+07:00"

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "openroboassure"
-version = "0.1.0"
+version = "0.3.0"
 description = "Simulation-only assurance pipeline for physical AI."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
@@ -16,7 +16,7 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.12",
 ]
-dependencies = ["PyYAML>=6.0,<7"]
+dependencies = ["mujoco>=3.2,<4", "PyYAML>=6.0,<7"]
 
 [project.scripts]
 ora = "openroboassure.cli:main"
@@ -49,4 +49,8 @@ warn_unreachable = true
 
 [[tool.mypy.overrides]]
 module = ["yaml"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["mujoco"]
 ignore_missing_imports = true

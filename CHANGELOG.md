@@ -15,6 +15,8 @@ All notable project changes will be documented here.
   lockfile-pinned environment.
 - P02 asset schema, policy allow/block lists, dependency and source-header
   licence audit, asset registration command, CI enforcement, and audit report.
+- P03 procedural ORA-4A MuJoCo adapter, scripted Pick-and-Place baseline,
+  deterministic replay tests, and the 1,000-seed baseline evidence record.
 
 ### Approved
 

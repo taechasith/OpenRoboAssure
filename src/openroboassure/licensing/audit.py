@@ -62,7 +62,8 @@ def _policy(root: Path) -> tuple[set[str], list[str], list[str], dict[str, str]]
     approved_exceptions = {
         str(item["package"]).lower(): str(item["spdx_license"])
         for item in exceptions
-        if isinstance(item, dict) and item.get("scope") == "development_only"
+        if isinstance(item, dict)
+        and item.get("scope") in {"development_only", "runtime_dependency_only"}
     }
     return (
         {str(item) for item in approved},

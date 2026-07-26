@@ -6,6 +6,7 @@ import argparse
 from pathlib import Path
 
 from openroboassure.doctor import run_doctor
+from openroboassure.experiments.baseline import run_baseline
 from openroboassure.licensing.audit import add_asset, audit_project, write_report
 
 
@@ -19,6 +20,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--offline",
         action="store_true",
         help="assert that the report is generated without network access",
+    )
+    baseline = subparsers.add_parser("baseline", help="run the first scripted simulation baseline")
+    baseline.add_argument("--seeds", type=int, default=20)
+    baseline.add_argument(
+        "--output", type=Path, default=Path("reports/benchmarks/EXP-SIM-BASELINE-001.json")
     )
     licence = subparsers.add_parser("licence", help="audit dependency and asset licences")
     licence_commands = licence.add_subparsers(dest="licence_command", required=True)
@@ -64,6 +70,10 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if args.command == "doctor":
         return run_doctor(output=args.output, offline=args.offline)
+    if args.command == "baseline":
+        report = run_baseline(args.seeds, args.output)
+        print(f"Baseline success rate: {report['success_rate']:.1%}")
+        return 0
     if args.command == "licence" and args.licence_command == "audit":
         report = audit_project(args.project_root.resolve())
         write_report(report, args.output)

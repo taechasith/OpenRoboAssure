@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from openroboassure.licensing.audit import audit_manifest, classify_licence
+from openroboassure.licensing.audit import _policy, audit_manifest, classify_licence
 
 
 def _asset(licence: str) -> dict[str, object]:
@@ -49,3 +49,21 @@ def test_asset_manifest_accepts_permissive_and_rejects_restricted(tmp_path: Path
     assert (
         audit_manifest(manifest, {"MIT"}, ["CC-BY-NC-*"], ["research-only"])[0].status == "blocked"
     )
+
+
+def test_policy_accepts_only_documented_exception_scopes(tmp_path: Path) -> None:
+    dependencies = tmp_path / "dependencies"
+    dependencies.mkdir()
+    (dependencies / "approved_licenses.yaml").write_text("licenses: [MIT]\n", encoding="utf-8")
+    (dependencies / "blocked_licenses.yaml").write_text(
+        "patterns: []\nblocked_terms: []\n", encoding="utf-8"
+    )
+    (dependencies / "license_exceptions.yaml").write_text(
+        "exceptions:\n"
+        "  - package: dev-tool\n    spdx_license: MPL-2.0\n    scope: development_only\n"
+        "  - package: runtime-tool\n    spdx_license: BSD\n    scope: runtime_dependency_only\n"
+        "  - package: ignored-tool\n    spdx_license: MIT\n    scope: unsupported_scope\n",
+        encoding="utf-8",
+    )
+
+    assert _policy(tmp_path)[3] == {"dev-tool": "MPL-2.0", "runtime-tool": "BSD"}
