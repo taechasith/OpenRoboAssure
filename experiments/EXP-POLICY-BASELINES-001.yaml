@@ -1,0 +1,36 @@
+experiment_id: EXP-POLICY-BASELINES-001
+phase: P06
+gate: GATE-P06-BASELINES
+status: implementation_ready_pending_dependency_audit_resolution
+task: pick_place_v1
+robot: ora_4a
+systems:
+  - A_no_randomization
+  - B_independent_broad_uniform
+  - C_automatic_curriculum
+  - D_morris_sobol_guided
+policy:
+  observation: state_only
+  architecture: mlp_64x64
+  shared_reward_and_action_limits: true
+training:
+  seeds: [11, 22, 33, 44, 55]
+  environment_steps_per_seed: 100000
+  total_environment_steps: 2000000
+evaluation:
+  held_out_scenarios_per_policy_seed: 200
+  total_episodes: 4000
+  primary_metric: held_out_task_success
+  secondary_metrics:
+    - drop_rate
+    - collision_rate
+    - completion_steps
+    - invalid_scenario_rate
+    - fifth_percentile_scenario_family_success
+provenance:
+  model_hashes: required
+  configuration_hashes: required
+  local_tracking: reports/tracking/p06_events.jsonl
+  failed_seeds: retained
+reproduction:
+  - uv run --locked ora policy campaign

@@ -15,7 +15,10 @@ remain agent-autonomous as defined in the master build guide.
   [GATE-P06-BASELINES.yaml](approvals/GATE-P06-BASELINES.yaml)
 - **Consequence:** P06 implementation may proceed. Panda and UR5e remain
   model probes, failed seeds remain evidence, and each added dependency must
-  pass the P02 licence audit before it is used.
+  pass the P02 licence audit before it is used. The owner additionally approved
+  only package-specific runtime exceptions for transitive `Pillow` (MIT-CMU)
+  and `tqdm` (MPL-2.0 AND MIT), with their notices preserved; MPL-2.0 remains
+  absent from the general allow-list.
 
 ## Approved — GATE-P05-SCENARIO-ONTOLOGY
 

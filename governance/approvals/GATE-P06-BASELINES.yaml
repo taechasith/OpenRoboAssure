@@ -55,7 +55,9 @@ scope:
       - fifth_percentile_scenario_family_success
   dependencies:
     requirement: "Every added dependency must pass the P02 licence audit before use."
-    licence_exceptions: none
+    licence_exceptions:
+      - pillow_MIT-CMU_runtime_dependency_only
+      - tqdm_MPL-2.0_AND_MIT_runtime_dependency_only
 expires_when:
   - task_or_robot_training_scope_changes
   - baseline_definition_changes
@@ -69,4 +71,7 @@ notes: >-
   thousand environment steps; it is not a budget for new robot task adapters.
   Panda and UR5e remain model probes until separately approved task adapters
   exist. The campaign is intentionally fixed and comparable: failed seeds are
-  evidence, and no system receives method-specific tuning.
+  evidence, and no system receives method-specific tuning. A later owner
+  approval permits only the recorded P02 narrow runtime exceptions for Pillow
+  (MIT-CMU) and tqdm (MPL-2.0 AND MIT), with notices preserved and no change to
+  the general licence allow-list.

@@ -9,6 +9,9 @@ All notable project changes will be documented here.
 - `GATE-P06-BASELINES` for the CPU-standard ORA-4A Pick-and-Place baseline
   campaign: Systems A-D, a fixed state-only 64x64 MLP, five 100,000-step
   seeds per system, held-out evaluation, and Morris/Sobol selection rules.
+- Narrow runtime-only P02 licence exceptions for transitive `Pillow` under
+  MIT-CMU and `tqdm` under MPL-2.0 AND MIT; their notices must be preserved,
+  and MPL-2.0 remains outside the general allow-list.
 
 ## [0.5.0] - 2026-07-26
 

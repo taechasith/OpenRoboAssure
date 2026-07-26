@@ -22,6 +22,13 @@
       "status": "approved"
     },
     {
+      "identifier": "alembic",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "cfgv",
       "licence": "MIT",
       "message": "Package metadata licence",
@@ -29,7 +36,42 @@
       "status": "approved"
     },
     {
+      "identifier": "cloudpickle",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "colorama",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "colorlog",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "contourpy",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "cycler",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "dill",
       "licence": "BSD-3-Clause",
       "message": "Package metadata licence",
       "source": "python_dependency",
@@ -50,7 +92,21 @@
       "status": "approved"
     },
     {
+      "identifier": "Farama-Notifications",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "filelock",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "fonttools",
       "licence": "MIT",
       "message": "Package metadata licence",
       "source": "python_dependency",
@@ -71,6 +127,20 @@
       "status": "approved"
     },
     {
+      "identifier": "greenlet",
+      "licence": "MIT AND PSF-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "gymnasium",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "identify",
       "licence": "MIT",
       "message": "Package metadata licence",
@@ -85,6 +155,13 @@
       "status": "approved"
     },
     {
+      "identifier": "kiwisolver",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "librt",
       "licence": "MIT",
       "message": "Package metadata licence",
@@ -92,8 +169,36 @@
       "status": "approved"
     },
     {
+      "identifier": "Mako",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "MarkupSafe",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "matplotlib",
+      "licence": "Apache-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "mujoco",
       "licence": "Apache-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "multiprocess",
+      "licence": "BSD-3-Clause",
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
@@ -134,6 +239,13 @@
       "status": "approved"
     },
     {
+      "identifier": "optuna",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "packaging",
       "licence": "Apache-2.0 OR BSD-2-Clause",
       "message": "Package metadata licence",
@@ -141,8 +253,22 @@
       "status": "approved"
     },
     {
+      "identifier": "pandas",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "pathspec",
       "licence": "MPL-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "pillow",
+      "licence": "MIT-CMU",
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
@@ -190,8 +316,22 @@
       "status": "approved"
     },
     {
+      "identifier": "pyparsing",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "pytest",
       "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "python-dateutil",
+      "licence": "Apache-2.0",
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
@@ -218,8 +358,50 @@
       "status": "approved"
     },
     {
+      "identifier": "SALib",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "scipy",
+      "licence": "BSD-3-Clause",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "six",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "SQLAlchemy",
+      "licence": "MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "tqdm",
+      "licence": "MPL-2.0 AND MIT",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "typing_extensions",
       "licence": "PSF-2.0",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
+      "identifier": "tzdata",
+      "licence": "Apache-2.0",
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
@@ -242,7 +424,7 @@
   "passed": true,
   "schema_version": 1,
   "summary": {
-    "approved": 34,
+    "approved": 60,
     "blocked": 0,
     "unknown": 0
   }

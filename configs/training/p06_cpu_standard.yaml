@@ -1,0 +1,48 @@
+schema_version: 1
+gate: GATE-P06-BASELINES
+task: pick_place_v1
+robot: ora_4a
+simulator: mujoco
+policy:
+  observation: state_only
+  architecture: mlp
+  hidden_layers: [64, 64]
+  action: normalized_xyz_and_proximity_gated_grasp
+  shared_constraints:
+    - identical_reward
+    - identical_canonical_motion_limits
+    - identical_stopping_condition
+    - no_method_specific_hyperparameter_tuning
+systems:
+  A: no_randomization
+  B: independent_broad_uniform_p05_variables
+  C: automatic_curriculum
+  D: morris_sobol_guided_randomization
+training:
+  seeds: [11, 22, 33, 44, 55]
+  environment_steps_per_seed: 100000
+  total_environment_steps: 2000000
+  retain_failed_seeds: true
+evaluation:
+  held_out_scenarios_per_policy_seed: 200
+  total_episodes: 4000
+  split: evaluation
+  families:
+    - S1_in_distribution
+    - S2_boundary
+    - S3_unseen_combinations
+    - S4_out_of_distribution
+    - S6_fault_injection
+sensitivity:
+  morris:
+    variables: all_16_p05_variables
+    trajectories: 20
+    expected_evaluations: 340
+    sobol_advance_threshold: "mu_star >= 5 percent of maximum"
+  sobol:
+    max_variables: 6
+    base_sample_size: 512
+    second_order: false
+    maximum_evaluations: 4096
+    bootstrap_resamples: 1000
+    retain_rule: "total_order 95 percent lower confidence bound > 0.01; retain top 3 minimum"
