@@ -6,6 +6,7 @@ import mujoco
 import numpy as np
 
 from openroboassure.contracts import CanonicalState, FloatArray, StepResult
+from openroboassure.scenarios.models import PickPlaceScenario
 from openroboassure.simulators.action_conversion import apply_canonical_action
 from openroboassure.simulators.task_geometry import (
     END_EFFECTOR_Z_OFFSET,
@@ -33,7 +34,7 @@ ORA_4A_XML = """
     </body>
     <body name="object" pos="-0.12 -0.08 0.025">
       <freejoint/>
-      <geom type="box" size="0.02 0.02 0.02" mass="0.05" rgba="0.95 0.35 0.1 1"/>
+      <geom name="object_geom" type="box" size="0.02 0.02 0.02" mass="0.05" rgba="0.95 0.35 0.1 1"/>
     </body>
     <site name="target" type="cylinder" pos="0.16 0.10 0.001" size="0.045 0.002" rgba="0.1 0.8 0.25 0.45"/>
   </worldbody>
@@ -50,24 +51,82 @@ ORA_4A_XML = """
 class MujocoORA4AAdapter:
     """MuJoCo implementation of ORA-4A with deterministic grasp attachment."""
 
-    target_position = TARGET_POSITION.copy()
-
     def __init__(self) -> None:
         self.model = mujoco.MjModel.from_xml_string(ORA_4A_XML)
         self.data = mujoco.MjData(self.model)
+        self._object_geom_id = mujoco.mj_name2id(
+            self.model, mujoco.mjtObj.mjOBJ_GEOM, "object_geom"
+        )
+        self._object_body_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "object")
+        self._target_site_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE, "target")
+        self._table_geom_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "table")
+        self._default_geom_size = self.model.geom_size.copy()
+        self._default_geom_friction = self.model.geom_friction.copy()
+        self._default_body_mass = self.model.body_mass.copy()
+        self._default_site_pos = self.model.site_pos.copy()
+        self._default_site_size = self.model.site_size.copy()
+        self._default_gravity = self.model.opt.gravity.copy()
         self.held = False
         self.initial_object_position = np.zeros(3, dtype=np.float64)
+        self.target_position = TARGET_POSITION.copy()
+        self.object_half_extent_m = float(OBJECT_HALF_EXTENTS[2])
+        self.object_mass_kg = 0.05
+        self.surface_friction = 0.70
+        self.vertical_gravity_scale = 1.0
 
     def reset(self, seed: int) -> CanonicalState:
+        self._restore_defaults()
+        return self._reset(sample_object_position(seed))
+
+    def reset_scenario(self, scenario: PickPlaceScenario) -> CanonicalState:
+        """Apply an approved procedural scenario and reset into its initial state."""
+        self._restore_defaults()
+        self._apply_scenario(scenario)
+        return self._reset(np.asarray(scenario.object_position, dtype=np.float64))
+
+    def _reset(self, object_position: FloatArray) -> CanonicalState:
         mujoco.mj_resetData(self.model, self.data)
         self.data.qpos[:4] = INITIAL_CONFIGURATION
-        self.initial_object_position = sample_object_position(seed)
+        self.initial_object_position = object_position.copy()
         self.data.qpos[4:7] = self.initial_object_position
         self.data.qpos[7:11] = np.array([1.0, 0.0, 0.0, 0.0])
         self.data.ctrl[:] = self.data.qpos[:4]
         self.held = False
         mujoco.mj_forward(self.model, self.data)
         return self.get_state()
+
+    def _restore_defaults(self) -> None:
+        self.model.geom_size[:] = self._default_geom_size
+        self.model.geom_friction[:] = self._default_geom_friction
+        self.model.body_mass[:] = self._default_body_mass
+        self.model.site_pos[:] = self._default_site_pos
+        self.model.site_size[:] = self._default_site_size
+        self.model.opt.gravity[:] = self._default_gravity
+        self.target_position = TARGET_POSITION.copy()
+        self.object_half_extent_m = float(OBJECT_HALF_EXTENTS[2])
+        self.object_mass_kg = 0.05
+        self.surface_friction = 0.70
+        self.vertical_gravity_scale = 1.0
+
+    def _apply_scenario(self, scenario: PickPlaceScenario) -> None:
+        self.model.geom_size[self._object_geom_id] = np.full(3, scenario.object_half_extent_m)
+        self.model.geom_friction[self._object_geom_id] = np.array(
+            [scenario.surface_friction, 0.005, 0.0001]
+        )
+        self.model.geom_friction[self._table_geom_id] = np.array(
+            [scenario.surface_friction, 0.005, 0.0001]
+        )
+        self.model.body_mass[self._object_body_id] = scenario.object_mass_kg
+        self.model.site_pos[self._target_site_id] = np.asarray(
+            scenario.target_position, dtype=np.float64
+        )
+        self.model.site_size[self._target_site_id, 0] = scenario.target_radius_m
+        self.model.opt.gravity[2] = -9.81 * scenario.vertical_gravity_scale
+        self.target_position = np.asarray(scenario.target_position, dtype=np.float64)
+        self.object_half_extent_m = scenario.object_half_extent_m
+        self.object_mass_kg = scenario.object_mass_kg
+        self.surface_friction = scenario.surface_friction
+        self.vertical_gravity_scale = scenario.vertical_gravity_scale
 
     def get_state(self) -> CanonicalState:
         ee = self.data.qpos[:3].copy()
@@ -89,7 +148,7 @@ class MujocoORA4AAdapter:
 
     def set_grasp(self, held: bool) -> None:
         if self.held and not held:
-            self.data.qpos[6] = OBJECT_HALF_EXTENTS[2]
+            self.data.qpos[6] = self.object_half_extent_m
             self.data.qvel[4:10] = 0.0
             mujoco.mj_forward(self.model, self.data)
         self.held = held
