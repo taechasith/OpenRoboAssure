@@ -1,6 +1,20 @@
 {
   "findings": [
     {
+      "identifier": "panda_mjcf",
+      "licence": "Apache-2.0",
+      "message": "Asset manifest record",
+      "source": "asset_manifest",
+      "status": "approved"
+    },
+    {
+      "identifier": "ur5e_mjcf",
+      "licence": "BSD-3-Clause",
+      "message": "Asset manifest record",
+      "source": "asset_manifest",
+      "status": "approved"
+    },
+    {
       "identifier": "absl-py",
       "licence": "Apache-2.0",
       "message": "Package metadata licence",
@@ -30,7 +44,7 @@
     },
     {
       "identifier": "etils",
-      "licence": null,
+      "licence": "Apache-2.0",
       "message": "Package metadata licence",
       "source": "python_dependency",
       "status": "approved"
@@ -155,6 +169,13 @@
       "status": "approved"
     },
     {
+      "identifier": "pybullet",
+      "licence": "Zlib",
+      "message": "Package metadata licence",
+      "source": "python_dependency",
+      "status": "approved"
+    },
+    {
       "identifier": "Pygments",
       "licence": "BSD-2-Clause",
       "message": "Package metadata licence",
@@ -221,7 +242,7 @@
   "passed": true,
   "schema_version": 1,
   "summary": {
-    "approved": 31,
+    "approved": 34,
     "blocked": 0,
     "unknown": 0
   }

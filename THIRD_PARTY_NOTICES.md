@@ -1,8 +1,23 @@
 # Third-party notices
 
-No third-party code, models, assets, or datasets are currently included in this
-repository. Future third-party material must retain its original licence and be
-recorded here and in the asset/dependency manifests before use.
+## Runtime dependency
+
+`PyBullet` 3.2.7 is used as the secondary simulator under the Zlib licence.
+Its source notice is retained by the upstream package; OpenRoboAssure does not
+vendor or modify its source.
+
+## Imported robot model assets
+
+The unmodified `franka_emika_panda` and `universal_robots_ur5e` directories
+from `google-deepmind/mujoco_menagerie` commit
+`71f066ad0be9cd271f7ed58c030243ef157af9f4` are redistributed under
+`assets/imported/mujoco_menagerie/`.
+
+- `franka_emika_panda`: Apache-2.0; its upstream `LICENSE` file is retained.
+- `universal_robots_ur5e`: BSD-3-Clause; its upstream `LICENSE` file is retained.
+
+See `assets/manifest.yaml` for exact source subdirectories and entrypoint
+checksums.
 
 ## Development-only exception
 

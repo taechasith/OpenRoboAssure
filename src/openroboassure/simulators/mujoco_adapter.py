@@ -6,6 +6,15 @@ import mujoco
 import numpy as np
 
 from openroboassure.contracts import CanonicalState, FloatArray, StepResult
+from openroboassure.simulators.action_conversion import apply_canonical_action
+from openroboassure.simulators.task_geometry import (
+    END_EFFECTOR_Z_OFFSET,
+    HELD_OBJECT_OFFSET,
+    INITIAL_CONFIGURATION,
+    OBJECT_HALF_EXTENTS,
+    TARGET_POSITION,
+    sample_object_position,
+)
 
 ORA_4A_XML = """
 <mujoco model="ora_4a_pick_place">
@@ -41,7 +50,7 @@ ORA_4A_XML = """
 class MujocoORA4AAdapter:
     """MuJoCo implementation of ORA-4A with deterministic grasp attachment."""
 
-    target_position = np.array([0.16, 0.10, 0.02], dtype=np.float64)
+    target_position = TARGET_POSITION.copy()
 
     def __init__(self) -> None:
         self.model = mujoco.MjModel.from_xml_string(ORA_4A_XML)
@@ -50,12 +59,9 @@ class MujocoORA4AAdapter:
         self.initial_object_position = np.zeros(3, dtype=np.float64)
 
     def reset(self, seed: int) -> CanonicalState:
-        rng = np.random.default_rng(seed)
         mujoco.mj_resetData(self.model, self.data)
-        self.data.qpos[:4] = np.array([0.0, 0.0, 0.12, 0.0])
-        self.initial_object_position = np.array(
-            [rng.uniform(-0.16, -0.06), rng.uniform(-0.12, -0.03), 0.02], dtype=np.float64
-        )
+        self.data.qpos[:4] = INITIAL_CONFIGURATION
+        self.initial_object_position = sample_object_position(seed)
         self.data.qpos[4:7] = self.initial_object_position
         self.data.qpos[7:11] = np.array([1.0, 0.0, 0.0, 0.0])
         self.data.ctrl[:] = self.data.qpos[:4]
@@ -65,27 +71,25 @@ class MujocoORA4AAdapter:
 
     def get_state(self) -> CanonicalState:
         ee = self.data.qpos[:3].copy()
-        ee[2] += 0.02
+        ee[2] += END_EFFECTOR_Z_OFFSET
         return CanonicalState(ee, self.data.qpos[4:7].copy(), self.held)
 
     def step(self, action: FloatArray) -> StepResult:
-        target = self.data.ctrl.copy()
-        target[:3] = np.clip(target[:3] + action[:3], [-0.25, -0.20, 0.02], [0.25, 0.20, 0.25])
-        target[3] = float(np.clip(target[3] + action[3], -3.14, 3.14))
+        target = apply_canonical_action(self.data.ctrl.copy(), action)
         self.data.ctrl[:] = target
         self.data.qpos[:4] = target
         self.data.qvel[:4] = 0.0
         mujoco.mj_forward(self.model, self.data)
         if self.held:
             state = self.get_state()
-            self.data.qpos[4:7] = state.end_effector_position - np.array([0.0, 0.0, 0.04])
+            self.data.qpos[4:7] = state.end_effector_position - HELD_OBJECT_OFFSET
             self.data.qvel[4:10] = 0.0
             mujoco.mj_forward(self.model, self.data)
         return StepResult(self.get_state(), collision_count=0)
 
     def set_grasp(self, held: bool) -> None:
         if self.held and not held:
-            self.data.qpos[6] = 0.02
+            self.data.qpos[6] = OBJECT_HALF_EXTENTS[2]
             self.data.qvel[4:10] = 0.0
             mujoco.mj_forward(self.model, self.data)
         self.held = held

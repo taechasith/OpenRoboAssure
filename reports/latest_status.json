@@ -1,17 +1,17 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T14:00:00+07:00",
-  "current_phase": "P03",
-  "current_version": "0.3.0",
+  "generated_at": "2026-07-26T14:30:00+07:00",
+  "current_phase": "P04",
+  "current_version": "0.4.0",
   "status": "completed",
-  "next_required_gate": "GATE-P04-ROBOT-SIMULATOR",
+  "next_required_gate": "GATE-P05-SCENARIO-ONTOLOGY",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
     "simulation_only",
     "no_physical_robot_validation",
-    "single_simulator",
     "kinematic_scripted_baseline",
-    "no_learned_policy"
+    "no_learned_policy",
+    "cross_simulator_dynamic_equivalence_not_established"
   ]
 }

@@ -11,14 +11,14 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.3.0`
-- Current phase: `P03 — MuJoCo primary simulator and first task`
-- Status: MuJoCo ORA-4A baseline complete; pending review before the v0.3.0 release
+- Current version: `v0.4.0`
+- Current phase: `P04 — multi-simulator and multi-robot layer`
+- Status: v0.4.0 is released; P04 multi-simulator and multi-robot layer is complete
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
 - Required paid services: None
-- Licence audit: Passed — 31 approved, 0 blocked, 0 unknown
+- Licence audit: Passed — 34 approved, 0 blocked, 0 unknown
 
 ## Scope proposed for v1.0
 
@@ -43,9 +43,10 @@ support for arbitrary robots without adapters.
 
 ## Governance
 
-The project charter and free-data policy have been approved. The next
-directional decision is `GATE-P04-ROBOT-SIMULATOR`, which selects the second
-simulator and imported robot-model sources.
+The project charter, free-data policy, and P04 robot/simulator set have been
+approved. P04 uses MuJoCo and PyBullet; imported Panda and UR5e models are
+pinned to reviewed MuJoCo Menagerie subdirectories. The next directional gate
+is `GATE-P05-SCENARIO-ONTOLOGY`.
 
 The active charter materials are:
 
@@ -70,10 +71,11 @@ MPL-2.0 and runtime-only `PyOpenGL` with verified BSD package metadata.
 
 ## Current limitation
 
-The current evidence is a deterministic, scripted and kinematic MuJoCo
-pick-and-place baseline. It is not a learned policy, does not establish contact
-physics fidelity, and has only one simulator backend; it makes no physical
-robot or safety claim.
+The current evidence is a deterministic, scripted and kinematic
+Pick-and-Place baseline. The P04 report measures identical canonical state
+mapping for ORA-4A in MuJoCo and PyBullet; it does not establish contact-physics
+fidelity, dynamic equivalence, learned-policy robustness, physical-robot
+performance, or safety.
 
 ## Development quick start
 
@@ -87,6 +89,7 @@ make typecheck
 make test
 make smoke
 ora doctor --offline
+ora simulator discrepancy
 ```
 
 On Windows, `make.bat` provides the same commands when GNU Make is not
@@ -106,3 +109,25 @@ The recorded `EXP-SIM-BASELINE-001` run completed all 1,000 procedural seeds
 with a 100% scripted task-success rate, zero invalid resets and collisions, and
 100% deterministic replay. These are smoke-level kinematic baseline metrics,
 not evidence of learned-policy robustness or physical performance.
+
+## Simulator and robot support
+
+| Simulator | ORA-4A Pick-and-Place | Panda | UR5e |
+|---|---|---|---|
+| MuJoCo | Deterministic scripted kinematic baseline | Pinned MJCF model and Jacobian kinematic probe | Pinned MJCF model and Jacobian kinematic probe |
+| PyBullet | Deterministic canonical-state kinematic smoke path | Not implemented | Not implemented |
+
+Panda is imported from `franka_emika_panda` under Apache-2.0; UR5e is imported
+from `universal_robots_ur5e` under BSD-3-Clause. Both sources are pinned to
+MuJoCo Menagerie commit `71f066ad0be9cd271f7ed58c030243ef157af9f4` and recorded
+with entrypoint checksums in `assets/manifest.yaml`.
+
+Run the measured ORA-4A cross-simulator state discrepancy report with:
+
+```text
+ora simulator discrepancy
+```
+
+`EXP-SIM-DISCREPANCY-001` currently reports `0.0 m` under the deliberately
+shared kinematic mapping. It is not a dynamics comparison: no claim is made
+about contact, force, friction, collision response, or sim-to-sim transfer.
