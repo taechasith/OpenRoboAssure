@@ -12,8 +12,8 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 ## Project status
 
 - Current version: `v0.5.0`
-- Current phase: `P05 — scenario and uncertainty engine`
-- Status: v0.5.0 is released; P05 scenario and uncertainty engine is complete
+- Current phase: `P06 — policies, baselines, and sensitivity`
+- Status: v0.5.0 is released; the approved CPU-standard P06 campaign is in progress
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -43,10 +43,11 @@ support for arbitrary robots without adapters.
 
 ## Governance
 
-The project charter, free-data policy, P04 robot/simulator set, and P05 core
-scenario ontology have been approved. P05 generated one million deterministic,
-constrained scenarios without external data. The next directional gate is
-`GATE-P06-BASELINES`.
+The project charter, free-data policy, P04 robot/simulator set, P05 core
+scenario ontology, and P06 baseline campaign have been approved. P05 generated
+one million deterministic, constrained scenarios without external data. P06 is
+limited to ORA-4A Pick-and-Place, four fixed comparable systems, and CPU-first
+training; the next directional gate is `GATE-P08-PILOT`.
 
 The active charter materials are:
 

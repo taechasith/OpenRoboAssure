@@ -1,17 +1,17 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T15:21:22+07:00",
-  "current_phase": "P05",
+  "generated_at": "2026-07-26T17:09:27+07:00",
+  "current_phase": "P06",
   "current_version": "0.5.0",
-  "status": "completed",
-  "next_required_gate": "GATE-P06-BASELINES",
+  "status": "in_progress",
+  "next_required_gate": "GATE-P08-PILOT",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
     "simulation_only",
     "no_physical_robot_validation",
     "kinematic_scripted_baseline",
-    "no_learned_policy",
+    "learned_policy_baselines_not_yet_evidenced",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],

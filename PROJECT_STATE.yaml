@@ -1,20 +1,20 @@
 project: OpenRoboAssure
-current_phase: P05
+current_phase: P06
 current_version: 0.5.0
-status: completed
+status: in_progress
 validation_level: none
-latest_commit: 6fbfdf3
-active_branch: phase/p05-scenario-ontology
+latest_commit: 0fcdb60
+active_branch: phase/p06-policies-sensitivity
 protected_benchmark_frozen: false
 licence_audit: passed
-last_completed_gate: GATE-P05-SCENARIO-ONTOLOGY
-next_required_gate: GATE-P06-BASELINES
+last_completed_gate: GATE-P06-BASELINES
+next_required_gate: GATE-P08-PILOT
 open_blockers: []
 known_limitations:
   - simulation_only
   - no_physical_robot_validation
   - kinematic_scripted_baseline
-  - no_learned_policy
+  - learned_policy_baselines_not_yet_evidenced
   - cross_simulator_dynamic_equivalence_not_established
   - scenario_validity_is_not_dynamic_equivalence
 protected_files:
