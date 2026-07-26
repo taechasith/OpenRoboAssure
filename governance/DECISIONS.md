@@ -12,7 +12,20 @@ remain agent-autonomous as defined in the master build guide.
   tasks, and prohibited public claims.
 - **Decision record:** [GATE-P00-CHARTER.yaml](approvals/GATE-P00-CHARTER.yaml)
 - **Consequence:** P01 repository bootstrap may begin. Future direction gates
-  remain mandatory.
+remain mandatory.
+
+## Approved — GATE-P04-ROBOT-SET
+
+- **Status:** approved on 2026-07-26
+- **Scope:** MuJoCo as primary and PyBullet as secondary simulator; ORA-4A,
+  Panda, and UR5e as the reference robot set; 5 mm static end-effector and
+  1 mm shared-geometry equivalence tolerances; no licence exception.
+- **Model sources:** MuJoCo Menagerie commit
+  `71f066ad0be9cd271f7ed58c030243ef157af9f4`: `franka_emika_panda`
+  (Apache-2.0) and `universal_robots_ur5e` (BSD-3-Clause).
+- **Decision record:** [GATE-P04-ROBOT-SET.yaml](approvals/GATE-P04-ROBOT-SET.yaml)
+- **Consequence:** P04 implementation may proceed. Dynamic equivalence remains
+  a measurement and reporting obligation, not an assumed property.
 
 ## DRAFT-0001 — Initial charter proposal
 

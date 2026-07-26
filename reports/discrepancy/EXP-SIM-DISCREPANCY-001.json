@@ -1,0 +1,10 @@
+{
+  "dynamic_equivalence": "not_claimed_kinematic_smoke_only",
+  "experiment_id": "EXP-SIM-DISCREPANCY-001",
+  "max_end_effector_position_error_m": 0.0,
+  "max_object_position_error_m": 0.0,
+  "robot": "ora_4a",
+  "samples": 5,
+  "seed": 0,
+  "task": "pick_place_v1"
+}

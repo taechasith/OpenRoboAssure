@@ -19,3 +19,11 @@ class SimulatorAdapter(Protocol):
     def snapshot(self) -> bytes: ...
 
     def restore(self, snapshot: bytes) -> None: ...
+
+
+class PickPlaceSimulatorAdapter(SimulatorAdapter, Protocol):
+    """Additional contract used by the shared scripted Pick-and-Place policy."""
+
+    target_position: FloatArray
+
+    def set_grasp(self, held: bool) -> None: ...

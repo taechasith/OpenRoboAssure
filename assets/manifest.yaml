@@ -1,2 +1,34 @@
 schema_version: 1
-assets: []
+assets:
+  - asset_id: panda_mjcf
+    name: Franka Emika Panda MJCF model
+    kind: robot_model
+    source_repository: https://github.com/google-deepmind/mujoco_menagerie
+    source_commit: 71f066ad0be9cd271f7ed58c030243ef157af9f4
+    source_subdirectory: franka_emika_panda
+    spdx_license: Apache-2.0
+    redistributed: true
+    retrieval_method: pinned_sparse_git_checkout
+    sha256: c5a92e6ff47e7282ea303ffe13530ffe150248a22bb4b349a9369881e52facf0
+    review_status: approved
+    reviewed_by: taechasith
+    review_date: "2026-07-26"
+    notes: Unmodified MJCF package; sha256 is for the panda.xml entry point.
+    local_path: assets/imported/mujoco_menagerie/franka_emika_panda
+    entrypoint: panda.xml
+  - asset_id: ur5e_mjcf
+    name: Universal Robots UR5e MJCF model
+    kind: robot_model
+    source_repository: https://github.com/google-deepmind/mujoco_menagerie
+    source_commit: 71f066ad0be9cd271f7ed58c030243ef157af9f4
+    source_subdirectory: universal_robots_ur5e
+    spdx_license: BSD-3-Clause
+    redistributed: true
+    retrieval_method: pinned_sparse_git_checkout
+    sha256: b7320db33754bc9183b5b50135b493d5dfb313c96ce9e32bbaea2b94d187f585
+    review_status: approved
+    reviewed_by: taechasith
+    review_date: "2026-07-26"
+    notes: Unmodified MJCF package; sha256 is for the ur5e.xml entry point.
+    local_path: assets/imported/mujoco_menagerie/universal_robots_ur5e
+    entrypoint: ur5e.xml

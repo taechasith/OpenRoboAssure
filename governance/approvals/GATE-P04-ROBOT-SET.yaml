@@ -1,0 +1,46 @@
+approval_id: GATE-P04-ROBOT-SET
+aliases: [GATE-P04-ROBOT-SIMULATOR]
+project_version: 0.4.0
+decision: approved
+approved_by: taechasith
+approved_at: "2026-07-26T14:22:00+07:00"
+approval_source: user_conversation
+scope:
+  simulators:
+    primary:
+      name: MuJoCo
+      licence: Apache-2.0
+    secondary:
+      name: PyBullet
+      source_repository: https://github.com/bulletphysics/bullet3
+      source_commit: 63c4d67e337017f9d8b298c900e9aabdb69296e7
+      licence: Zlib
+  robots:
+    - ora_4a
+    - name: franka_panda
+      source_repository: https://github.com/google-deepmind/mujoco_menagerie
+      source_commit: 71f066ad0be9cd271f7ed58c030243ef157af9f4
+      source_subdirectory: franka_emika_panda
+      licence: Apache-2.0
+    - name: ur5e
+      source_repository: https://github.com/google-deepmind/mujoco_menagerie
+      source_commit: 71f066ad0be9cd271f7ed58c030243ef157af9f4
+      source_subdirectory: universal_robots_ur5e
+      licence: BSD-3-Clause
+  equivalence_tolerances:
+    static_end_effector_position_m: 0.005
+    static_end_effector_orientation_rad: 0.05
+    shared_object_target_position_m: 0.001
+    action_conversion_bounds: exact_after_clipping
+    dynamic_trajectory_matching: report_only_not_an_acceptance_criterion
+  licence_exceptions: none
+expires_when:
+  - simulator_set_changes
+  - robot_set_changes
+  - model_source_or_licence_changes
+  - equivalence_tolerance_changes
+notes: >-
+  The repository owner approved P04 in the project conversation. PyBullet is
+  selected as the second simulator. Panda and UR5e are sourced only from the
+  named, pinned MuJoCo Menagerie subdirectories; no alternative model source
+  or licence exception is approved by this record.

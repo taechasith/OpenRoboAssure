@@ -8,6 +8,10 @@ from pathlib import Path
 from openroboassure.doctor import run_doctor
 from openroboassure.experiments.baseline import run_baseline
 from openroboassure.licensing.audit import add_asset, audit_project, write_report
+from openroboassure.simulators.discrepancy import (
+    measure_ora4a_discrepancy,
+    write_discrepancy_report,
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -25,6 +29,15 @@ def build_parser() -> argparse.ArgumentParser:
     baseline.add_argument("--seeds", type=int, default=20)
     baseline.add_argument(
         "--output", type=Path, default=Path("reports/benchmarks/EXP-SIM-BASELINE-001.json")
+    )
+    simulator = subparsers.add_parser("simulator", help="run simulator comparison tools")
+    simulator_commands = simulator.add_subparsers(dest="simulator_command", required=True)
+    discrepancy = simulator_commands.add_parser(
+        "discrepancy", help="measure deterministic ORA-4A cross-simulator discrepancies"
+    )
+    discrepancy.add_argument("--seed", type=int, default=0)
+    discrepancy.add_argument(
+        "--output", type=Path, default=Path("reports/discrepancy/EXP-SIM-DISCREPANCY-001.json")
     )
     licence = subparsers.add_parser("licence", help="audit dependency and asset licences")
     licence_commands = licence.add_subparsers(dest="licence_command", required=True)
@@ -73,6 +86,13 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "baseline":
         report = run_baseline(args.seeds, args.output)
         print(f"Baseline success rate: {report['success_rate']:.1%}")
+        return 0
+    if args.command == "simulator" and args.simulator_command == "discrepancy":
+        report = measure_ora4a_discrepancy(args.seed)
+        write_discrepancy_report(report, args.output)
+        print(
+            f"Maximum end-effector discrepancy: {report['max_end_effector_position_error_m']:.6f} m"
+        )
         return 0
     if args.command == "licence" and args.licence_command == "audit":
         report = audit_project(args.project_root.resolve())

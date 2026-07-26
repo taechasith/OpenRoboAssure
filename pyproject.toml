@@ -16,7 +16,11 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.12",
 ]
-dependencies = ["mujoco>=3.2,<4", "PyYAML>=6.0,<7"]
+dependencies = [
+    "mujoco>=3.2,<4",
+    "pybullet>=3.2,<4",
+    "PyYAML>=6.0,<7",
+]
 
 [project.scripts]
 ora = "openroboassure.cli:main"
@@ -32,6 +36,9 @@ dev = [
 [tool.pytest.ini_options]
 addopts = "-ra"
 testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"assets/imported/mujoco_menagerie" = "openroboassure/assets/mujoco_menagerie"
 
 [tool.ruff]
 target-version = "py312"
@@ -52,5 +59,5 @@ module = ["yaml"]
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
-module = ["mujoco"]
+ module = ["mujoco", "pybullet"]
 ignore_missing_imports = true

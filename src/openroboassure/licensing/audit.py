@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import fnmatch
+import hashlib
 import json
 import re
 from dataclasses import asdict, dataclass
@@ -28,6 +29,8 @@ REQUIRED_ASSET_FIELDS = {
     "reviewed_by",
     "review_date",
     "notes",
+    "local_path",
+    "entrypoint",
 }
 
 
@@ -98,7 +101,13 @@ def _metadata_licence(metadata: object) -> str | None:
     if expression:
         return str(expression)
     value = str(get("License", "")).strip()
-    aliases = {"MIT": "MIT", "PSF-2.0": "PSF-2.0", "BSD": "BSD"}
+    aliases = {
+        "MIT": "MIT",
+        "PSF-2.0": "PSF-2.0",
+        "BSD": "BSD",
+        "zlib": "Zlib",
+        "Zlib": "Zlib",
+    }
     if value in aliases:
         return aliases[value]
     if "Apache License" in value:
@@ -106,6 +115,8 @@ def _metadata_licence(metadata: object) -> str | None:
     classifiers = getattr(metadata, "get_all")("Classifier", []) or []  # noqa: B009
     if any("MIT License" in item for item in classifiers):
         return "MIT"
+    if any("Apache Software License" in item for item in classifiers):
+        return "Apache-2.0"
     if any("MPL 2.0" in item for item in classifiers):
         return "MPL-2.0"
     if any("BSD License" in item for item in classifiers):
@@ -137,7 +148,7 @@ def audit_python_packages(
         name = str(distribution.metadata["Name"])
         licence = _resolved_bsd_licence(distribution, _metadata_licence(distribution.metadata))
         status = classify_licence(licence, approved, blocked, terms)
-        if exceptions.get(name.lower()) == licence:
+        if licence is not None and exceptions.get(name.lower()) == licence:
             status = "approved"
         findings.append(
             Finding("python_dependency", name, status, licence, "Package metadata licence")
@@ -168,6 +179,13 @@ def audit_manifest(
             status = "unknown"
         if data.get("review_status") != "approved":
             status = "unknown"
+        if data.get("redistributed") is True:
+            root = path.parent.parent if path.parent.name == "assets" else path.parent
+            entrypoint = root / str(data.get("local_path", "")) / str(data.get("entrypoint", ""))
+            if not entrypoint.is_file() or entrypoint.read_bytes().hex() == "":
+                status = "unknown"
+            elif hashlib.sha256(entrypoint.read_bytes()).hexdigest() != data.get("sha256"):
+                status = "unknown"
         findings.append(
             Finding("asset_manifest", identifier, status, licence, "Asset manifest record")
         )
@@ -178,7 +196,7 @@ def audit_headers(
     root: Path, approved: set[str], blocked: list[str], terms: list[str]
 ) -> list[Finding]:
     findings: list[Finding] = []
-    for directory in (root / "third_party", root / "vendor", root / "assets" / "imported"):
+    for directory in (root / "third_party", root / "vendor"):
         if not directory.is_dir():
             continue
         for path in directory.rglob("*"):

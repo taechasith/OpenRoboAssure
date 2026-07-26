@@ -1,0 +1,11 @@
+.git
+.venv
+.mypy_cache
+.pytest_cache
+.ruff_cache
+__pycache__
+*.py[cod]
+dist
+build
+reports/environment
+OPENROBOASSURE_SIMULATION_MASTER_BUILD_GUIDE.md
