@@ -4,6 +4,12 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+### Approved
+
+- `GATE-P05-SCENARIO-ONTOLOGY` for the core constrained Pick-and-Place
+  ontology, its global validity bounds and exclusions, and one million
+  deterministic scenarios for `EXP-SCENARIO-VALIDITY-001`.
+
 ## [0.4.0] - 2026-07-26
 
 ### Added

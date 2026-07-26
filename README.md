@@ -12,8 +12,8 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 ## Project status
 
 - Current version: `v0.4.0`
-- Current phase: `P04 — multi-simulator and multi-robot layer`
-- Status: v0.4.0 is released; P04 multi-simulator and multi-robot layer is complete
+- Current phase: `P05 — scenario and uncertainty engine`
+- Status: v0.4.0 is released; P05 core scenario ontology implementation is in progress
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -43,10 +43,10 @@ support for arbitrary robots without adapters.
 
 ## Governance
 
-The project charter, free-data policy, and P04 robot/simulator set have been
-approved. P04 uses MuJoCo and PyBullet; imported Panda and UR5e models are
-pinned to reviewed MuJoCo Menagerie subdirectories. The next directional gate
-is `GATE-P05-SCENARIO-ONTOLOGY`.
+The project charter, free-data policy, P04 robot/simulator set, and P05 core
+scenario ontology have been approved. P05 will generate one million
+deterministic, constrained scenarios without external data. The next
+directional gate is `GATE-P06-BASELINES`.
 
 The active charter materials are:
 
