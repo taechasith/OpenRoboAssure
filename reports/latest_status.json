@@ -1,27 +1,37 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T15:21:22+07:00",
-  "current_phase": "P05",
-  "current_version": "0.5.0",
+  "generated_at": "2026-07-26T18:01:00+07:00",
+  "current_phase": "P06",
+  "current_version": "0.6.0",
   "status": "completed",
-  "next_required_gate": "GATE-P06-BASELINES",
+  "next_required_gate": "GATE-P08-PILOT",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
     "simulation_only",
     "no_physical_robot_validation",
     "kinematic_scripted_baseline",
-    "no_learned_policy",
+    "learned_policy_baselines_have_zero_held_out_success_in_p06",
+    "p06_sensitivity_is_based_on_scripted_reference_returns",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],
   "latest_experiment": {
-    "experiment_id": "EXP-SCENARIO-VALIDITY-001",
-    "generated_scenarios": 1000000,
-    "valid_rate": 1.0,
-    "duplicate_rate": 0.0,
-    "deterministic_regeneration_rate": 1.0,
-    "simulator_execution_sample_size": 256,
-    "simulator_execution_rate": 1.0
+    "experiment_id": "EXP-POLICY-BASELINES-001",
+    "total_training_environment_steps": 2000000,
+    "total_held_out_evaluation_episodes": 4000,
+    "equal_budget_check": "passed",
+    "systems": {
+      "A": { "held_out_task_success": 0.0, "seed_count": 5 },
+      "B": { "held_out_task_success": 0.0, "seed_count": 5 },
+      "C": { "held_out_task_success": 0.0, "seed_count": 5 },
+      "D": { "held_out_task_success": 0.0, "seed_count": 5 }
+    },
+    "sensitivity": {
+      "experiment_id": "EXP-SENS-001",
+      "morris_evaluations": 340,
+      "sobol_evaluations": 4096,
+      "system_d_variable_count": 6
+    }
   }
 }

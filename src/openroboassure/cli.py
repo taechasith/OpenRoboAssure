@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from openroboassure.doctor import run_doctor
@@ -14,6 +15,15 @@ from openroboassure.scenarios.models import ScenarioFamily, ScenarioSplit
 from openroboassure.simulators.discrepancy import (
     measure_ora4a_discrepancy,
     write_discrepancy_report,
+)
+from openroboassure.training.randomization import RandomizationSystem
+from openroboassure.training.sensitivity import run_sensitivity_experiment
+from openroboassure.training.trainer import (
+    TrainingConfiguration,
+    build_evaluation_scenarios,
+    evaluate_policy,
+    run_cpu_standard_campaign,
+    train_policy,
 )
 
 
@@ -104,6 +114,38 @@ def build_parser() -> argparse.ArgumentParser:
         "--notes", default="Registered by ora asset add; requires review before benchmark use."
     )
     add.add_argument("--redistributed", action="store_true")
+    policy = subparsers.add_parser("policy", help="train and evaluate P06 state-only policies")
+    policy_commands = policy.add_subparsers(dest="policy_command", required=True)
+    train = policy_commands.add_parser("train", help="train one reproducible P06 policy seed")
+    train.add_argument(
+        "--system", choices=[item.value for item in RandomizationSystem], required=True
+    )
+    train.add_argument("--seed", type=int, required=True)
+    train.add_argument("--steps", type=int, default=100_000)
+    train.add_argument("--selected-variable", action="append", default=[])
+    train.add_argument("--model-directory", type=Path, default=Path("reports/policies/models"))
+    train.add_argument("--tracking", type=Path, default=Path("reports/policies/tracking.jsonl"))
+    evaluate = policy_commands.add_parser(
+        "evaluate", help="evaluate one policy on 200 held-out scenarios"
+    )
+    evaluate.add_argument("--model", type=Path, required=True)
+    evaluate.add_argument(
+        "--output", type=Path, default=Path("reports/policies/EXP-POLICY-EVALUATION.json")
+    )
+    campaign = policy_commands.add_parser(
+        "campaign", help="run the approved P06 four-system CPU-standard campaign"
+    )
+    campaign.add_argument("--output-directory", type=Path, default=Path("reports"))
+    sensitivity = subparsers.add_parser("sensitivity", help="run P06 SALib sensitivity evidence")
+    sensitivity_commands = sensitivity.add_subparsers(dest="sensitivity_command", required=True)
+    for command_name in ("morris", "sobol", "run"):
+        command = sensitivity_commands.add_parser(
+            command_name, help="run the linked Morris and Sobol EXP-SENS-001 evidence"
+        )
+        command.add_argument("--seed", type=int, default=202606)
+        command.add_argument(
+            "--output", type=Path, default=Path("reports/sensitivity/EXP-SENS-001.json")
+        )
     doctor.add_argument(
         "--output",
         type=Path,
@@ -184,5 +226,42 @@ def main(argv: list[str] | None = None) -> int:
         record["redistributed"] = args.redistributed
         add_asset(args.manifest, record)
         print(f"Registered asset in {args.manifest}")
+        return 0
+    if args.command == "policy" and args.policy_command == "train":
+        result = train_policy(
+            TrainingConfiguration(
+                system=RandomizationSystem(args.system),
+                seed=args.seed,
+                environment_steps=args.steps,
+                selected_variables=tuple(args.selected_variable),
+            ),
+            model_directory=args.model_directory,
+            tracking_path=args.tracking,
+        )
+        print(
+            f"Trained {result['system']} seed {result['seed']} for {result['environment_steps']} steps"
+        )
+        return 0
+    if args.command == "policy" and args.policy_command == "evaluate":
+        report = evaluate_policy(args.model, build_evaluation_scenarios())
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(
+            json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        print(f"Held-out task success: {report['primary_held_out_task_success']:.1%}")
+        return 0
+    if args.command == "policy" and args.policy_command == "campaign":
+        report = run_cpu_standard_campaign(args.output_directory)
+        aggregate = report["aggregate"]
+        if not isinstance(aggregate, dict):
+            raise AssertionError("P06 campaign aggregate is malformed")
+        print(f"P06 campaign completed with {len(aggregate)} systems")
+        return 0
+    if args.command == "sensitivity":
+        report = run_sensitivity_experiment(args.output, seed=args.seed)
+        variables = report["system_d_variables"]
+        if not isinstance(variables, list) or not all(isinstance(item, str) for item in variables):
+            raise AssertionError("Sensitivity report did not contain System D variables")
+        print(f"System D variables: {', '.join(str(item) for item in variables)}")
         return 0
     raise AssertionError(f"Unhandled command: {args.command}")

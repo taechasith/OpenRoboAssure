@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "openroboassure"
-version = "0.5.0"
+version = "0.6.0"
 description = "Simulation-only assurance pipeline for physical AI."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
@@ -17,9 +17,12 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
+    "gymnasium>=1.1,<2",
     "mujoco>=3.2,<4",
+    "optuna>=4.4,<5",
     "pybullet>=3.2,<4",
     "PyYAML>=6.0,<7",
+    "SALib>=1.5,<2",
 ]
 
 [project.scripts]

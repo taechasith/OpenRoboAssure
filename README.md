@@ -11,14 +11,14 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.5.0`
-- Current phase: `P05 — scenario and uncertainty engine`
-- Status: v0.5.0 is released; P05 scenario and uncertainty engine is complete
+- Current version: `v0.6.0`
+- Current phase: `P06 — policies, baselines, and sensitivity`
+- Status: P06 is complete; its learned-policy result is preliminary and negative
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
 - Required paid services: None
-- Licence audit: Passed — 34 approved, 0 blocked, 0 unknown
+- Licence audit: Passed — 60 approved, 0 blocked, 0 unknown
 
 ## Scope proposed for v1.0
 
@@ -43,10 +43,11 @@ support for arbitrary robots without adapters.
 
 ## Governance
 
-The project charter, free-data policy, P04 robot/simulator set, and P05 core
-scenario ontology have been approved. P05 generated one million deterministic,
-constrained scenarios without external data. The next directional gate is
-`GATE-P06-BASELINES`.
+The project charter, free-data policy, P04 robot/simulator set, P05 core
+scenario ontology, and P06 baseline campaign have been approved. P05 generated
+one million deterministic, constrained scenarios without external data. P06 is
+limited to ORA-4A Pick-and-Place, four fixed comparable systems, and CPU-first
+training; the next directional gate is `GATE-P08-PILOT`.
 
 The active charter materials are:
 
@@ -67,15 +68,19 @@ Run `ora licence audit` to write the machine-readable audit report. The core
 benchmark permits Apache-2.0, MIT, BSD-2/3-Clause, Zlib, ISC, CC0-1.0,
 CC-BY-4.0, PSF-2.0, and 0BSD. Any other licence requires a documented human-approved
 exception. Current narrow exceptions are development-only `pathspec` under
-MPL-2.0 and runtime-only `PyOpenGL` with verified BSD package metadata.
+MPL-2.0, runtime-only `PyOpenGL` with verified BSD package metadata,
+runtime-only `Pillow` under MIT-CMU, and runtime-only `tqdm` under MPL-2.0 AND
+MIT. The latter two retain their notices and do not add either licence to the
+general allow-list.
 
 ## Current limitation
 
-The current evidence is a deterministic, scripted and kinematic
-Pick-and-Place baseline. The P04 report measures identical canonical state
-mapping for ORA-4A in MuJoCo and PyBullet; it does not establish contact-physics
-fidelity, dynamic equivalence, learned-policy robustness, physical-robot
-performance, or safety.
+The deterministic scripted controller succeeds in the current kinematic task,
+but every P06 learned-policy seed achieved 0% held-out task success. Therefore
+P06 does not establish learned-policy robustness, sensitivity-guided improvement,
+physical-robot performance, or safety. The P04 report measures identical
+canonical state mapping for ORA-4A in MuJoCo and PyBullet; it does not establish
+contact-physics fidelity or dynamic equivalence.
 
 ## Scenario and uncertainty engine
 
@@ -102,6 +107,40 @@ rate, zero duplicates, deterministic regeneration, and no sampled
 train/evaluation parameter overlap. A stratified 256-scenario sample completed
 512 adapter resets across MuJoCo and PyBullet. This verifies scenario
 construction, not contact-physics or dynamic equivalence.
+
+## P06 policies, baselines, and sensitivity
+
+P06 supplies a Gymnasium-compatible state-only task wrapper, an identical
+64x64 NumPy MLP policy-gradient learner for all systems, local JSONL tracking,
+saved model/configuration hashes, and the four approved randomization systems.
+Morris screens all 16 approved P05 variables; Sobol then evaluates up to six
+screened variables with 1,000 bootstrap resamples.
+
+`EXP-POLICY-BASELINES-001` completed 20 fixed 100,000-step training runs and
+4,000 held-out evaluation episodes. The equal-budget check passed. All systems
+had 0% held-out task success across five seeds (95% bootstrap interval: 0–0%).
+This is a preserved negative result, not a reason to retune, discard, or
+selectively rerun any seed.
+
+| System | Training steps | Seeds | Held-out success |
+|---|---:|---:|---:|
+| A — no randomization | 500,000 | 5 | 0% |
+| B — broad independent uniform | 500,000 | 5 | 0% |
+| C — automatic curriculum | 500,000 | 5 | 0% |
+| D — Morris/Sobol guided | 500,000 | 5 | 0% |
+
+`EXP-SENS-001` executed 340 Morris and 4,096 Sobol evaluations. It selected
+`frame_delay_steps`, `action_latency_steps`, `object_mass_kg`,
+`observation_dropout_probability`, `object_x_m`, and `surface_friction` for
+System D. Those sensitivity results are based on deterministic scripted
+reference returns; they are not learned-policy sensitivity claims.
+
+Reproduce the full fixed campaign locally:
+
+```text
+uv sync --locked
+ora policy campaign
+```
 
 ## Development quick start
 

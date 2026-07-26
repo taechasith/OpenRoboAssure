@@ -4,6 +4,27 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Approved — GATE-P06-BASELINES
+
+- **Status:** approved on 2026-07-26
+- **Scope:** the CPU-standard ORA-4A Pick-and-Place campaign: Systems A-D; a
+  state-only 64x64 MLP with fixed reward, action limits, and stopping rule;
+  five 100,000-step seeds per system; 200 held-out scenarios per policy/seed;
+  and the declared Morris/Sobol sensitivity thresholds and selection rule.
+- **Decision record:**
+  [GATE-P06-BASELINES.yaml](approvals/GATE-P06-BASELINES.yaml)
+- **Consequence:** P06 implementation may proceed. Panda and UR5e remain
+  model probes, failed seeds remain evidence, and each added dependency must
+  pass the P02 licence audit before it is used. The owner additionally approved
+  only package-specific runtime exceptions for transitive `Pillow` (MIT-CMU)
+  and `tqdm` (MPL-2.0 AND MIT), with their notices preserved; MPL-2.0 remains
+  absent from the general allow-list.
+- **Evidence:** `EXP-POLICY-BASELINES-001` completed its exact four-system,
+  five-seed, two-million-step campaign with 4,000 common held-out episodes.
+  All learned-policy systems recorded 0% held-out success; the negative result,
+  all model hashes, and all seed records are preserved. `EXP-SENS-001` retains
+  its scripted-reference Morris/Sobol selection evidence separately.
+
 ## Approved — GATE-P05-SCENARIO-ONTOLOGY
 
 - **Status:** approved on 2026-07-26

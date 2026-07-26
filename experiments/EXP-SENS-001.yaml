@@ -1,0 +1,26 @@
+experiment_id: EXP-SENS-001
+phase: P06
+gate: GATE-P06-BASELINES
+status: completed
+objective: Identify P05 uncertainty variables that influence the deterministic state-only reference.
+implementation:
+  package: SALib
+  morris:
+    trajectories: 20
+    variables: 16
+    expected_evaluations: 340
+  sobol:
+    selected_variables: up_to_6
+    base_sample_size: 512
+    second_order: false
+    bootstrap_resamples: 1000
+reference_policy: deterministic_scripted_state_only
+selection:
+  morris: "mu_star >= 5 percent of maximum mu_star"
+  sobol: "total_order 95 percent lower confidence bound > 0.01"
+  floor: top_3_variables
+outputs:
+  - reports/sensitivity/EXP-SENS-001.json
+  - reports/models/registry.json
+reproduction:
+  - uv run --locked ora sensitivity run

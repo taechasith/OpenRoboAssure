@@ -1,0 +1,232 @@
+{
+  "experiment_id": "EXP-SENS-001",
+  "method": "SALib Morris screening followed by SALib Sobol analysis",
+  "morris": {
+    "evaluations": 340,
+    "rows": [
+      {
+        "mu": 1.310377509268268,
+        "mu_star": 7.38502922305185,
+        "mu_star_conf": 4.891336782090358,
+        "parameter": "object_mass_kg",
+        "sigma": 14.609255921249263
+      },
+      {
+        "mu": 0.21117627603154582,
+        "mu_star": 5.7224890310091485,
+        "mu_star_conf": 4.60124185531026,
+        "parameter": "surface_friction",
+        "sigma": 11.335559742883657
+      },
+      {
+        "mu": -4.150721442526327,
+        "mu_star": 5.509109344989289,
+        "mu_star_conf": 5.524899711102841,
+        "parameter": "object_half_extent_m",
+        "sigma": 12.617058101337886
+      },
+      {
+        "mu": 1.447495230068051,
+        "mu_star": 6.330609446846976,
+        "mu_star_conf": 4.7906274375372675,
+        "parameter": "object_x_m",
+        "sigma": 11.819360908469516
+      },
+      {
+        "mu": -0.8333992620316785,
+        "mu_star": 3.378869378099366,
+        "mu_star_conf": 1.6119573577842234,
+        "parameter": "object_y_m",
+        "sigma": 5.066297371987042
+      },
+      {
+        "mu": -0.08237376662463695,
+        "mu_star": 5.161580774310684,
+        "mu_star_conf": 2.8750077816045927,
+        "parameter": "target_radius_m",
+        "sigma": 9.288838045236792
+      },
+      {
+        "mu": 0.602064945978738,
+        "mu_star": 4.719586327769828,
+        "mu_star_conf": 2.888874772071676,
+        "parameter": "target_x_m",
+        "sigma": 8.592756128312958
+      },
+      {
+        "mu": 0.29057650522727824,
+        "mu_star": 2.326913391198918,
+        "mu_star_conf": 1.2358152391593298,
+        "parameter": "target_y_m",
+        "sigma": 3.512430077009035
+      },
+      {
+        "mu": -8.242889549402033,
+        "mu_star": 10.681134816657464,
+        "mu_star_conf": 6.722906427726198,
+        "parameter": "action_latency_steps",
+        "sigma": 16.63133325566163
+      },
+      {
+        "mu": -0.08939050654432998,
+        "mu_star": 2.207568735272863,
+        "mu_star_conf": 0.8604604189672044,
+        "parameter": "action_noise_fraction",
+        "sigma": 3.1520026626130435
+      },
+      {
+        "mu": -0.5305752990621835,
+        "mu_star": 4.006052053453223,
+        "mu_star_conf": 2.4733861958957917,
+        "parameter": "joint_encoder_bias_rad",
+        "sigma": 7.907497214488292
+      },
+      {
+        "mu": -4.286390554646434,
+        "mu_star": 5.581714778721884,
+        "mu_star_conf": 4.205590645389476,
+        "parameter": "joint_encoder_noise_rad",
+        "sigma": 11.784821283708288
+      },
+      {
+        "mu": -0.8664660873707513,
+        "mu_star": 3.3979751671752148,
+        "mu_star_conf": 0.9304825023927514,
+        "parameter": "object_state_noise_m",
+        "sigma": 4.249838731376995
+      },
+      {
+        "mu": -7.876194299694942,
+        "mu_star": 10.910500876354648,
+        "mu_star_conf": 6.249736080913985,
+        "parameter": "frame_delay_steps",
+        "sigma": 16.89538377757721
+      },
+      {
+        "mu": 3.535974762546426,
+        "mu_star": 6.624800702733308,
+        "mu_star_conf": 4.3957792542691685,
+        "parameter": "observation_dropout_probability",
+        "sigma": 11.559765066708108
+      },
+      {
+        "mu": 2.5735449796610723,
+        "mu_star": 4.41889567306803,
+        "mu_star_conf": 3.778653764432185,
+        "parameter": "vertical_gravity_scale",
+        "sigma": 10.334603832586447
+      }
+    ],
+    "selection": {
+      "maximum_mu_star": 10.910500876354648,
+      "selected_variables": [
+        "frame_delay_steps",
+        "action_latency_steps",
+        "object_mass_kg",
+        "observation_dropout_probability",
+        "object_x_m",
+        "surface_friction"
+      ],
+      "threshold": 0.5455250438177325
+    },
+    "trajectories": 20
+  },
+  "optuna_gate_invariant": {
+    "morris_fraction": 0.05,
+    "sobol_lower_bound": 0.01,
+    "trials": 1
+  },
+  "reference_policy": "deterministic_scripted_state_only",
+  "report_hash": "0c9373eb33569b4cd0ce10bb712b9d917a4fffd03641b4d16c977adeb6e742e6",
+  "sobol": {
+    "base_sample_size": 512,
+    "bootstrap_resamples": 1000,
+    "evaluations": 4096,
+    "retained_variables": [
+      "frame_delay_steps",
+      "action_latency_steps",
+      "object_mass_kg",
+      "observation_dropout_probability",
+      "object_x_m",
+      "surface_friction"
+    ],
+    "rows": [
+      {
+        "first_order": 0.3118658149618552,
+        "first_order_confidence_half_width": 0.09473058251056728,
+        "parameter": "frame_delay_steps",
+        "total_order": 0.6713117860302645,
+        "total_order_confidence_half_width": 0.09763462737415064,
+        "total_order_confidence_lower": 0.5736771586561139
+      },
+      {
+        "first_order": 0.3207208139910925,
+        "first_order_confidence_half_width": 0.10199897108167462,
+        "parameter": "action_latency_steps",
+        "total_order": 0.6556517598734426,
+        "total_order_confidence_half_width": 0.09091799980501569,
+        "total_order_confidence_lower": 0.5647337600684269
+      },
+      {
+        "first_order": 0.038282213589617885,
+        "first_order_confidence_half_width": 0.03254279112517351,
+        "parameter": "object_mass_kg",
+        "total_order": 0.09438610044984516,
+        "total_order_confidence_half_width": 0.03949071469496152,
+        "total_order_confidence_lower": 0.05489538575488364
+      },
+      {
+        "first_order": -0.03570652123037302,
+        "first_order_confidence_half_width": 0.04016779706416308,
+        "parameter": "observation_dropout_probability",
+        "total_order": 0.13542596464757586,
+        "total_order_confidence_half_width": 0.04880366607683084,
+        "total_order_confidence_lower": 0.08662229857074502
+      },
+      {
+        "first_order": 0.05494421902987142,
+        "first_order_confidence_half_width": 0.05643425490796232,
+        "parameter": "object_x_m",
+        "total_order": 0.21707093974501698,
+        "total_order_confidence_half_width": 0.05908957711175659,
+        "total_order_confidence_lower": 0.1579813626332604
+      },
+      {
+        "first_order": 0.01671292624985354,
+        "first_order_confidence_half_width": 0.041501971075907786,
+        "parameter": "surface_friction",
+        "total_order": 0.1102982693657445,
+        "total_order_confidence_half_width": 0.044812358350008186,
+        "total_order_confidence_lower": 0.06548591101573631
+      }
+    ],
+    "second_order": false,
+    "total_order_lower_bound_rule": 0.01
+  },
+  "system_d_variables": [
+    "frame_delay_steps",
+    "action_latency_steps",
+    "object_mass_kg",
+    "observation_dropout_probability",
+    "object_x_m",
+    "surface_friction"
+  ],
+  "variables_screened": [
+    "object_mass_kg",
+    "surface_friction",
+    "object_half_extent_m",
+    "object_x_m",
+    "object_y_m",
+    "target_radius_m",
+    "target_x_m",
+    "target_y_m",
+    "action_latency_steps",
+    "action_noise_fraction",
+    "joint_encoder_bias_rad",
+    "joint_encoder_noise_rad",
+    "object_state_noise_m",
+    "frame_delay_steps",
+    "observation_dropout_probability",
+    "vertical_gravity_scale"
+  ]
+}

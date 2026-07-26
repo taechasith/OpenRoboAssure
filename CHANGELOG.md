@@ -4,6 +4,35 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [0.6.0] - 2026-07-26
+
+### Added
+
+- P06 Gymnasium-compatible ORA-4A Pick-and-Place wrapper, shared 64x64
+  state-only NumPy policy-gradient learner, Systems A-D, local tracking,
+  model/configuration hashing, fixed evaluation scenarios, and `ora policy`
+  and `ora sensitivity` commands.
+- SALib Morris/Sobol evidence with 1,000-resample confidence intervals and
+  Optuna verification that gate-fixed sensitivity thresholds were not tuned.
+
+### Results
+
+- `EXP-POLICY-BASELINES-001` ran 20 exact 100,000-step jobs and 4,000 common
+  held-out evaluation episodes. The equal-budget check passed; all systems had
+  0% held-out task success across five seeds. This negative result is retained.
+- `EXP-SENS-001` ran 340 Morris and 4,096 Sobol reference evaluations and
+  selected six variables for System D; this is scripted-reference sensitivity,
+  not learned-policy robustness evidence.
+
+### Approved
+
+- `GATE-P06-BASELINES` for the CPU-standard ORA-4A Pick-and-Place baseline
+  campaign: Systems A-D, a fixed state-only 64x64 MLP, five 100,000-step
+  seeds per system, held-out evaluation, and Morris/Sobol selection rules.
+- Narrow runtime-only P02 licence exceptions for transitive `Pillow` under
+  MIT-CMU and `tqdm` under MPL-2.0 AND MIT; their notices must be preserved,
+  and MPL-2.0 remains outside the general allow-list.
+
 ## [0.5.0] - 2026-07-26
 
 ### Added

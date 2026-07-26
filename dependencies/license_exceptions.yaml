@@ -14,3 +14,17 @@ exceptions:
     obligations: Preserve upstream BSD notice if redistributed; do not treat generic BSD metadata as globally approved.
     approved_by: taechasith
     approved_at: "2026-07-26T14:15:00+07:00"
+  - package: pillow
+    spdx_license: MIT-CMU
+    scope: runtime_dependency_only
+    reason: Required transitively by SALib 1.5.2 through Matplotlib for the P06 sensitivity implementation.
+    obligations: Preserve the MIT-CMU copyright and permission notice if redistributed; do not treat MIT-CMU as generally approved.
+    approved_by: taechasith
+    approved_at: "2026-07-26T17:37:43+07:00"
+  - package: tqdm
+    spdx_license: MPL-2.0 AND MIT
+    scope: runtime_dependency_only
+    reason: Required transitively by Optuna 4.9.0 for the P06 bounded search integration.
+    obligations: Preserve applicable MPL-2.0 and MIT notices if redistributed; do not add MPL-2.0 to the general allow-list.
+    approved_by: taechasith
+    approved_at: "2026-07-26T17:37:43+07:00"
