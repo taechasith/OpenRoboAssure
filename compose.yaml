@@ -1,0 +1,22 @@
+services:
+  ora:
+    build:
+      context: .
+      target: runtime
+    command: ["uv", "run", "--no-sync", "ora", "doctor", "--offline"]
+
+  ora-gpu:
+    profiles: ["gpu"]
+    build:
+      context: .
+      target: runtime
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      ORA_ACCELERATION: gpu
+    command: ["uv", "run", "--no-sync", "ora", "doctor", "--offline"]
