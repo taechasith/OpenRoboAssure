@@ -4,6 +4,8 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [0.4.0] - 2026-07-26
+
 ### Added
 
 - P00 charter draft, project state, governance decision record, roadmap, and

@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.3.0`
+- Current version: `v0.4.0`
 - Current phase: `P04 — multi-simulator and multi-robot layer`
-- Status: v0.3.0 is released; P04 implementation is complete and pending review for v0.4.0
+- Status: v0.4.0 is released; P04 multi-simulator and multi-robot layer is complete
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None

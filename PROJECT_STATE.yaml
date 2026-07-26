@@ -3,7 +3,7 @@ current_phase: P04
 current_version: 0.4.0
 status: completed
 validation_level: none
-latest_commit: ff9457a
+latest_commit: fe8240f
 active_branch: phase/p04-multi-simulator
 protected_benchmark_frozen: false
 licence_audit: passed

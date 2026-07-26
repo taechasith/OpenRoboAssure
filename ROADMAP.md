@@ -10,7 +10,7 @@ gate has been satisfied.
 | P01 | Reproducible repository bootstrap | Completed — v0.1.0 released | None unless a paid/proprietary dependency is proposed |
 | P02 | Free-data and licence enforcement | Completed — v0.2.0 released | `GATE-P02-DATA-POLICY` |
 | P03 | MuJoCo and first ORA-4A task | Completed — v0.3.0 released | None |
-| P04 | Second simulator and robot library | Completed — pending human review before merge | `GATE-P04-ROBOT-SET` |
+| P04 | Second simulator and robot library | Completed — v0.4.0 released | `GATE-P04-ROBOT-SET` |
 | P05 | Scenario and uncertainty engine | Not started | `GATE-P05-SCENARIO-ONTOLOGY` |
 | P06 | Policies, baselines, and sensitivity | Not started | `GATE-P06-BASELINES` |
 | P07 | Calibration, falsification, and coverage | Not started | None |
