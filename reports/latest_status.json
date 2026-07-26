@@ -1,0 +1,15 @@
+{
+  "project": "OpenRoboAssure",
+  "generated_at": "2026-07-26T11:32:26+07:00",
+  "current_phase": "P00",
+  "current_version": "0.0.0",
+  "status": "awaiting_human_approval",
+  "next_required_gate": "GATE-P00-CHARTER",
+  "validation_level": "none",
+  "licence_audit": "not_run",
+  "known_limitations": [
+    "simulation_only",
+    "no_physical_robot_validation",
+    "no_runtime_implementation"
+  ]
+}

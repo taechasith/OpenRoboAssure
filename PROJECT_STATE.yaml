@@ -1,0 +1,27 @@
+project: OpenRoboAssure
+current_phase: P00
+current_version: 0.0.0
+status: awaiting_human_approval
+validation_level: none
+latest_commit: null
+active_branch: phase/p00-charter
+protected_benchmark_frozen: false
+licence_audit: not_run
+last_completed_gate: null
+next_required_gate: GATE-P00-CHARTER
+open_blockers:
+  - GATE-P00-CHARTER approval is required before implementation beyond repository bootstrap.
+known_limitations:
+  - simulation_only
+  - no_physical_robot_validation
+  - no_runtime_implementation
+  - no_licence_audit_yet
+protected_files:
+  - MASTER_BUILD_GUIDE.md
+  - README.md
+  - LICENSE
+  - DATA_LICENSE
+  - DATA_POLICY.md
+  - PROJECT_STATE.yaml
+  - governance/DECISIONS.md
+  - governance/approvals/
