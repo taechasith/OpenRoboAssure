@@ -1,9 +1,9 @@
 project: OpenRoboAssure
 current_phase: P05
 current_version: 0.4.0
-status: in_progress
+status: completed_pending_review
 validation_level: none
-latest_commit: 9e38dee
+latest_commit: 6fbfdf3
 active_branch: phase/p05-scenario-ontology
 protected_benchmark_frozen: false
 licence_audit: passed
@@ -16,7 +16,7 @@ known_limitations:
   - kinematic_scripted_baseline
   - no_learned_policy
   - cross_simulator_dynamic_equivalence_not_established
-  - scenario_engine_in_progress
+  - scenario_validity_is_not_dynamic_equivalence
 protected_files:
   - MASTER_BUILD_GUIDE.md
   - README.md

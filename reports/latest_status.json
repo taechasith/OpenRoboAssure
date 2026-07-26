@@ -1,10 +1,10 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T14:30:00+07:00",
-  "current_phase": "P04",
+  "generated_at": "2026-07-26T15:21:22+07:00",
+  "current_phase": "P05",
   "current_version": "0.4.0",
-  "status": "completed",
-  "next_required_gate": "GATE-P05-SCENARIO-ONTOLOGY",
+  "status": "completed_pending_review",
+  "next_required_gate": "GATE-P06-BASELINES",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
@@ -12,6 +12,16 @@
     "no_physical_robot_validation",
     "kinematic_scripted_baseline",
     "no_learned_policy",
-    "cross_simulator_dynamic_equivalence_not_established"
-  ]
+    "cross_simulator_dynamic_equivalence_not_established",
+    "scenario_validity_is_not_dynamic_equivalence"
+  ],
+  "latest_experiment": {
+    "experiment_id": "EXP-SCENARIO-VALIDITY-001",
+    "generated_scenarios": 1000000,
+    "valid_rate": 1.0,
+    "duplicate_rate": 0.0,
+    "deterministic_regeneration_rate": 1.0,
+    "simulator_execution_sample_size": 256,
+    "simulator_execution_rate": 1.0
+  }
 }

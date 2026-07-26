@@ -4,6 +4,15 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+### Added
+
+- P05 constrained Pick-and-Place uncertainty registry, deterministic Latin
+  hypercube and Halton sampling, hard/soft scenario validation, deduplication,
+  serializable scenario hashes, and train/evaluation split protection.
+- `EXP-SCENARIO-VALIDITY-001`: one million generated scenarios, 100% valid,
+  zero duplicates, deterministic regeneration, and 256 accepted scenarios
+  exercised through both current simulator adapters.
+
 ### Approved
 
 - `GATE-P05-SCENARIO-ONTOLOGY` for the core constrained Pick-and-Place

@@ -13,9 +13,10 @@ remain agent-autonomous as defined in the master build guide.
   deterministic scenarios for `EXP-SCENARIO-VALIDITY-001`.
 - **Decision record:**
   [GATE-P05-SCENARIO-ONTOLOGY.yaml](approvals/GATE-P05-SCENARIO-ONTOLOGY.yaml)
-- **Consequence:** P05 implementation may proceed. Dynamic/contact uncertainty
-  variables remain excluded until separately approved with supporting simulator
-  semantics and evidence.
+- **Consequence:** P05 implementation and its one-million-scenario validity
+  evidence are complete pending review. Dynamic/contact uncertainty variables
+  remain excluded until separately approved with supporting simulator semantics
+  and evidence.
 
 ## Approved — GATE-P00-CHARTER
 
