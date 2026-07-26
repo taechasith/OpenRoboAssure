@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - run: uv sync --all-groups --locked
+      - run: uv run pre-commit run --all-files
+      - run: uv run ruff check .
+      - run: uv run mypy src tests
+      - run: uv run pytest
+      - run: uv run ora doctor --offline --output reports/environment/ci.json
+      - run: uv build

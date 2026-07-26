@@ -12,8 +12,8 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 ## Project status
 
 - Current version: `v0.1.0`
-- Current phase: `P00 — Charter and direction`
-- Status: Charter approved; P01 bootstrap is next
+- Current phase: `P01 — Reproducible repository bootstrap`
+- Status: CPU-first bootstrap complete; P02 data-policy approval is next
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -65,6 +65,24 @@ its original recorded licence.
 
 ## Current limitation
 
-This repository currently contains the P00 charter package only. It has no
-simulator implementation, experiment results, licence-audit result, or runtime
-dependencies.
+This repository currently contains the P00 charter package and the P01
+development bootstrap. It has no simulator implementation, experiment results,
+or licence-audit result.
+
+## Development quick start
+
+OpenRoboAssure requires Python 3.12 and uses `uv` for locked, local dependency
+management. The standard commands are:
+
+```text
+make setup
+make lint
+make typecheck
+make test
+make smoke
+ora doctor --offline
+```
+
+On Windows, `make.bat` provides the same commands when GNU Make is not
+installed. Docker is optional and CPU-compatible by default; the `gpu` Compose
+profile is opt-in and never required for installation or smoke reproduction.

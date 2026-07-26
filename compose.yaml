@@ -1,0 +1,16 @@
+services:
+  ora:
+    build:
+      context: .
+      target: runtime
+    command: ["uv", "run", "ora", "doctor", "--offline"]
+
+  ora-gpu:
+    profiles: ["gpu"]
+    build:
+      context: .
+      target: runtime
+    gpus: all
+    environment:
+      ORA_ACCELERATION: gpu
+    command: ["uv", "run", "ora", "doctor", "--offline"]

@@ -1,15 +1,16 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T11:37:00+07:00",
-  "current_phase": "P00",
+  "generated_at": "2026-07-26T11:52:00+07:00",
+  "current_phase": "P01",
   "current_version": "0.1.0",
   "status": "completed",
-  "next_required_gate": null,
+  "next_required_gate": "GATE-P02-DATA-POLICY",
   "validation_level": "none",
   "licence_audit": "not_run",
   "known_limitations": [
     "simulation_only",
     "no_physical_robot_validation",
-    "no_runtime_implementation"
+    "no_simulator_implementation",
+    "docker_container_not_verified_locally"
   ]
 }
