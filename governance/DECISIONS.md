@@ -4,21 +4,20 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
-## Pending — GATE-P00-CHARTER
+## Approved — GATE-P00-CHARTER
 
-- **Status:** awaiting human decision
+- **Status:** approved on 2026-07-26
 - **Scope:** name, mission, simulation-only v1.0 scope, free-data requirement,
   code and generated-data licences, research questions, candidate robots and
   tasks, and prohibited public claims.
-- **Decision record:** must be created in `governance/approvals/` using the
-  machine-readable approval schema in the master build guide.
-- **Consequence:** no implementation beyond repository bootstrap may begin
-  until approved.
+- **Decision record:** [GATE-P00-CHARTER.yaml](approvals/GATE-P00-CHARTER.yaml)
+- **Consequence:** P01 repository bootstrap may begin. Future direction gates
+  remain mandatory.
 
 ## DRAFT-0001 — Initial charter proposal
 
 - **Date:** 2026-07-26
-- **Status:** proposed; not approved
+- **Status:** approved by `GATE-P00-CHARTER`
 - **Decision:** Define OpenRoboAssure as a human-governed, simulation-only,
   open-source pipeline for reproducible physical-AI assurance experiments.
 - **Proposed scope:** rigid-body, fixed-base robot manipulation; procedural
@@ -30,5 +29,5 @@ remain agent-autonomous as defined in the master build guide.
   or real-world reliability; third-party robot assets require file-specific
   licence review; research hypotheses may have negative results; reproducibility
   requires deterministic seeds, recorded environments, and preserved failures.
-- **Required action:** owner approval or requested amendments through
-  `GATE-P00-CHARTER`.
+- **Outcome:** approved; this decision remains in force until a protected
+  charter file changes.

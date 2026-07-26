@@ -9,6 +9,6 @@ All notable project changes will be documented here.
 - P00 charter draft, project state, governance decision record, roadmap, and
   proposed code/data licence declarations.
 
-### Pending
+### Approved
 
-- `GATE-P00-CHARTER` approval before implementation beyond repository bootstrap.
+- `GATE-P00-CHARTER` for the project charter and P00 foundation.

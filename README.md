@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.0.0`
+- Current version: `v0.1.0`
 - Current phase: `P00 — Charter and direction`
-- Status: Charter draft awaiting `GATE-P00-CHARTER`
+- Status: Charter approved; P01 bootstrap is next
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None

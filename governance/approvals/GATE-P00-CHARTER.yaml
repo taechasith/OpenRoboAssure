@@ -1,0 +1,40 @@
+approval_id: GATE-P00-CHARTER
+project_version: 0.1.0
+decision: approved
+approved_by: taechasith
+approved_at: "2026-07-26T11:37:00+07:00"
+approval_source: user_conversation
+scope:
+  project_name: OpenRoboAssure
+  mission: human-governed, simulation-only physical-AI assurance research
+  validation_target: simulation_only
+  paid_data_requirement: none
+  paid_service_requirement: none
+  code_license: Apache-2.0
+  generated_data_license: CC-BY-4.0
+  research_questions: approved_as_drafted_in_MASTER_BUILD_GUIDE
+  reference_robots:
+    - ora_4a
+    - franka_panda_subject_to_asset_license_review
+    - ur5e_subject_to_asset_license_review
+  reference_tasks:
+    - pick_and_place
+    - precision_insertion
+    - push_to_target
+  prohibited_claims:
+    - physical_robot_validation
+    - real_world_safety_certification
+    - universal_sim_to_real_transfer
+    - complete_failure_discovery
+    - guaranteed_policy_safety
+expires_when:
+  - project_mission_changes
+  - simulation_only_scope_changes
+  - licence_or_data_policy_changes
+  - research_question_changes
+  - reference_robot_or_task_changes
+  - prohibited_claim_changes
+notes: >-
+  The repository owner approved the P00 charter in the project conversation.
+  This approval permits repository bootstrap only; later directional gates
+  remain required before the activities specified in the master build guide.
