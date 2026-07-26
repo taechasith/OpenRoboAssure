@@ -13,7 +13,7 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 - Current version: `v0.6.0`
 - Current phase: `P06 — policies, baselines, and sensitivity`
-- Status: P06 is complete and ready for v0.6.0 review; its learned-policy result is preliminary and negative
+- Status: P06 is complete; its learned-policy result is preliminary and negative
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None

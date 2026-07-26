@@ -1,7 +1,7 @@
 project: OpenRoboAssure
 current_phase: P06
 current_version: 0.6.0
-status: completed_pending_review
+status: completed
 validation_level: none
 latest_commit: 38c5626
 active_branch: phase/p06-policies-sensitivity

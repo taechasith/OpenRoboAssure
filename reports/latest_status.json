@@ -1,9 +1,9 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T17:46:06+07:00",
+  "generated_at": "2026-07-26T18:01:00+07:00",
   "current_phase": "P06",
   "current_version": "0.6.0",
-  "status": "completed_pending_review",
+  "status": "completed",
   "next_required_gate": "GATE-P08-PILOT",
   "validation_level": "none",
   "licence_audit": "passed",
