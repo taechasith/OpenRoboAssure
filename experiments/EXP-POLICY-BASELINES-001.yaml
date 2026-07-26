@@ -1,7 +1,7 @@
 experiment_id: EXP-POLICY-BASELINES-001
 phase: P06
 gate: GATE-P06-BASELINES
-status: implementation_ready_pending_dependency_audit_resolution
+status: completed_negative_result_preserved
 task: pick_place_v1
 robot: ora_4a
 systems:

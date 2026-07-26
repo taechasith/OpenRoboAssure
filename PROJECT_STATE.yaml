@@ -1,9 +1,9 @@
 project: OpenRoboAssure
 current_phase: P06
-current_version: 0.5.0
-status: in_progress
+current_version: 0.6.0
+status: completed_pending_review
 validation_level: none
-latest_commit: 0fcdb60
+latest_commit: 38c5626
 active_branch: phase/p06-policies-sensitivity
 protected_benchmark_frozen: false
 licence_audit: passed
@@ -14,7 +14,8 @@ known_limitations:
   - simulation_only
   - no_physical_robot_validation
   - kinematic_scripted_baseline
-  - learned_policy_baselines_not_yet_evidenced
+  - learned_policy_baselines_have_zero_held_out_success_in_p06
+  - p06_sensitivity_is_based_on_scripted_reference_returns
   - cross_simulator_dynamic_equivalence_not_established
   - scenario_validity_is_not_dynamic_equivalence
 protected_files:

@@ -1,7 +1,7 @@
 experiment_id: EXP-SENS-001
 phase: P06
 gate: GATE-P06-BASELINES
-status: implementation_ready_pending_dependency_audit_resolution
+status: completed
 objective: Identify P05 uncertainty variables that influence the deterministic state-only reference.
 implementation:
   package: SALib

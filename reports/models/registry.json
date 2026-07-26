@@ -1,0 +1,346 @@
+{
+  "experiment_id": "EXP-POLICY-BASELINES-001",
+  "models": [
+    {
+      "configuration_hash": "9b02a5704babbdceeb3abd902ca647a3a88517f1fe0be3304919480ff38fda21",
+      "model_hash": "395f9f46c0d3a5bbfb0f88786548b6bdde18fea51108f111b3bf72025c4d9c8c",
+      "model_path": "reports/models/p06_a_11.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 11,
+      "system": "A"
+    },
+    {
+      "configuration_hash": "f1e0faca839b35561ff96751db2801d6b1c03b7bb0fc7f807375f1d7b03d1472",
+      "model_hash": "04e560eef93946d6448952c2a82c22e9391bac2fa0edf987417e45d559269820",
+      "model_path": "reports/models/p06_a_22.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 22,
+      "system": "A"
+    },
+    {
+      "configuration_hash": "ebeb0f2bc9158221c03f162d93f910516715eeeeeb787bf44e6830ca8dc18d60",
+      "model_hash": "a00c4836d60fc25293987bbb0f297f6c6ed18882256d1d742d414a230e38bf27",
+      "model_path": "reports/models/p06_a_33.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 33,
+      "system": "A"
+    },
+    {
+      "configuration_hash": "17e06926bbc3d24aa47c8ca64ace4cf98337e5c412a5d20564e7bb8008981085",
+      "model_hash": "15d1ca81dd96a3cf8ed2b8293aa4c93b8bfd378dba059acee6a623f990c243af",
+      "model_path": "reports/models/p06_a_44.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 44,
+      "system": "A"
+    },
+    {
+      "configuration_hash": "03650f179cfe51497937d8a590e9d65f66fd6623a0001812a14f32056135c52f",
+      "model_hash": "c2da112d9da836d023cef99b8960df72cc1d1cb49d37887a355ed17e6274cde9",
+      "model_path": "reports/models/p06_a_55.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 55,
+      "system": "A"
+    },
+    {
+      "configuration_hash": "52410d9f9b1fa30b6a22841b1ae0a11ead330640f4c9f149de86f3fa265accac",
+      "model_hash": "7eba68ec901fab3544675d00c943316554bfc04c8e6d6051539860276471b033",
+      "model_path": "reports/models/p06_b_11.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 11,
+      "system": "B"
+    },
+    {
+      "configuration_hash": "3a817505a99f4fd0804b62fc11dc759f5b1fcf10779ffe7b1a25aa7a546e932e",
+      "model_hash": "8ca825f62101682394502b810618c73318bbf3fc78102aa38837edb1e3eff010",
+      "model_path": "reports/models/p06_b_22.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 22,
+      "system": "B"
+    },
+    {
+      "configuration_hash": "666d24b2549cc2009f390250dc052599f7e6fb294ae7632ad9c0817b24ea33cc",
+      "model_hash": "e8ef719e844bdee94013c13edb62904a4a9a4c43f3410c862881ea544fc3b0a7",
+      "model_path": "reports/models/p06_b_33.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 33,
+      "system": "B"
+    },
+    {
+      "configuration_hash": "4da465eb6fc1b9fd513c898a65c497ed45380e21bd4523b5d69d6c110a7c7dac",
+      "model_hash": "31b4a63aa30564aa89124a17fbd4a2049a092ca33b6e28c1289b0099b049f86b",
+      "model_path": "reports/models/p06_b_44.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 44,
+      "system": "B"
+    },
+    {
+      "configuration_hash": "143edba8b2aba085362bb7e0b399291b2bfce74489c0b1ec1541500e9002ac9a",
+      "model_hash": "0ad499e006e9782623064138995d260b377818ad27145d9625f92a91223754d2",
+      "model_path": "reports/models/p06_b_55.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 55,
+      "system": "B"
+    },
+    {
+      "configuration_hash": "d54c5a80846ddf285242d867e61f2d6b3bc82a3c21f4303292de05a36f976547",
+      "model_hash": "b03d25df785640f18ed3dcbd3d6462c90f026eb608fc30cd924256bbff92cbcb",
+      "model_path": "reports/models/p06_c_11.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 11,
+      "system": "C"
+    },
+    {
+      "configuration_hash": "c52b96df6abc6cbea0a5f15e91702806f510f12b409a4dc2f6e40773637df59a",
+      "model_hash": "94e43988f8902d52b796ad16fb4bffad8c279fe839372eda940fbb0594621bc9",
+      "model_path": "reports/models/p06_c_22.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 22,
+      "system": "C"
+    },
+    {
+      "configuration_hash": "bebf1081a7f55977f1dac03e1588e78262177058dec0c8e8bb89ac6b09835e74",
+      "model_hash": "e3e149d2e93a1448d4d1f4a3c348639c11ac62d63a998dca199fdcd824b2d810",
+      "model_path": "reports/models/p06_c_33.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 33,
+      "system": "C"
+    },
+    {
+      "configuration_hash": "71e9580733d241a12cf0c60532d032ef4f569da29017bb9899fd6bcd4811d203",
+      "model_hash": "221a4b021b38bb66a4dcbbe9da814611068db78ccf992a172dc751b2b1005553",
+      "model_path": "reports/models/p06_c_44.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 44,
+      "system": "C"
+    },
+    {
+      "configuration_hash": "4bf6f355c34d8a95bbb25ea05d93fb3b04f8f54cf661c8d7c35e6185da0ba416",
+      "model_hash": "dd42341ebf5c7f1371fae7e8cf59683d163f20e3fdd0ef6eb2827c5fa4c31e14",
+      "model_path": "reports/models/p06_c_55.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 55,
+      "system": "C"
+    },
+    {
+      "configuration_hash": "c5e8daab390048f0cafca00f339f824428415fb2364dede342a94948cc5e4d78",
+      "model_hash": "a5d5f3e0fc1c0c7045f80a39a0f1e6246c8ba3b2db19b759944fd62c236f6623",
+      "model_path": "reports/models/p06_d_11.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 11,
+      "system": "D"
+    },
+    {
+      "configuration_hash": "08428f33298fbe750dfd3720f89b51b5426b04f94c2868bcae99edf401660dad",
+      "model_hash": "8a05ab85383746f9090264ffc559dd1c3a369dbabc627a2e90a3e0019123c3ea",
+      "model_path": "reports/models/p06_d_22.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 22,
+      "system": "D"
+    },
+    {
+      "configuration_hash": "6ebabe6552bd3672c1df0c9635542d5eec0494d1d4a056ba04f6b4b506ab901c",
+      "model_hash": "6f3ee4371432429ddadcc43e300d2126919404c269c8e0a41b77beeb23f288c8",
+      "model_path": "reports/models/p06_d_33.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 33,
+      "system": "D"
+    },
+    {
+      "configuration_hash": "97883006f98bf2f0b8daaf907f81f12f4254bdda37ca656dd546bd74f38a7027",
+      "model_hash": "33f1293e313cbd8ed15a3b25a8670b26b663d6e206e92e436f3514bbd99bb771",
+      "model_path": "reports/models/p06_d_44.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 44,
+      "system": "D"
+    },
+    {
+      "configuration_hash": "83de85acfc4eba7766688102da9400238fe4d281d390bca3999255fdd4629a5a",
+      "model_hash": "46aba8eb76610e7340482e641011e5105c9e2bb03646863788bcc04c6d3bfb97",
+      "model_path": "reports/models/p06_d_55.npz",
+      "policy_specification": {
+        "action_size": 4,
+        "exploration_std": 0.35,
+        "hidden_layers": [
+          64,
+          64
+        ],
+        "learning_rate": 0.002,
+        "observation_size": 10
+      },
+      "seed": 55,
+      "system": "D"
+    }
+  ],
+  "schema_version": 1
+}

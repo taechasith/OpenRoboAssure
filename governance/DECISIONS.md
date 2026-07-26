@@ -19,6 +19,11 @@ remain agent-autonomous as defined in the master build guide.
   only package-specific runtime exceptions for transitive `Pillow` (MIT-CMU)
   and `tqdm` (MPL-2.0 AND MIT), with their notices preserved; MPL-2.0 remains
   absent from the general allow-list.
+- **Evidence:** `EXP-POLICY-BASELINES-001` completed its exact four-system,
+  five-seed, two-million-step campaign with 4,000 common held-out episodes.
+  All learned-policy systems recorded 0% held-out success; the negative result,
+  all model hashes, and all seed records are preserved. `EXP-SENS-001` retains
+  its scripted-reference Morris/Sobol selection evidence separately.
 
 ## Approved — GATE-P05-SCENARIO-ONTOLOGY
 
