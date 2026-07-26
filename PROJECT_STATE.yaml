@@ -1,7 +1,7 @@
 project: OpenRoboAssure
 current_phase: P05
-current_version: 0.4.0
-status: completed_pending_review
+current_version: 0.5.0
+status: completed
 validation_level: none
 latest_commit: 6fbfdf3
 active_branch: phase/p05-scenario-ontology

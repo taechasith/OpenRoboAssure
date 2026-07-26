@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.4.0`
+- Current version: `v0.5.0`
 - Current phase: `P05 — scenario and uncertainty engine`
-- Status: v0.4.0 is released; P05 scenario engine is complete and pending review for v0.5.0
+- Status: v0.5.0 is released; P05 scenario and uncertainty engine is complete
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None

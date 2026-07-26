@@ -4,6 +4,8 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [0.5.0] - 2026-07-26
+
 ### Added
 
 - P05 constrained Pick-and-Place uncertainty registry, deterministic Latin
