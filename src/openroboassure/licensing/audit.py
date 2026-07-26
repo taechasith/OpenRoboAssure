@@ -182,14 +182,27 @@ def audit_manifest(
         if data.get("redistributed") is True:
             root = path.parent.parent if path.parent.name == "assets" else path.parent
             entrypoint = root / str(data.get("local_path", "")) / str(data.get("entrypoint", ""))
-            if not entrypoint.is_file() or entrypoint.read_bytes().hex() == "":
+            entrypoint_bytes = entrypoint.read_bytes() if entrypoint.is_file() else b""
+            if not entrypoint_bytes:
                 status = "unknown"
-            elif hashlib.sha256(entrypoint.read_bytes()).hexdigest() != data.get("sha256"):
+            elif _entrypoint_digest(entrypoint, entrypoint_bytes) != data.get("sha256"):
                 status = "unknown"
         findings.append(
             Finding("asset_manifest", identifier, status, licence, "Asset manifest record")
         )
     return findings
+
+
+def _entrypoint_digest(entrypoint: Path, contents: bytes) -> str:
+    """Return a stable digest for a vendored model entry point.
+
+    MJCF XML is text: Git's checkout line-ending setting must not make an
+    otherwise identical imported model fail its provenance audit.  Binary
+    assets remain byte-for-byte hashed.
+    """
+    if entrypoint.suffix.lower() == ".xml":
+        contents = contents.replace(b"\r\n", b"\n")
+    return hashlib.sha256(contents).hexdigest()
 
 
 def audit_headers(

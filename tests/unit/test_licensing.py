@@ -125,6 +125,20 @@ def test_asset_manifest_checks_vendored_entrypoint_hash(tmp_path: Path) -> None:
     assert audit_manifest(manifest, {"MIT"}, [], [])[0].status == "unknown"
 
 
+def test_asset_manifest_normalizes_xml_line_endings(tmp_path: Path) -> None:
+    manifest = tmp_path / "assets" / "manifest.yaml"
+    entrypoint = tmp_path / "assets" / "imported" / "fixture" / "fixture.xml"
+    entrypoint.parent.mkdir(parents=True)
+    entrypoint.write_bytes(b"<mujoco>\r\n  <worldbody/>\r\n</mujoco>\r\n")
+    asset = _asset("MIT")
+    asset["redistributed"] = True
+    asset["sha256"] = "363d5771cc0cdb26c84ef4c484052da948604300d759709ebd638bc46fbdf9f1"
+    manifest.parent.mkdir(parents=True, exist_ok=True)
+    manifest.write_text(yaml.safe_dump({"schema_version": 1, "assets": [asset]}), encoding="utf-8")
+
+    assert audit_manifest(manifest, {"MIT"}, [], [])[0].status == "approved"
+
+
 def test_repository_vendored_model_manifest_is_complete() -> None:
     root = Path(__file__).resolve().parents[2]
     findings = audit_manifest(

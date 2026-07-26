@@ -9,11 +9,11 @@ assets:
     spdx_license: Apache-2.0
     redistributed: true
     retrieval_method: pinned_sparse_git_checkout
-    sha256: c5a92e6ff47e7282ea303ffe13530ffe150248a22bb4b349a9369881e52facf0
+    sha256: 96ad67da03710f17f798c9478fd9e9efdf24a3bf8359f05e456dd9fb158ea273
     review_status: approved
     reviewed_by: taechasith
     review_date: "2026-07-26"
-    notes: Unmodified MJCF package; sha256 is for the panda.xml entry point.
+    notes: Unmodified MJCF package; sha256 is for the LF-canonical panda.xml entry point.
     local_path: assets/imported/mujoco_menagerie/franka_emika_panda
     entrypoint: panda.xml
   - asset_id: ur5e_mjcf
@@ -25,10 +25,10 @@ assets:
     spdx_license: BSD-3-Clause
     redistributed: true
     retrieval_method: pinned_sparse_git_checkout
-    sha256: b7320db33754bc9183b5b50135b493d5dfb313c96ce9e32bbaea2b94d187f585
+    sha256: ffd0a7b336d3c2d27c35a15cc0d4aaa95196769aca190ac8d6522d3318c345a0
     review_status: approved
     reviewed_by: taechasith
     review_date: "2026-07-26"
-    notes: Unmodified MJCF package; sha256 is for the ur5e.xml entry point.
+    notes: Unmodified MJCF package; sha256 is for the LF-canonical ur5e.xml entry point.
     local_path: assets/imported/mujoco_menagerie/universal_robots_ur5e
     entrypoint: ur5e.xml
