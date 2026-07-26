@@ -14,9 +14,20 @@ import yaml
 
 Status = Literal["approved", "blocked", "unknown"]
 REQUIRED_ASSET_FIELDS = {
-    "asset_id", "name", "kind", "source_repository", "source_commit", "source_subdirectory",
-    "spdx_license", "redistributed", "retrieval_method", "sha256", "review_status", "reviewed_by",
-    "review_date", "notes",
+    "asset_id",
+    "name",
+    "kind",
+    "source_repository",
+    "source_commit",
+    "source_subdirectory",
+    "spdx_license",
+    "redistributed",
+    "retrieval_method",
+    "sha256",
+    "review_status",
+    "reviewed_by",
+    "review_date",
+    "notes",
 }
 
 
@@ -53,17 +64,29 @@ def _policy(root: Path) -> tuple[set[str], list[str], list[str], dict[str, str]]
         for item in exceptions
         if isinstance(item, dict) and item.get("scope") == "development_only"
     }
-    return {str(item) for item in approved}, [str(item) for item in patterns_value], [str(item) for item in terms_value], approved_exceptions
+    return (
+        {str(item) for item in approved},
+        [str(item) for item in patterns_value],
+        [str(item) for item in terms_value],
+        approved_exceptions,
+    )
 
 
-def classify_licence(value: str | None, approved: set[str], blocked: list[str], terms: list[str]) -> Status:
+def classify_licence(
+    value: str | None, approved: set[str], blocked: list[str], terms: list[str]
+) -> Status:
     if not value or not value.strip():
         return "unknown"
     lowered = value.lower()
     if any(term.lower() in lowered for term in terms):
         return "blocked"
-    parts = [part for part in re.findall(r"[A-Za-z0-9.+-]+", value) if part not in {"AND", "OR", "WITH"}]
-    if any(any(fnmatch.fnmatchcase(part.lower(), pattern.lower()) for pattern in blocked) for part in parts):
+    parts = [
+        part for part in re.findall(r"[A-Za-z0-9.+-]+", value) if part not in {"AND", "OR", "WITH"}
+    ]
+    if any(
+        any(fnmatch.fnmatchcase(part.lower(), pattern.lower()) for pattern in blocked)
+        for part in parts
+    ):
         return "blocked"
     return "approved" if parts and all(part in approved for part in parts) else "unknown"
 
@@ -103,19 +126,27 @@ def _resolved_bsd_licence(distribution: object, licence: str | None) -> str | No
     return licence
 
 
-def audit_python_packages(approved: set[str], blocked: list[str], terms: list[str], exceptions: dict[str, str]) -> list[Finding]:
+def audit_python_packages(
+    approved: set[str], blocked: list[str], terms: list[str], exceptions: dict[str, str]
+) -> list[Finding]:
     findings: list[Finding] = []
-    for distribution in sorted(distributions(), key=lambda item: str(item.metadata["Name"]).lower()):
+    for distribution in sorted(
+        distributions(), key=lambda item: str(item.metadata["Name"]).lower()
+    ):
         name = str(distribution.metadata["Name"])
         licence = _resolved_bsd_licence(distribution, _metadata_licence(distribution.metadata))
         status = classify_licence(licence, approved, blocked, terms)
         if exceptions.get(name.lower()) == licence:
             status = "approved"
-        findings.append(Finding("python_dependency", name, status, licence, "Package metadata licence"))
+        findings.append(
+            Finding("python_dependency", name, status, licence, "Package metadata licence")
+        )
     return findings
 
 
-def audit_manifest(path: Path, approved: set[str], blocked: list[str], terms: list[str]) -> list[Finding]:
+def audit_manifest(
+    path: Path, approved: set[str], blocked: list[str], terms: list[str]
+) -> list[Finding]:
     document = _load(path)
     assets = document.get("assets", [])
     if not isinstance(assets, list):
@@ -123,7 +154,9 @@ def audit_manifest(path: Path, approved: set[str], blocked: list[str], terms: li
     findings: list[Finding] = []
     for asset in assets:
         if not isinstance(asset, dict):
-            findings.append(Finding("asset_manifest", str(path), "unknown", None, "Asset must be a mapping"))
+            findings.append(
+                Finding("asset_manifest", str(path), "unknown", None, "Asset must be a mapping")
+            )
             continue
         data = {str(key): value for key, value in asset.items()}
         identifier = str(data.get("asset_id", "<missing asset_id>"))
@@ -134,11 +167,15 @@ def audit_manifest(path: Path, approved: set[str], blocked: list[str], terms: li
             status = "unknown"
         if data.get("review_status") != "approved":
             status = "unknown"
-        findings.append(Finding("asset_manifest", identifier, status, licence, "Asset manifest record"))
+        findings.append(
+            Finding("asset_manifest", identifier, status, licence, "Asset manifest record")
+        )
     return findings
 
 
-def audit_headers(root: Path, approved: set[str], blocked: list[str], terms: list[str]) -> list[Finding]:
+def audit_headers(
+    root: Path, approved: set[str], blocked: list[str], terms: list[str]
+) -> list[Finding]:
     findings: list[Finding] = []
     for directory in (root / "third_party", root / "vendor", root / "assets" / "imported"):
         if not directory.is_dir():
@@ -149,7 +186,15 @@ def audit_headers(root: Path, approved: set[str], blocked: list[str], terms: lis
             text = path.read_text(encoding="utf-8", errors="ignore")[:4096]
             match = re.search(r"SPDX-License-Identifier:\s*([^\r\n*]+)", text)
             licence = match.group(1).strip() if match else None
-            findings.append(Finding("source_header", str(path.relative_to(root)), classify_licence(licence, approved, blocked, terms), licence, "Imported source SPDX header"))
+            findings.append(
+                Finding(
+                    "source_header",
+                    str(path.relative_to(root)),
+                    classify_licence(licence, approved, blocked, terms),
+                    licence,
+                    "Imported source SPDX header",
+                )
+            )
     return findings
 
 
@@ -159,8 +204,16 @@ def audit_project(root: Path, *, include_packages: bool = True) -> dict[str, obj
     findings.extend(audit_headers(root, approved, blocked, terms))
     if include_packages:
         findings.extend(audit_python_packages(approved, blocked, terms, exceptions))
-    counts = {status: sum(item.status == status for item in findings) for status in ("approved", "blocked", "unknown")}
-    return {"schema_version": 1, "passed": counts["blocked"] == 0 and counts["unknown"] == 0, "summary": counts, "findings": [asdict(item) for item in findings]}
+    counts = {
+        status: sum(item.status == status for item in findings)
+        for status in ("approved", "blocked", "unknown")
+    }
+    return {
+        "schema_version": 1,
+        "passed": counts["blocked"] == 0 and counts["unknown"] == 0,
+        "summary": counts,
+        "findings": [asdict(item) for item in findings],
+    }
 
 
 def write_report(report: dict[str, object], output: Path) -> None:

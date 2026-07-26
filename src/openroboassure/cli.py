@@ -22,19 +22,33 @@ def build_parser() -> argparse.ArgumentParser:
     )
     licence = subparsers.add_parser("licence", help="audit dependency and asset licences")
     licence_commands = licence.add_subparsers(dest="licence_command", required=True)
-    audit = licence_commands.add_parser("audit", help="write a strict machine-readable licence report")
+    audit = licence_commands.add_parser(
+        "audit", help="write a strict machine-readable licence report"
+    )
     audit.add_argument("--project-root", type=Path, default=Path("."))
     audit.add_argument("--output", type=Path, default=Path("reports/licence_audit/latest.json"))
     asset = subparsers.add_parser("asset", help="register an imported asset")
     asset_commands = asset.add_subparsers(dest="asset_command", required=True)
     add = asset_commands.add_parser("add", help="add an asset record with provenance")
-    for name in ("asset_id", "name", "kind", "source_repository", "source_commit", "source_subdirectory", "spdx_license", "sha256", "retrieval_method"):
+    for name in (
+        "asset_id",
+        "name",
+        "kind",
+        "source_repository",
+        "source_commit",
+        "source_subdirectory",
+        "spdx_license",
+        "sha256",
+        "retrieval_method",
+    ):
         add.add_argument(f"--{name.replace('_', '-')}", required=True)
     add.add_argument("--manifest", type=Path, default=Path("assets/manifest.yaml"))
     add.add_argument("--review-status", choices=["pending", "approved"], default="pending")
     add.add_argument("--reviewed-by", default="unreviewed")
     add.add_argument("--review-date", default="unreviewed")
-    add.add_argument("--notes", default="Registered by ora asset add; requires review before benchmark use.")
+    add.add_argument(
+        "--notes", default="Registered by ora asset add; requires review before benchmark use."
+    )
     add.add_argument("--redistributed", action="store_true")
     doctor.add_argument(
         "--output",
