@@ -1,0 +1,11 @@
+schema_version: 1
+licenses:
+  - Apache-2.0
+  - MIT
+  - BSD-2-Clause
+  - BSD-3-Clause
+  - Zlib
+  - ISC
+  - CC0-1.0
+  - CC-BY-4.0
+  - PSF-2.0

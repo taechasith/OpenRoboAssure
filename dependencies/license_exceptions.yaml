@@ -1,0 +1,9 @@
+schema_version: 1
+exceptions:
+  - package: pathspec
+    spdx_license: MPL-2.0
+    scope: development_only
+    reason: Required transitively by mypy, which is mandated by Phase P01.
+    obligations: Preserve MPL-2.0 notice; do not copy or modify MPL-covered files.
+    approved_by: taechasith
+    approved_at: "2026-07-26T13:35:00+07:00"

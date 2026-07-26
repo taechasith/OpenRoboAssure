@@ -8,7 +8,7 @@ gate has been satisfied.
 |---|---|---|---|
 | P00 | Charter and direction | Completed — charter approved | `GATE-P00-CHARTER` |
 | P01 | Reproducible repository bootstrap | Completed — pending human review before merge | None unless a paid/proprietary dependency is proposed |
-| P02 | Free-data and licence enforcement | Blocked pending policy approval | `GATE-P02-DATA-POLICY` |
+| P02 | Free-data and licence enforcement | Completed — pending human review before merge | `GATE-P02-DATA-POLICY` |
 | P03 | MuJoCo and first ORA-4A task | Not started | None |
 | P04 | Second simulator and robot library | Not started | `GATE-P04-ROBOT-SIMULATOR` |
 | P05 | Scenario and uncertainty engine | Not started | `GATE-P05-SCENARIO-ONTOLOGY` |

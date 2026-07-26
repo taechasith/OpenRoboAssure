@@ -1,0 +1,12 @@
+schema_version: 1
+patterns:
+  - CC-BY-NC-*
+  - CC-BY-ND-*
+  - '*research-only*'
+  - '*academic-use-only*'
+  - '*evaluation-only*'
+blocked_terms:
+  - research-only
+  - academic-use-only
+  - evaluation-only
+  - non-commercial
