@@ -8,6 +8,9 @@ from pathlib import Path
 from openroboassure.doctor import run_doctor
 from openroboassure.experiments.baseline import run_baseline
 from openroboassure.licensing.audit import add_asset, audit_project, write_report
+from openroboassure.scenarios.compiler import SamplingMethod, ScenarioCompiler
+from openroboassure.scenarios.experiment import run_scenario_validity, write_scenarios
+from openroboassure.scenarios.models import ScenarioFamily, ScenarioSplit
 from openroboassure.simulators.discrepancy import (
     measure_ora4a_discrepancy,
     write_discrepancy_report,
@@ -38,6 +41,38 @@ def build_parser() -> argparse.ArgumentParser:
     discrepancy.add_argument("--seed", type=int, default=0)
     discrepancy.add_argument(
         "--output", type=Path, default=Path("reports/discrepancy/EXP-SIM-DISCREPANCY-001.json")
+    )
+    scenario = subparsers.add_parser("scenario", help="generate and validate procedural scenarios")
+    scenario_commands = scenario.add_subparsers(dest="scenario_command", required=True)
+    generate = scenario_commands.add_parser(
+        "generate", help="write a deterministic scenario population as JSON"
+    )
+    generate.add_argument("--count", type=int, default=20)
+    generate.add_argument("--seed", type=int, default=20260726)
+    generate.add_argument(
+        "--family",
+        choices=[family.value for family in ScenarioFamily],
+        default=ScenarioFamily.S1_IN_DISTRIBUTION.value,
+    )
+    generate.add_argument(
+        "--split",
+        choices=[split.value for split in ScenarioSplit],
+        default=ScenarioSplit.TRAIN.value,
+    )
+    generate.add_argument(
+        "--method",
+        choices=[method.value for method in SamplingMethod],
+        default=SamplingMethod.LATIN_HYPERCUBE.value,
+    )
+    generate.add_argument("--output", type=Path, default=Path("reports/scenarios/generated.json"))
+    validate = scenario_commands.add_parser(
+        "validate", help="run the streamed EXP-SCENARIO-VALIDITY-001 evidence experiment"
+    )
+    validate.add_argument("--count", type=int, default=1_000_000)
+    validate.add_argument("--seed", type=int, default=20260726)
+    validate.add_argument("--execution-samples", type=int, default=256)
+    validate.add_argument(
+        "--output", type=Path, default=Path("reports/scenarios/EXP-SCENARIO-VALIDITY-001.json")
     )
     licence = subparsers.add_parser("licence", help="audit dependency and asset licences")
     licence_commands = licence.add_subparsers(dest="licence_command", required=True)
@@ -94,6 +129,36 @@ def main(argv: list[str] | None = None) -> int:
             f"Maximum end-effector discrepancy: {report['max_end_effector_position_error_m']:.6f} m"
         )
         return 0
+    if args.command == "scenario" and args.scenario_command == "generate":
+        compiler = ScenarioCompiler()
+        count = write_scenarios(
+            compiler.generate(
+                args.count,
+                root_seed=args.seed,
+                family=ScenarioFamily(args.family),
+                split=ScenarioSplit(args.split),
+                method=SamplingMethod(args.method),
+            ),
+            args.output,
+        )
+        print(f"Wrote {count} scenarios to {args.output}")
+        return 0
+    if args.command == "scenario" and args.scenario_command == "validate":
+        report = run_scenario_validity(
+            args.count,
+            args.output,
+            root_seed=args.seed,
+            execution_samples=args.execution_samples,
+        )
+        valid_rate = report["valid_rate"]
+        generated_scenarios = report["generated_scenarios"]
+        if not isinstance(valid_rate, float) or not isinstance(generated_scenarios, int):
+            raise AssertionError("Scenario validity report has invalid summary types")
+        print(
+            "Scenario validity rate: "
+            f"{valid_rate:.1%} over {generated_scenarios} generated scenarios"
+        )
+        return 0 if valid_rate >= 0.995 else 1
     if args.command == "licence" and args.licence_command == "audit":
         report = audit_project(args.project_root.resolve())
         write_report(report, args.output)

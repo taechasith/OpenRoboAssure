@@ -1,0 +1,76 @@
+approval_id: GATE-P05-SCENARIO-ONTOLOGY
+aliases: [GATE-P05-ONTOLOGY]
+project_version: 0.5.0
+decision: approved
+approved_by: taechasith
+approved_at: "2026-07-26T15:10:10+07:00"
+approval_source: user_conversation
+scope:
+  initial_task: pick_place_v1
+  compiler: internal_deterministic_scenario_compiler
+  uncertainty_categories:
+    physics:
+      included: [object_mass_kg, surface_friction]
+      excluded: [inertia_multiplier, restitution, damping, actuator_effectiveness]
+    geometry:
+      included: [object_half_extent_m, object_initial_pose, target_radius_m, target_position]
+      excluded: [insertion_clearance, centre_of_mass_offset]
+    control:
+      included: [action_latency_steps, bounded_action_noise, canonical_action_clipping]
+      excluded: [missed_action]
+    sensors:
+      included: [joint_encoder_bias_rad, joint_encoder_noise_rad, object_state_noise_m, frame_delay_steps, observation_dropout_probability]
+      excluded: [camera_blackout]
+    environment:
+      included: [workspace_placement, vertical_gravity_magnitude]
+      excluded: [surface_orientation, external_impulse, simulation_clock_jitter]
+  global_validity_bounds:
+    object_mass_kg: [0.05, 0.50]
+    surface_friction: [0.20, 1.00]
+    object_half_extent_m: [0.015, 0.024]
+    object_initial_x_m: [-0.18, -0.04]
+    object_initial_y_m: [-0.14, -0.02]
+    target_radius_m: [0.044, 0.060]
+    target_x_m: [0.10, 0.20]
+    target_y_m: [0.05, 0.15]
+    action_latency_steps: [0, 4]
+    action_noise_fraction_of_canonical_limit: [0.0, 0.25]
+    joint_bias_and_noise_clip_rad: [-0.03, 0.03]
+    object_state_noise_clip_m: [-0.005, 0.005]
+    frame_delay_steps: [0, 4]
+    observation_dropout_probability: [0.0, 0.10]
+    vertical_gravity_scale: [0.98, 1.02]
+    containment_margin_m: 0.010
+    object_target_clearance_m: 0.010
+    reachability: required_before_execution
+  scenario_families:
+    S0: nominal
+    S1: in_distribution
+    S2: boundary
+    S3: unseen_combinations
+    S4: out_of_distribution_within_global_validity_bounds
+    S5: adversarial_reserved_for_p07_search
+    S6: fault_injection
+    S7: cross_simulator_reserved_for_later_evaluation
+  experiment:
+    experiment_id: EXP-SCENARIO-VALIDITY-001
+    generated_scenarios: 1000000
+    full_physics_episodes: not_required_by_this_gate
+    simulator_execution_measurement: stratified_valid_sample
+    minimum_valid_rate: 0.995
+    deterministic_regeneration_required: true
+    train_evaluation_hash_overlap: 0
+    duplicate_rate: report_required
+  external_data: prohibited
+expires_when:
+  - uncertainty_category_changes
+  - global_validity_bound_changes
+  - scenario_family_definition_changes
+  - variable_exclusion_changes
+  - scenario_count_or_acceptance_criterion_changes
+notes: >-
+  The project owner selected the core constrained ontology and increased the
+  EXP-SCENARIO-VALIDITY-001 deterministic generation target to one million
+  scenarios. The target is generation and validity evidence, not one million
+  full physics episodes. Dynamic/contact variables remain excluded until a
+  later approval supports their simulator semantics and evidence.

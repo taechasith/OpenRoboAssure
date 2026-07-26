@@ -1,0 +1,22 @@
+schema_version: 1
+ontology_id: pick_place_core_v1
+approval_id: GATE-P05-SCENARIO-ONTOLOGY
+task: pick_place_v1
+sampling:
+  default_method: latin_hypercube
+  quasi_random_method: halton
+  deterministic_seed_namespace: scenario
+constraints:
+  containment_margin_m: 0.010
+  object_target_clearance_m: 0.010
+  require_reachability_precheck: true
+  require_collision_free_initialization: true
+families:
+  - S0_nominal
+  - S1_in_distribution
+  - S2_boundary
+  - S3_unseen_combinations
+  - S4_out_of_distribution
+  - S5_adversarial
+  - S6_fault_injection
+  - S7_cross_simulator

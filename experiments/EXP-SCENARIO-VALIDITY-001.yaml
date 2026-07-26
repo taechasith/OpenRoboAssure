@@ -1,0 +1,19 @@
+experiment_id: EXP-SCENARIO-VALIDITY-001
+approval_id: GATE-P05-SCENARIO-ONTOLOGY
+ontology_id: pick_place_core_v1
+task: pick_place_v1
+generated_scenarios: 1000000
+sampling_method: latin_hypercube
+root_seed: 20260726
+scenario_family: S1_in_distribution
+acceptance_criteria:
+  minimum_valid_rate: 0.995
+  deterministic_regeneration_rate: 1.0
+  train_evaluation_parameter_hash_overlap: 0
+  duplicate_rate: report_required
+simulator_execution_measurement:
+  mode: stratified_valid_sample
+  adapters: [MujocoORA4AAdapter, PyBulletORA4AAdapter]
+  full_physics_episodes: 0
+limitations:
+  - Dynamic and contact-physics equivalence are not measured by this experiment.

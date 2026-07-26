@@ -4,6 +4,20 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Approved — GATE-P05-SCENARIO-ONTOLOGY
+
+- **Status:** approved on 2026-07-26
+- **Scope:** the core constrained Pick-and-Place scenario ontology; its physics,
+  geometry, control, sensor, and environment variables; global validity bounds;
+  the S0–S7 family definitions; declared exclusions; and one million
+  deterministic scenarios for `EXP-SCENARIO-VALIDITY-001`.
+- **Decision record:**
+  [GATE-P05-SCENARIO-ONTOLOGY.yaml](approvals/GATE-P05-SCENARIO-ONTOLOGY.yaml)
+- **Consequence:** P05 implementation and its one-million-scenario validity
+  evidence are complete pending review. Dynamic/contact uncertainty variables
+  remain excluded until separately approved with supporting simulator semantics
+  and evidence.
+
 ## Approved — GATE-P00-CHARTER
 
 - **Status:** approved on 2026-07-26

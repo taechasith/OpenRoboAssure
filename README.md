@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.4.0`
-- Current phase: `P04 — multi-simulator and multi-robot layer`
-- Status: v0.4.0 is released; P04 multi-simulator and multi-robot layer is complete
+- Current version: `v0.5.0`
+- Current phase: `P05 — scenario and uncertainty engine`
+- Status: v0.5.0 is released; P05 scenario and uncertainty engine is complete
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -43,10 +43,10 @@ support for arbitrary robots without adapters.
 
 ## Governance
 
-The project charter, free-data policy, and P04 robot/simulator set have been
-approved. P04 uses MuJoCo and PyBullet; imported Panda and UR5e models are
-pinned to reviewed MuJoCo Menagerie subdirectories. The next directional gate
-is `GATE-P05-SCENARIO-ONTOLOGY`.
+The project charter, free-data policy, P04 robot/simulator set, and P05 core
+scenario ontology have been approved. P05 generated one million deterministic,
+constrained scenarios without external data. The next directional gate is
+`GATE-P06-BASELINES`.
 
 The active charter materials are:
 
@@ -76,6 +76,32 @@ Pick-and-Place baseline. The P04 report measures identical canonical state
 mapping for ORA-4A in MuJoCo and PyBullet; it does not establish contact-physics
 fidelity, dynamic equivalence, learned-policy robustness, physical-robot
 performance, or safety.
+
+## Scenario and uncertainty engine
+
+P05 provides a constrained, procedural Pick-and-Place ontology covering
+approved physics, geometry, control, sensor, and environment variables. It
+uses deterministic Latin-hypercube or Halton sampling, hard reachability and
+collision-free-reset checks, conditional target-clearance correlation, scenario
+hashes, and train/evaluation split protection.
+
+Generate a small synthetic population locally:
+
+```text
+ora scenario generate --count 20 --seed 20260726 --output reports/scenarios/generated.json
+```
+
+Reproduce the validity evidence:
+
+```text
+ora scenario validate --count 1000000 --execution-samples 256
+```
+
+`EXP-SCENARIO-VALIDITY-001` generated 1,000,000 scenarios with a 100% valid
+rate, zero duplicates, deterministic regeneration, and no sampled
+train/evaluation parameter overlap. A stratified 256-scenario sample completed
+512 adapter resets across MuJoCo and PyBullet. This verifies scenario
+construction, not contact-physics or dynamic equivalence.
 
 ## Development quick start
 

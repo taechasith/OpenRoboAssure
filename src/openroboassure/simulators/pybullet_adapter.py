@@ -6,6 +6,7 @@ import numpy as np
 import pybullet
 
 from openroboassure.contracts import CanonicalState, FloatArray, StepResult
+from openroboassure.scenarios.models import PickPlaceScenario
 from openroboassure.simulators.action_conversion import apply_canonical_action
 from openroboassure.simulators.task_geometry import (
     END_EFFECTOR_Z_OFFSET,
@@ -22,14 +23,21 @@ from openroboassure.simulators.task_geometry import (
 class PyBulletORA4AAdapter:
     """PyBullet counterpart to the kinematic MuJoCo ORA-4A smoke adapter."""
 
-    target_position = TARGET_POSITION.copy()
-
     def __init__(self) -> None:
         self.client_id = pybullet.connect(pybullet.DIRECT)
+        self._set_defaults()
+        self._build_scene()
+
+    def _set_defaults(self) -> None:
         self.configuration = INITIAL_CONFIGURATION.copy()
         self.object_position = np.zeros(3, dtype=np.float64)
+        self.target_position = TARGET_POSITION.copy()
+        self.target_radius_m = TARGET_RADIUS
+        self.object_half_extent_m = float(OBJECT_HALF_EXTENTS[2])
+        self.object_mass_kg = 0.05
+        self.surface_friction = 0.70
+        self.vertical_gravity_scale = 1.0
         self.held = False
-        self._build_scene()
 
     def _body(
         self,
@@ -51,6 +59,9 @@ class PyBulletORA4AAdapter:
 
     def _build_scene(self) -> None:
         pybullet.resetSimulation(physicsClientId=self.client_id)
+        pybullet.setGravity(
+            0.0, 0.0, -9.81 * self.vertical_gravity_scale, physicsClientId=self.client_id
+        )
         table_collision = pybullet.createCollisionShape(
             pybullet.GEOM_BOX,
             halfExtents=TABLE_HALF_EXTENTS.tolist(),
@@ -62,7 +73,9 @@ class PyBulletORA4AAdapter:
             rgbaColor=[0.2, 0.2, 0.2, 1.0],
             physicsClientId=self.client_id,
         )
-        self._body(table_collision, table_visual, np.array([0.0, 0.0, -0.025], dtype=np.float64))
+        self.table_body = self._body(
+            table_collision, table_visual, np.array([0.0, 0.0, -0.025], dtype=np.float64)
+        )
         ee_collision = pybullet.createCollisionShape(
             pybullet.GEOM_SPHERE, radius=0.022, physicsClientId=self.client_id
         )
@@ -75,7 +88,7 @@ class PyBulletORA4AAdapter:
         self.end_effector_body = self._body(ee_collision, ee_visual, self._end_effector_position())
         object_collision = pybullet.createCollisionShape(
             pybullet.GEOM_BOX,
-            halfExtents=OBJECT_HALF_EXTENTS.tolist(),
+            halfExtents=[self.object_half_extent_m] * 3,
             physicsClientId=self.client_id,
         )
         object_visual = pybullet.createVisualShape(
@@ -85,16 +98,27 @@ class PyBulletORA4AAdapter:
             physicsClientId=self.client_id,
         )
         self.object_body = self._body(
-            object_collision, object_visual, self.object_position, mass=0.05
+            object_collision, object_visual, self.object_position, mass=self.object_mass_kg
         )
         target_visual = pybullet.createVisualShape(
             pybullet.GEOM_CYLINDER,
-            radius=TARGET_RADIUS,
+            radius=float(self.target_radius_m),
             length=0.004,
             rgbaColor=[0.1, 0.8, 0.25, 0.45],
             physicsClientId=self.client_id,
         )
-        self._body(-1, target_visual, np.array([TARGET_POSITION[0], TARGET_POSITION[1], 0.002]))
+        self.target_body = self._body(
+            -1,
+            target_visual,
+            np.array([self.target_position[0], self.target_position[1], 0.002]),
+        )
+        for body in (self.table_body, self.object_body):
+            pybullet.changeDynamics(
+                body,
+                -1,
+                lateralFriction=self.surface_friction,
+                physicsClientId=self.client_id,
+            )
 
     def _end_effector_position(self) -> FloatArray:
         return np.asarray(
@@ -116,9 +140,23 @@ class PyBulletORA4AAdapter:
         )
 
     def reset(self, seed: int) -> CanonicalState:
-        self.configuration = INITIAL_CONFIGURATION.copy()
+        self._set_defaults()
         self.object_position = sample_object_position(seed)
-        self.held = False
+        self._build_scene()
+        self._sync_bodies()
+        return self.get_state()
+
+    def reset_scenario(self, scenario: PickPlaceScenario) -> CanonicalState:
+        """Apply an approved procedural scenario and reset into its initial state."""
+        self._set_defaults()
+        self.object_position = np.asarray(scenario.object_position, dtype=np.float64)
+        self.target_position = np.asarray(scenario.target_position, dtype=np.float64)
+        self.target_radius_m = scenario.target_radius_m
+        self.object_half_extent_m = scenario.object_half_extent_m
+        self.object_mass_kg = scenario.object_mass_kg
+        self.surface_friction = scenario.surface_friction
+        self.vertical_gravity_scale = scenario.vertical_gravity_scale
+        self._build_scene()
         self._sync_bodies()
         return self.get_state()
 
@@ -136,7 +174,7 @@ class PyBulletORA4AAdapter:
 
     def set_grasp(self, held: bool) -> None:
         if self.held and not held:
-            self.object_position[2] = OBJECT_HALF_EXTENTS[2]
+            self.object_position[2] = self.object_half_extent_m
         self.held = held
         self._sync_bodies()
 
