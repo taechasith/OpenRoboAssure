@@ -3,7 +3,7 @@ current_phase: P07
 current_version: 0.7.0
 status: completed_negative_result_preserved
 validation_level: none
-latest_commit: pending_p07_commit
+latest_commit: ef3f868
 active_branch: phase/p07-closed-loop
 protected_benchmark_frozen: false
 licence_audit: passed
