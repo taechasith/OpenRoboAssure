@@ -3,7 +3,7 @@ current_phase: P08
 current_version: 0.8.0
 status: completed_negative_result_preserved
 validation_level: none
-latest_commit: pending_p08_release_commit
+latest_commit: 6f89074
 active_branch: phase/p08-pilot
 protected_benchmark_frozen: true
 licence_audit: passed
