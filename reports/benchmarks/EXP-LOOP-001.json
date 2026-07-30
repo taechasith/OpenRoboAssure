@@ -1,0 +1,186 @@
+{
+  "comparison": {
+    "after_primary_held_out_task_success": 0.0,
+    "before_available": true,
+    "before_model_path": "reports/models/p06_d_11.npz",
+    "before_primary_held_out_task_success": 0.0,
+    "delta_primary_held_out_task_success": 0.0,
+    "status": "negative_result_preserved"
+  },
+  "experiment_id": "EXP-LOOP-001",
+  "inputs": {
+    "calibration_report": "reports/calibration/EXP-CALIBRATION-001.json",
+    "coverage_report": "reports/coverage/EXP-COVERAGE-001.json",
+    "falsification_report": "reports/counterexamples/EXP-FALSIFICATION-001.json",
+    "replay_report": "reports/counterexamples/EXP-FALSIFICATION-REPLAY-001.json",
+    "sensitivity_variables": [
+      "frame_delay_steps",
+      "action_latency_steps",
+      "object_mass_kg",
+      "observation_dropout_probability",
+      "object_x_m",
+      "surface_friction"
+    ]
+  },
+  "limitations": [
+    "simulation_only",
+    "no_physical_robot_validation",
+    "uses_internal_verifai_compatible_search_api_not_external_verifai",
+    "p07_retraining_budget_is_demonstration_scale"
+  ],
+  "negative_results_preserved": [
+    "closed_loop_retraining_did_not_improve_primary_success",
+    "counterexamples_remain_replayable_failures"
+  ],
+  "report_hash": "280c9dbed19412c97bd0cb1fc6edad19a52e9433cae1723a5f4cb534e810e593",
+  "retraining": {
+    "environment_steps": 2048,
+    "method": "P06 state-only trainer with revised System E randomization variables",
+    "model_hash": "eee414327ebe9695b8546968b0ac54d127cb8966868eaabf8060162624719b74",
+    "model_path": "reports/models/p07_system_e_d_77.npz",
+    "note": "CPU-sized P07 loop demonstration, not a replacement for P08 pilot budget",
+    "seed": 77
+  },
+  "revision": {
+    "change_rule": "include any approved P05 variable supported by sensitivity, calibration, counterexample, or coverage-gap evidence",
+    "distribution_changes": [
+      {
+        "category": "control",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "calibration",
+          "sensitivity"
+        ],
+        "parameter": "action_latency_steps"
+      },
+      {
+        "category": "control",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "counterexample"
+        ],
+        "parameter": "action_noise_fraction"
+      },
+      {
+        "category": "sensors",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "calibration",
+          "sensitivity"
+        ],
+        "parameter": "frame_delay_steps"
+      },
+      {
+        "category": "sensors",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "coverage_gap"
+        ],
+        "parameter": "joint_encoder_noise_rad"
+      },
+      {
+        "category": "physics",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "counterexample",
+          "sensitivity"
+        ],
+        "parameter": "object_mass_kg"
+      },
+      {
+        "category": "sensors",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "counterexample"
+        ],
+        "parameter": "object_state_noise_m"
+      },
+      {
+        "category": "geometry",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "calibration",
+          "sensitivity"
+        ],
+        "parameter": "object_x_m"
+      },
+      {
+        "category": "geometry",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "calibration",
+          "coverage_gap"
+        ],
+        "parameter": "object_y_m"
+      },
+      {
+        "category": "sensors",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "counterexample",
+          "sensitivity"
+        ],
+        "parameter": "observation_dropout_probability"
+      },
+      {
+        "category": "physics",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "counterexample",
+          "sensitivity"
+        ],
+        "parameter": "surface_friction"
+      },
+      {
+        "category": "geometry",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "coverage_gap"
+        ],
+        "parameter": "target_radius_m"
+      },
+      {
+        "category": "geometry",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "calibration",
+          "coverage_gap"
+        ],
+        "parameter": "target_x_m"
+      },
+      {
+        "category": "geometry",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "calibration"
+        ],
+        "parameter": "target_y_m"
+      },
+      {
+        "category": "environment",
+        "change": "include_in_system_e_randomization",
+        "evidence": [
+          "coverage_gap"
+        ],
+        "parameter": "vertical_gravity_scale"
+      }
+    ],
+    "revised_randomization_variables": [
+      "action_latency_steps",
+      "action_noise_fraction",
+      "frame_delay_steps",
+      "joint_encoder_noise_rad",
+      "object_mass_kg",
+      "object_state_noise_m",
+      "object_x_m",
+      "object_y_m",
+      "observation_dropout_probability",
+      "surface_friction",
+      "target_radius_m",
+      "target_x_m",
+      "target_y_m",
+      "vertical_gravity_scale"
+    ]
+  },
+  "scope": "P07 System E closed loop: sensitivity, calibration, falsification, coverage, revision, retraining, comparison"
+}

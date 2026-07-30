@@ -6,9 +6,14 @@ import argparse
 import json
 from pathlib import Path
 
+from openroboassure.calibration.hidden_target import run_hidden_target_calibration
+from openroboassure.coverage.reports import run_coverage_report
 from openroboassure.doctor import run_doctor
 from openroboassure.experiments.baseline import run_baseline
+from openroboassure.falsification.replay import replay_search_report
+from openroboassure.falsification.search import run_falsification_search
 from openroboassure.licensing.audit import add_asset, audit_project, write_report
+from openroboassure.loop import run_closed_loop
 from openroboassure.scenarios.compiler import SamplingMethod, ScenarioCompiler
 from openroboassure.scenarios.experiment import run_scenario_validity, write_scenarios
 from openroboassure.scenarios.models import ScenarioFamily, ScenarioSplit
@@ -146,6 +151,47 @@ def build_parser() -> argparse.ArgumentParser:
         command.add_argument(
             "--output", type=Path, default=Path("reports/sensitivity/EXP-SENS-001.json")
         )
+    calibrate = subparsers.add_parser("calibrate", help="run hidden-target calibration tools")
+    calibrate_commands = calibrate.add_subparsers(dest="calibrate_command", required=True)
+    hidden_target = calibrate_commands.add_parser("hidden-target", help="run EXP-CALIBRATION-001")
+    hidden_target.add_argument("--seed", type=int, default=20260730)
+    hidden_target.add_argument("--candidate-count", type=int, default=128)
+    hidden_target.add_argument(
+        "--output", type=Path, default=Path("reports/calibration/EXP-CALIBRATION-001.json")
+    )
+    falsify = subparsers.add_parser("falsify", help="search and replay counterexamples")
+    falsify_commands = falsify.add_subparsers(dest="falsify_command", required=True)
+    falsify_search = falsify_commands.add_parser("search", help="run EXP-FALSIFICATION-001")
+    falsify_search.add_argument("--trials", type=int, default=96)
+    falsify_search.add_argument("--seed", type=int, default=20260730)
+    falsify_search.add_argument("--policy", type=Path, default=None)
+    falsify_search.add_argument(
+        "--output", type=Path, default=Path("reports/counterexamples/EXP-FALSIFICATION-001.json")
+    )
+    falsify_replay = falsify_commands.add_parser("replay", help="run EXP-FALSIFICATION-REPLAY-001")
+    falsify_replay.add_argument(
+        "--input", type=Path, default=Path("reports/counterexamples/EXP-FALSIFICATION-001.json")
+    )
+    falsify_replay.add_argument(
+        "--output",
+        type=Path,
+        default=Path("reports/counterexamples/EXP-FALSIFICATION-REPLAY-001.json"),
+    )
+    coverage = subparsers.add_parser("coverage", help="measure scenario coverage")
+    coverage_commands = coverage.add_subparsers(dest="coverage_command", required=True)
+    coverage_report = coverage_commands.add_parser("report", help="run EXP-COVERAGE-001")
+    coverage_report.add_argument("--scenario-count", type=int, default=128)
+    coverage_report.add_argument("--seed", type=int, default=20260730)
+    coverage_report.add_argument("--counterexamples", type=Path, default=None)
+    coverage_report.add_argument(
+        "--output", type=Path, default=Path("reports/coverage/EXP-COVERAGE-001.json")
+    )
+    loop = subparsers.add_parser("loop", help="run the P07 System E closed loop")
+    loop_commands = loop.add_subparsers(dest="loop_command", required=True)
+    loop_run = loop_commands.add_parser("run", help="run EXP-LOOP-001")
+    loop_run.add_argument("--output-directory", type=Path, default=Path("reports"))
+    loop_run.add_argument("--retrain-steps", type=int, default=2048)
+    loop_run.add_argument("--seed", type=int, default=20260730)
     doctor.add_argument(
         "--output",
         type=Path,
@@ -263,5 +309,52 @@ def main(argv: list[str] | None = None) -> int:
         if not isinstance(variables, list) or not all(isinstance(item, str) for item in variables):
             raise AssertionError("Sensitivity report did not contain System D variables")
         print(f"System D variables: {', '.join(str(item) for item in variables)}")
+        return 0
+    if args.command == "calibrate" and args.calibrate_command == "hidden-target":
+        report = run_hidden_target_calibration(
+            args.output, seed=args.seed, candidate_count=args.candidate_count
+        )
+        discrepancy = report["discrepancy"]
+        if not isinstance(discrepancy, dict):
+            raise AssertionError("Calibration report discrepancy is malformed")
+        print(
+            "Calibration RMSE: "
+            f"{discrepancy['nominal_observation_rmse']:.6f} -> "
+            f"{discrepancy['calibrated_map_observation_rmse']:.6f}"
+        )
+        return 0
+    if args.command == "falsify" and args.falsify_command == "search":
+        report = run_falsification_search(
+            args.output, trials=args.trials, seed=args.seed, policy_path=args.policy
+        )
+        print(f"Counterexamples found: {report['counterexample_count']}")
+        return 0
+    if args.command == "falsify" and args.falsify_command == "replay":
+        report = replay_search_report(args.input, args.output)
+        print(f"Replayed failure rate: {report['replayed_failure_rate']:.1%}")
+        return 0
+    if args.command == "coverage" and args.coverage_command == "report":
+        report = run_coverage_report(
+            args.output,
+            scenario_count=args.scenario_count,
+            seed=args.seed,
+            counterexamples_path=args.counterexamples,
+        )
+        summary = report["summary"]
+        if not isinstance(summary, dict):
+            raise AssertionError("Coverage report summary is malformed")
+        scores = summary["coverage_scores"]
+        if not isinstance(scores, dict):
+            raise AssertionError("Coverage scores are malformed")
+        print(f"Combined coverage score: {scores['combined']:.1%}")
+        return 0
+    if args.command == "loop" and args.loop_command == "run":
+        report = run_closed_loop(
+            args.output_directory, retrain_steps=args.retrain_steps, seed=args.seed
+        )
+        comparison = report["comparison"]
+        if not isinstance(comparison, dict):
+            raise AssertionError("Loop comparison is malformed")
+        print(f"System E loop status: {comparison['status']}")
         return 0
     raise AssertionError(f"Unhandled command: {args.command}")

@@ -4,6 +4,17 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Recorded — P07 closed-loop implementation
+
+- **Status:** implemented on 2026-07-30 without a new directional gate.
+- **Scope:** hidden-target calibration, counterexample search and replay,
+  coverage measurement, coverage-gap scenario generation, randomization
+  revision, and CPU-sized System E retraining for ORA-4A Pick-and-Place.
+- **Consequence:** P07 may be reviewed for the v0.7.0 milestone. The next
+  required human gate remains `GATE-P08-PILOT` before pilot benchmark
+  implementation. P07 does not add a new uncertainty category, does not change
+  protected success metrics, and does not claim real-world validation.
+
 ## Approved — GATE-P06-BASELINES
 
 - **Status:** approved on 2026-07-26

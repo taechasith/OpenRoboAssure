@@ -1,0 +1,65 @@
+{
+  "counterexample_id": "CE-000008",
+  "outcome": {
+    "collision_count": 0,
+    "dropped": true,
+    "final_goal_distance_m": 0.023596036264999523,
+    "robustness": -1.9761593286848267,
+    "steps": 69,
+    "success": false
+  },
+  "parameter_values": {
+    "action_latency_steps": 0.0,
+    "action_noise_fraction": 0.21705041295225097,
+    "frame_delay_steps": 1.0,
+    "joint_encoder_bias_rad": -0.028713905612546914,
+    "joint_encoder_noise_rad": 0.007223283601555686,
+    "object_half_extent_m": 0.015380089587281657,
+    "object_mass_kg": 0.11040182165234028,
+    "object_state_noise_m": 0.003490141660734365,
+    "object_x_m": -0.15111929320129316,
+    "object_y_m": -0.12138965396082357,
+    "observation_dropout_probability": 0.02246381763493448,
+    "surface_friction": 0.2851371087675036,
+    "target_radius_m": 0.04743670758017288,
+    "target_x_m": 0.12665364025777406,
+    "target_y_m": 0.06772060539937626,
+    "vertical_gravity_scale": 0.9945241088800637
+  },
+  "predicate_hits": [
+    "task_failure",
+    "dropped_object"
+  ],
+  "scenario": {
+    "action_latency_steps": 0,
+    "action_noise_fraction": 0.21705041295225097,
+    "family": "S5_adversarial",
+    "frame_delay_steps": 1,
+    "index": 40,
+    "joint_encoder_bias_rad": -0.028713905612546914,
+    "joint_encoder_noise_rad": 0.007223283601555686,
+    "object_half_extent_m": 0.015380089587281657,
+    "object_mass_kg": 0.11040182165234028,
+    "object_position": [
+      -0.15111929320129316,
+      -0.12138965396082357,
+      0.015380089587281657
+    ],
+    "object_state_noise_m": 0.003490141660734365,
+    "observation_dropout_probability": 0.02246381763493448,
+    "ontology_id": "pick_place_core_v1",
+    "schema_version": 1,
+    "seed": 5840083810544324522,
+    "split": "evaluation",
+    "surface_friction": 0.2851371087675036,
+    "target_position": [
+      0.12665364025777406,
+      0.06772060539937626,
+      0.001
+    ],
+    "target_radius_m": 0.04743670758017288,
+    "vertical_gravity_scale": 0.9945241088800637
+  },
+  "scenario_hash": "1101e159dbc3fc76a87a8f2c3d5ef75271ba072f8d150b1340c837688b31490f",
+  "trial_index": 40
+}

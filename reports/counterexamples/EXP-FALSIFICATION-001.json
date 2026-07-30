@@ -1,0 +1,1567 @@
+{
+  "all_trial_summary": [
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.4411797319817499,
+      "scenario_hash": "a5316bebf6385934e4648e5f86b6f362318ee3c0452a8842f0750f1c10cb74a7",
+      "trial_index": 0
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.427206781684139,
+      "scenario_hash": "aa0a7ba8e5c3c486a62ccf034d1552558cc2d4f3f9078a744be09ee25b576122",
+      "trial_index": 1
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.3984167777211325,
+      "scenario_hash": "5fa2cf5a122e9e0c5007346985967d88995818be59fc484aca680ff421c9f481",
+      "trial_index": 2
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.1588818115839112,
+      "scenario_hash": "87ca46203cad043bdc1db51578d3d2244cd621fd3c9cf56eec3083e3930ac801",
+      "trial_index": 3
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.4310832228237111,
+      "scenario_hash": "310dabe6f72223af62944053bdbec314fe1f662db4d4c092f826b73f3e6408d5",
+      "trial_index": 4
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.428841273049951,
+      "scenario_hash": "d24b64ac69f4e9a5ea6c52a340429d772d3f6caa075e18976f48d9affde833b2",
+      "trial_index": 5
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.170928789617721,
+      "scenario_hash": "d745586e4457e5c793f6494575eecdd56121ab4f8199bfb7c88ba5a2916a03d0",
+      "trial_index": 6
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.4310711454326528,
+      "scenario_hash": "cdaed51a0a124fd9d57fd8e1979852762d0a9eadd0a7e5cca7655151fafd8934",
+      "trial_index": 7
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.435879828422259,
+      "scenario_hash": "76e5c3af0cef4f4ea1593828efb032cb65e3409ce6bdde8c41ac7e3287e9e59a",
+      "trial_index": 8
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9764154775367313,
+      "scenario_hash": "a7566c15ad212645e10a8b6503ff8126e667d9697284d659bc88aaf18d3e5078",
+      "trial_index": 9
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.300051120831037,
+      "scenario_hash": "10fd5800275b474d2cb34a78f581653ad0b612d756386df2da9e1585e49d78d6",
+      "trial_index": 10
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2729684230257476,
+      "scenario_hash": "68c0a547cc513a01365ddfda62cd3141f3be295e2e077306c584b40eced8114c",
+      "trial_index": 11
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2991170926675089,
+      "scenario_hash": "fd42e68547d37aefd2ad423ff03579d1c4c346bf1dea257ac537af87927b6c92",
+      "trial_index": 12
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9785113372759013,
+      "scenario_hash": "4927324eca17e9571f2a3cc51d0cd59ea372354f57daefdafffd408b4331bb26",
+      "trial_index": 13
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9732193707423435,
+      "scenario_hash": "44350e29c3a3badf8b5b8e46b88a0b36db5beb1e28316dacf64b6ac4292aa32b",
+      "trial_index": 14
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.3110501260928373,
+      "scenario_hash": "2d8edf078d7578341e7e5db88515a3910b0595f1326e8d351ddec43e3a5756e3",
+      "trial_index": 15
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0299310595105493,
+      "scenario_hash": "2ac87000d6e14f914b0f0f4a47d411096901e6a26fc676a220956fe70a6d1d05",
+      "trial_index": 16
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2844782683593803,
+      "scenario_hash": "b49dc83a744c998374f6c01b867bfa13b8eaa28ae98cc6253353c12ba9ab03d3",
+      "trial_index": 17
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.1806869972363199,
+      "scenario_hash": "0632a79810946094021c82008fe9447880f914eae657f13e9ab64a17016b03c5",
+      "trial_index": 18
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9767409091661787,
+      "scenario_hash": "ef8c67442b2242e4c7d15522a105fa5eab4067b8f9ed0af184ac0b08f3bd8c27",
+      "trial_index": 19
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2895672722488993,
+      "scenario_hash": "6e6fb3a9e463d4486f854a6500101ec9fe235ad3319bebff3477cf1cfaf0ae03",
+      "trial_index": 20
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.072133391705309,
+      "scenario_hash": "4aee2023c86b77ce56601a58fffb5871993bf959ce052a9ae065210a5e35e4b2",
+      "trial_index": 21
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2904117854367487,
+      "scenario_hash": "7a50c3c0fb8b6643143e08165fb7d197a0e12639d56771bc9c3e8b863ab5a9fa",
+      "trial_index": 22
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2900430003211412,
+      "scenario_hash": "13caf282c2a34f36674eae19a78f312ff2d9a2108a6a5bbf7ed599398c8ff336",
+      "trial_index": 23
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout"
+      ],
+      "robustness": -0.9557858272617826,
+      "scenario_hash": "5130a81566d842064e039edbf4c2a73bd4375b66a16d8cae3d9047b1bdc9bad2",
+      "trial_index": 24
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9823645006160848,
+      "scenario_hash": "1135351aeaae670828713f7b93fabce93ef1a64123204f8283d0c7bf4ba36b94",
+      "trial_index": 25
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0331758655834768,
+      "scenario_hash": "85d2ba6ca9352d0657dab020e8217d25fefb1b16a6ad72ed2de8fa758e803f34",
+      "trial_index": 26
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.224533826671653,
+      "scenario_hash": "93f5dbd5c678bc953bff0f5e760b8cfe551c88112b9dcfa3974b9a69bdddb5ce",
+      "trial_index": 27
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.1763575568106521,
+      "scenario_hash": "b99b676b39fad6f83ab809db42195ce5b309bfb18ecf8114fe264923f111fc6f",
+      "trial_index": 28
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2962793922592952,
+      "scenario_hash": "d84cd3273315e48e020d57f3989f5b95ef79a9dee04d492551f92e52aeaafacb",
+      "trial_index": 29
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2283802038940008,
+      "scenario_hash": "ff85e1adae3b3f99c2f9ba3a2f10edc6a98492ed88fb945ff4a56320da818cf2",
+      "trial_index": 30
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0393072538138786,
+      "scenario_hash": "38803ad616f1377d3cf524361f19ea2faf576b698290c9859a8aab211556f60c",
+      "trial_index": 31
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2740166035955567,
+      "scenario_hash": "4ae13b839e8392756ebabb6029fa2e8efbc9f264ed51d55ab38b1127f8452d63",
+      "trial_index": 32
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.263339114864117,
+      "scenario_hash": "a1638f641c904bcb34e04f63b0e2278f3037daec4d3574866a3dc41b3dc25934",
+      "trial_index": 33
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2984109219965858,
+      "scenario_hash": "101e1a81ee71066b8fa2a20a551470a5e99fab799754faccf64d5535527aa88f",
+      "trial_index": 34
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2820471558630413,
+      "scenario_hash": "059e252135d4af9f2af0ddfe9e5e0f36958ddfa28a5e7bf06e258923b863bafb",
+      "trial_index": 35
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.084319620783419,
+      "scenario_hash": "9bc3048b4cb91c89e3e5e64450b7e5bc6d03fc81e7906c1a2f6608b2de83d0e7",
+      "trial_index": 36
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0330531549318325,
+      "scenario_hash": "61c9979971aa5e39eb14083491126272d7fbeaefc6357f9ff09b86926e25fcc2",
+      "trial_index": 37
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2953656203902064,
+      "scenario_hash": "f4e61c5948c4e0d8e70cbf6c072665a1bff193c09d8d5bd74882dd085795ee9b",
+      "trial_index": 38
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2738322587214392,
+      "scenario_hash": "1b3fde4ef15789f01eacb9259935602591a68e8471324052dcce39b4aaf0f362",
+      "trial_index": 39
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9761593286848267,
+      "scenario_hash": "1101e159dbc3fc76a87a8f2c3d5ef75271ba072f8d150b1340c837688b31490f",
+      "trial_index": 40
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2945114986594988,
+      "scenario_hash": "819ff602c8b319d3250c62018046e91fe2a15756a6254c8bf2a34acc5e505ad6",
+      "trial_index": 41
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2997217189538222,
+      "scenario_hash": "4a893a6db56b1bbb9b7f2c4d22142d48b5cc363a29f5ce24f129f097add41da2",
+      "trial_index": 42
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.036823409357956,
+      "scenario_hash": "af6f75164d2d56d893b5bcde9dd254d4af0f969b2f6c10e60dc765998605fb1f",
+      "trial_index": 43
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2859572100207979,
+      "scenario_hash": "b8c2103ed54cc793d9890ffde1c7c9fdfccee6664bddb31e4be6c288445d6ce6",
+      "trial_index": 44
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2617812063711418,
+      "scenario_hash": "15dee2a99e778548412d24c8649f672e9e67d55adb81fb53d550a09978040a08",
+      "trial_index": 45
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2922497786679226,
+      "scenario_hash": "db1f17969eecd54564471d6310aed2863b94d399450530e9f525c3027f0fbc41",
+      "trial_index": 46
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.0575687700516843,
+      "scenario_hash": "b5ae65c6a03a7566ae747e00f6a7f874025071b4f101d3af0d1e1ca5637646de",
+      "trial_index": 47
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.297734960308882,
+      "scenario_hash": "f8886c81fc5407a1e36c3d0cb2302de265756a073571a6e5970a80e83f9717ed",
+      "trial_index": 48
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2913289481480021,
+      "scenario_hash": "2cad27daa964b1bc497d6deeb853d388af0b62b2793eb65f60231d5be11513f2",
+      "trial_index": 49
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2939017749217863,
+      "scenario_hash": "a958caaa4d1f874dda102267eb4ea1bfaff4c7865902ec1a6ded2b9e9da04ac2",
+      "trial_index": 50
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0346524786186635,
+      "scenario_hash": "e31a737c5a13006350cc37d00de9dd8f10f03dcc282d46249f5c7fbca3e62c67",
+      "trial_index": 51
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2899041816215262,
+      "scenario_hash": "dd8db10ab83f94dc3b44beb181c0041496cbe4dc49e64435e64d97ca89d86ab8",
+      "trial_index": 52
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.27920266869117,
+      "scenario_hash": "bad554040e6103b4ad68dfb00e985e4cab64a74db8ee827b33f2f58740776cc2",
+      "trial_index": 53
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2976180603565168,
+      "scenario_hash": "2105bf0afa848ec9180bf631602bbe537ba1288e0785419b16c57415130504aa",
+      "trial_index": 54
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.300181599759882,
+      "scenario_hash": "6f497e9f98f47919f81edc77ea62d0339ac27fe3405abaa2e242ee3650cb59ff",
+      "trial_index": 55
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2908295114234976,
+      "scenario_hash": "ede0ec85e188aab0e75260726c3d0d8f1c1fc05b7e5e5cc79ea4fbf40f35569c",
+      "trial_index": 56
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.1785415844721876,
+      "scenario_hash": "b0a09ab43f84bdc8ece9bfa1769b4b1bb2697f911f3b6b15fc9db3aac9a82b52",
+      "trial_index": 57
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.984784472832069,
+      "scenario_hash": "44052eb8574703263a78b76655b133bd7644467eb28d25a1824d0d50dfd8d0f2",
+      "trial_index": 58
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.112293343958569,
+      "scenario_hash": "4360f040a248b85db7aa518fa07b73ed13265dd99f4dee0e5b85d21223676d93",
+      "trial_index": 59
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.175879895746834,
+      "scenario_hash": "3f9b6dc8f6a264550053c0ba9ddd53e116b560db3c3520ce0ff5bfcb6e6dd4ec",
+      "trial_index": 60
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2699691840314065,
+      "scenario_hash": "c33f6a31d5570c0ae04baec977aaeba0ca4a300b6d30b0255674ea21cdf0a6a8",
+      "trial_index": 61
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2843033287252275,
+      "scenario_hash": "3625f7c38bd2646dba5b71d17028aa3d27fa2b1c335a673d2132e167f5f6b233",
+      "trial_index": 62
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.269453443737441,
+      "scenario_hash": "f11de18bacfe0eb64779c0aac436892f9aba303a532704131ce84cb2b8a16700",
+      "trial_index": 63
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2869272757839094,
+      "scenario_hash": "b19d30d4237bd9eb136c9c60076c48cd1edd9232627b6ab36159e8bddeb38783",
+      "trial_index": 64
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.96316245689439,
+      "scenario_hash": "c8ddd39c81e76deb365b8866f9653c892542a90b02282f88630d63f048111abb",
+      "trial_index": 65
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.231819663596698,
+      "scenario_hash": "cda2793fb5b833d4289ae8654d20dafbe457a225d2d1f3ba6334a1ab5d0206a1",
+      "trial_index": 66
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.28123045196988,
+      "scenario_hash": "d0bc7e66e441bd4bbac9aeb2595b874af24af36c09857ff99be6ee1bc702955a",
+      "trial_index": 67
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0418882146254145,
+      "scenario_hash": "b90facf3e1c3183f05d7d7a66323ecf34b2d43e40d14d3ef3b6410f349ae25f0",
+      "trial_index": 68
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0243689870915746,
+      "scenario_hash": "15cfc4572283f8b9fd4fd4c3bfcb2a55b8cbe6b8e35dc155a28374d5a466eac4",
+      "trial_index": 69
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0359938727671518,
+      "scenario_hash": "a473252f04e18ebdae645dd6f4d00c2f1ddc2dedab0aead57c6df80c3156f06a",
+      "trial_index": 70
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9777137473515911,
+      "scenario_hash": "e525e7cd105688d473e376f8511ece204a20894388ad1fd23454402098230967",
+      "trial_index": 71
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9812027571992934,
+      "scenario_hash": "2db76ae342d79547deb8f3d053711c2c50c503cf26406772c9d5cdd90d25c2b2",
+      "trial_index": 72
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9689708630665441,
+      "scenario_hash": "08e43f81b41ddb147958b29f7e3ca144751d3c7bb34a8b6dc7a7b83c75059869",
+      "trial_index": 73
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0386958899522496,
+      "scenario_hash": "57c3ffd54464ddfff0fd5be0e085d57366147ec842db5891472249f66ad1b980",
+      "trial_index": 74
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2066530340389277,
+      "scenario_hash": "9ac534954dafbfebd66cf770354828baab297df9bb73c992a0e96f3a48e1e483",
+      "trial_index": 75
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2712512993389211,
+      "scenario_hash": "4a6a96f25074be019878bece013d21951c3b92695462724ea8ab74a94ee2c81a",
+      "trial_index": 76
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.282778051063762,
+      "scenario_hash": "bbb34dc18f5d99779aedfcfd846d63d51a24cdb273014b464dfe4893dd1c44e5",
+      "trial_index": 77
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.0960378393727417,
+      "scenario_hash": "4eb14cfbad9c52092b0288320743b84a0e38b4c2e89b375a31b58ff3f5b99814",
+      "trial_index": 78
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.271123557040337,
+      "scenario_hash": "5bfec917c3bdb414b46ee95b3b0a9bce9eb0ae741c9e3a6b91fa33f99c9d43c0",
+      "trial_index": 79
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2794057973570379,
+      "scenario_hash": "f423fcb9f902bcc46a12978c71f7edb8e642d574603773c4abf7db79fe9e447e",
+      "trial_index": 80
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.1752206401822243,
+      "scenario_hash": "ae989497f808bc1555ae72809757db53a34d51db57d177e9b91582c51781e078",
+      "trial_index": 81
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2764382116637485,
+      "scenario_hash": "96d6cc6f1c03712c284290128dc40eec8d07d260ee2f5abeeeec9a3199c05bf5",
+      "trial_index": 82
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0324357748456703,
+      "scenario_hash": "e41354652c13b34871c122613d75e956f72d09975686b1682de6975583be3aec",
+      "trial_index": 83
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.1877791714030712,
+      "scenario_hash": "e08035a9484387a2790f1ce355a6175b176f105c8280c7086e649073ff05b1be",
+      "trial_index": 84
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.249890489237185,
+      "scenario_hash": "6ba4bcbddd68180a7686c92efb9119056b59001309c75ce9f6b96818a100bc1d",
+      "trial_index": 85
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0270033269277714,
+      "scenario_hash": "8cf235dbe39a4e45e9c1922dbfebb064146facd86dd26f90870bc241450e024f",
+      "trial_index": 86
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2020503538924985,
+      "scenario_hash": "82e7997f65859ac23c0614f31965dd61711935f9025ce7ce7a7efaa1e1cfe225",
+      "trial_index": 87
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9761424390177884,
+      "scenario_hash": "29b5e24b871c483e0a5219e52d02d46961a4ad98d589ee7215cab123e54b4da4",
+      "trial_index": 88
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.276489346430494,
+      "scenario_hash": "7daeeb843650c87aaebfcadb8d87af9540ba3a085694e9341b6a9253a009bcbc",
+      "trial_index": 89
+    },
+    {
+      "predicate_hits": [],
+      "robustness": 1.0270006059764796,
+      "scenario_hash": "6bf296664e7ff719201264ddfd957205833fd8f397f0c17ff0aa93f5deae6318",
+      "trial_index": 90
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2816235799231306,
+      "scenario_hash": "749c3cf00aab3bfd33ccf3b1e02893b58375322441eb947d127a39a0ae2fb8f9",
+      "trial_index": 91
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "robustness": -1.9679904700738209,
+      "scenario_hash": "bd1e9240f90b7b2613c2c13a437af0d80839f0125f2c370373a558d5b2b25444",
+      "trial_index": 92
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2482577804749864,
+      "scenario_hash": "839c3ceda477df54a441ac37849f31a0ea9a33f65413737829566e5e93357f25",
+      "trial_index": 93
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.3033584359910495,
+      "scenario_hash": "9d5b745c3cc37e79fee1c5d57732a8a9c2f2eb8a971db1af24e375926cf9dee9",
+      "trial_index": 94
+    },
+    {
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "robustness": -1.2995646676220767,
+      "scenario_hash": "575f88fd778c78a7f8843a273b4a2c031cb67fe1e3d3dc8a4315cf0c8c57c5b7",
+      "trial_index": 95
+    }
+  ],
+  "backend": "internal_verifai_compatible_black_box_v1",
+  "counterexample_count": 10,
+  "counterexamples": [
+    {
+      "counterexample_id": "CE-000001",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.032547040653559366,
+        "robustness": -1.984784472832069,
+        "steps": 69,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12375355956833037,
+        "object_state_noise_m": 0.00445797288212707,
+        "object_x_m": -0.15111929320129316,
+        "object_y_m": -0.09821561290864489,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.12665364025777406,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 58,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12375355956833037,
+        "object_position": [
+          -0.15111929320129316,
+          -0.09821561290864489,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.00445797288212707,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 8594807330287081436,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12665364025777406,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "44052eb8574703263a78b76655b133bd7644467eb28d25a1824d0d50dfd8d0f2",
+      "trial_index": 58
+    },
+    {
+      "counterexample_id": "CE-000002",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.030127068437575115,
+        "robustness": -1.9823645006160848,
+        "steps": 73,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_state_noise_m": 0.005,
+        "object_x_m": -0.15111929320129316,
+        "object_y_m": -0.12138965396082357,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.12665364025777406,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 25,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_position": [
+          -0.15111929320129316,
+          -0.12138965396082357,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.005,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 898488791236760092,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12665364025777406,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "1135351aeaae670828713f7b93fabce93ef1a64123204f8283d0c7bf4ba36b94",
+      "trial_index": 25
+    },
+    {
+      "counterexample_id": "CE-000003",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.034470804134770855,
+        "robustness": -1.9812027571992934,
+        "steps": 87,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 2.0,
+        "action_noise_fraction": 0.15743501144731747,
+        "frame_delay_steps": 0.0,
+        "joint_encoder_bias_rad": -0.0038723104706961976,
+        "joint_encoder_noise_rad": 0.0011926071063919474,
+        "object_half_extent_m": 0.02273328859773755,
+        "object_mass_kg": 0.47671714874129495,
+        "object_state_noise_m": 0.0011078457896989459,
+        "object_x_m": -0.06629146166742012,
+        "object_y_m": -0.1371404301043167,
+        "observation_dropout_probability": 0.0783489484570951,
+        "surface_friction": 0.776960785616633,
+        "target_radius_m": 0.053268046935477424,
+        "target_x_m": 0.1386804914655398,
+        "target_y_m": 0.07166632191420419,
+        "vertical_gravity_scale": 1.019217251258599
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 2,
+        "action_noise_fraction": 0.15743501144731747,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 0,
+        "index": 72,
+        "joint_encoder_bias_rad": -0.0038723104706961976,
+        "joint_encoder_noise_rad": 0.0011926071063919474,
+        "object_half_extent_m": 0.02273328859773755,
+        "object_mass_kg": 0.47671714874129495,
+        "object_position": [
+          -0.06629146166742012,
+          -0.1371404301043167,
+          0.02273328859773755
+        ],
+        "object_state_noise_m": 0.0011078457896989459,
+        "observation_dropout_probability": 0.0783489484570951,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 9131115084591028854,
+        "split": "evaluation",
+        "surface_friction": 0.776960785616633,
+        "target_position": [
+          0.1386804914655398,
+          0.07166632191420419,
+          0.001
+        ],
+        "target_radius_m": 0.053268046935477424,
+        "vertical_gravity_scale": 1.019217251258599
+      },
+      "scenario_hash": "2db76ae342d79547deb8f3d053711c2c50c503cf26406772c9d5cdd90d25c2b2",
+      "trial_index": 72
+    },
+    {
+      "counterexample_id": "CE-000004",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.026273905097391675,
+        "robustness": -1.9785113372759013,
+        "steps": 75,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_state_noise_m": 0.004541355029045456,
+        "object_x_m": -0.14941095328384657,
+        "object_y_m": -0.12138965396082357,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.12746914249218969,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 13,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_position": [
+          -0.14941095328384657,
+          -0.12138965396082357,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.004541355029045456,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 480082494218198369,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12746914249218969,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "4927324eca17e9571f2a3cc51d0cd59ea372354f57daefdafffd408b4331bb26",
+      "trial_index": 13
+    },
+    {
+      "counterexample_id": "CE-000005",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.02547631517308143,
+        "robustness": -1.9777137473515911,
+        "steps": 79,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12375355956833037,
+        "object_state_noise_m": 0.00445797288212707,
+        "object_x_m": -0.15111929320129316,
+        "object_y_m": -0.08708881282058967,
+        "observation_dropout_probability": 0.06967106898777084,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.12665364025777406,
+        "target_y_m": 0.052885835762303185,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 71,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12375355956833037,
+        "object_position": [
+          -0.15111929320129316,
+          -0.08708881282058967,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.00445797288212707,
+        "observation_dropout_probability": 0.06967106898777084,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 9081104835705151827,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12665364025777406,
+          0.052885835762303185,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "e525e7cd105688d473e376f8511ece204a20894388ad1fd23454402098230967",
+      "trial_index": 71
+    },
+    {
+      "counterexample_id": "CE-000006",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.024503476987668995,
+        "robustness": -1.9767409091661787,
+        "steps": 73,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.005877619126846495,
+        "object_half_extent_m": 0.016441047975333425,
+        "object_mass_kg": 0.12233283817616307,
+        "object_state_noise_m": 0.004541355029045456,
+        "object_x_m": -0.14941095328384657,
+        "object_y_m": -0.11123581396579166,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.12746914249218969,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 19,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.005877619126846495,
+        "object_half_extent_m": 0.016441047975333425,
+        "object_mass_kg": 0.12233283817616307,
+        "object_position": [
+          -0.14941095328384657,
+          -0.11123581396579166,
+          0.016441047975333425
+        ],
+        "object_state_noise_m": 0.004541355029045456,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 356086297739473786,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12746914249218969,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "ef8c67442b2242e4c7d15522a105fa5eab4067b8f9ed0af184ac0b08f3bd8c27",
+      "trial_index": 19
+    },
+    {
+      "counterexample_id": "CE-000007",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.02417804535822154,
+        "robustness": -1.9764154775367313,
+        "steps": 71,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.0046040791714397795,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_state_noise_m": 0.004541355029045456,
+        "object_x_m": -0.14941095328384657,
+        "object_y_m": -0.0894548944589167,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.13173466619854482,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 9,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.0046040791714397795,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_position": [
+          -0.14941095328384657,
+          -0.0894548944589167,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.004541355029045456,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 4080875039591494767,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.13173466619854482,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "a7566c15ad212645e10a8b6503ff8126e667d9697284d659bc88aaf18d3e5078",
+      "trial_index": 9
+    },
+    {
+      "counterexample_id": "CE-000008",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.023596036264999523,
+        "robustness": -1.9761593286848267,
+        "steps": 69,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.11040182165234028,
+        "object_state_noise_m": 0.003490141660734365,
+        "object_x_m": -0.15111929320129316,
+        "object_y_m": -0.12138965396082357,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04743670758017288,
+        "target_x_m": 0.12665364025777406,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 40,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.11040182165234028,
+        "object_position": [
+          -0.15111929320129316,
+          -0.12138965396082357,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.003490141660734365,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 5840083810544324522,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12665364025777406,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04743670758017288,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "1101e159dbc3fc76a87a8f2c3d5ef75271ba072f8d150b1340c837688b31490f",
+      "trial_index": 40
+    },
+    {
+      "counterexample_id": "CE-000009",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.023905006839278695,
+        "robustness": -1.9761424390177884,
+        "steps": 79,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015,
+        "object_mass_kg": 0.12375355956833037,
+        "object_state_noise_m": 0.00445797288212707,
+        "object_x_m": -0.16460239770510562,
+        "object_y_m": -0.08091989596438744,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04776256782149032,
+        "target_x_m": 0.12665364025777406,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 88,
+        "joint_encoder_bias_rad": -0.028713905612546914,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015,
+        "object_mass_kg": 0.12375355956833037,
+        "object_position": [
+          -0.16460239770510562,
+          -0.08091989596438744,
+          0.015
+        ],
+        "object_state_noise_m": 0.00445797288212707,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 5055761953056365665,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12665364025777406,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04776256782149032,
+        "vertical_gravity_scale": 0.9945241088800637
+      },
+      "scenario_hash": "29b5e24b871c483e0a5219e52d02d46961a4ad98d589ee7215cab123e54b4da4",
+      "trial_index": 88
+    },
+    {
+      "counterexample_id": "CE-000010",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.020290675875808444,
+        "robustness": -1.9732193707423435,
+        "steps": 69,
+        "success": false
+      },
+      "parameter_values": {
+        "action_latency_steps": 0.0,
+        "action_noise_fraction": 0.21705041295225097,
+        "frame_delay_steps": 1.0,
+        "joint_encoder_bias_rad": -0.024450948850952336,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_state_noise_m": 0.004541355029045456,
+        "object_x_m": -0.14941095328384657,
+        "object_y_m": -0.12138965396082357,
+        "observation_dropout_probability": 0.02246381763493448,
+        "surface_friction": 0.2851371087675036,
+        "target_radius_m": 0.04707130513346498,
+        "target_x_m": 0.12746914249218969,
+        "target_y_m": 0.06772060539937626,
+        "vertical_gravity_scale": 0.996053772285561
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario": {
+        "action_latency_steps": 0,
+        "action_noise_fraction": 0.21705041295225097,
+        "family": "S5_adversarial",
+        "frame_delay_steps": 1,
+        "index": 14,
+        "joint_encoder_bias_rad": -0.024450948850952336,
+        "joint_encoder_noise_rad": 0.007223283601555686,
+        "object_half_extent_m": 0.015380089587281657,
+        "object_mass_kg": 0.12233283817616307,
+        "object_position": [
+          -0.14941095328384657,
+          -0.12138965396082357,
+          0.015380089587281657
+        ],
+        "object_state_noise_m": 0.004541355029045456,
+        "observation_dropout_probability": 0.02246381763493448,
+        "ontology_id": "pick_place_core_v1",
+        "schema_version": 1,
+        "seed": 6957666416577322094,
+        "split": "evaluation",
+        "surface_friction": 0.2851371087675036,
+        "target_position": [
+          0.12746914249218969,
+          0.06772060539937626,
+          0.001
+        ],
+        "target_radius_m": 0.04707130513346498,
+        "vertical_gravity_scale": 0.996053772285561
+      },
+      "scenario_hash": "44350e29c3a3badf8b5b8e46b88a0b36db5beb1e28316dacf64b6ac4292aa32b",
+      "trial_index": 14
+    }
+  ],
+  "experiment_id": "EXP-FALSIFICATION-001",
+  "external_verifai_dependency": "not_used_internal_compatible_api",
+  "failure_predicates": [
+    "task_failure",
+    "dropped_object",
+    "timeout",
+    "collision",
+    "goal_distance_above_target_radius"
+  ],
+  "failure_rate": 0.8645833333333334,
+  "first_failure_trial": 0,
+  "policy": "scripted_reference",
+  "report_hash": "6c4db969e04e15111426c5921c9c44241ce1a4867fca26eeca45f5877385c9b6",
+  "scope": "P07 constrained counterexample search over approved P05 scenario values",
+  "trials": 96
+}

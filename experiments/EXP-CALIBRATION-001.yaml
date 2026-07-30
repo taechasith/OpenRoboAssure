@@ -1,0 +1,31 @@
+experiment_id: EXP-CALIBRATION-001
+phase: P07
+status: completed
+objective: Fit a source-simulator parameter posterior from limited hidden-target trajectories.
+task: pick_place_v1
+robot: ora_4a
+target_handling:
+  hidden_values_available_to_method: false
+  reveal_order: predictions_frozen_before_true_parameters_are_written
+calibration_variables:
+  - object_x_m
+  - object_y_m
+  - target_x_m
+  - target_y_m
+  - action_latency_steps
+  - frame_delay_steps
+excitation_policies:
+  - scripted_pick_place
+  - axis_sweep
+candidate_search:
+  candidate_count: 128
+  prior: uniform_over_approved_p05_training_bounds
+metrics:
+  - observable_trajectory_rmse
+  - outcome_mismatch_rate
+  - posterior_coverage_after_reveal
+  - target_policy_transfer
+outputs:
+  - reports/calibration/EXP-CALIBRATION-001.json
+reproduction:
+  - uv run --locked ora calibrate hidden-target

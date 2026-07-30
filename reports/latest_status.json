@@ -1,9 +1,9 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-26T18:01:00+07:00",
-  "current_phase": "P06",
-  "current_version": "0.6.0",
-  "status": "completed",
+  "generated_at": "2026-07-30T20:17:39+07:00",
+  "current_phase": "P07",
+  "current_version": "0.7.0",
+  "status": "completed_negative_result_preserved",
   "next_required_gate": "GATE-P08-PILOT",
   "validation_level": "none",
   "licence_audit": "passed",
@@ -13,25 +13,39 @@
     "kinematic_scripted_baseline",
     "learned_policy_baselines_have_zero_held_out_success_in_p06",
     "p06_sensitivity_is_based_on_scripted_reference_returns",
+    "p07_system_e_retraining_did_not_improve_held_out_success",
+    "p07_falsification_uses_internal_verifai_compatible_api_not_external_verifai",
+    "p07_retraining_budget_is_demonstration_scale",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],
   "latest_experiment": {
-    "experiment_id": "EXP-POLICY-BASELINES-001",
-    "total_training_environment_steps": 2000000,
-    "total_held_out_evaluation_episodes": 4000,
-    "equal_budget_check": "passed",
-    "systems": {
-      "A": { "held_out_task_success": 0.0, "seed_count": 5 },
-      "B": { "held_out_task_success": 0.0, "seed_count": 5 },
-      "C": { "held_out_task_success": 0.0, "seed_count": 5 },
-      "D": { "held_out_task_success": 0.0, "seed_count": 5 }
+    "experiment_id": "EXP-LOOP-001",
+    "calibration": {
+      "experiment_id": "EXP-CALIBRATION-001",
+      "status": "improved",
+      "nominal_observation_rmse": 0.03634922672861493,
+      "calibrated_map_observation_rmse": 0.0049006065045380095,
+      "relative_improvement": 0.8651798966419239
     },
-    "sensitivity": {
-      "experiment_id": "EXP-SENS-001",
-      "morris_evaluations": 340,
-      "sobol_evaluations": 4096,
-      "system_d_variable_count": 6
+    "falsification": {
+      "experiment_id": "EXP-FALSIFICATION-001",
+      "trials": 96,
+      "counterexamples": 10,
+      "failure_rate": 0.8645833333333334,
+      "replayed_failure_rate": 0.9333333333333333
+    },
+    "coverage": {
+      "experiment_id": "EXP-COVERAGE-001",
+      "combined_coverage_score": 0.9243958447780104,
+      "coverage_gap_count": 24
+    },
+    "system_e": {
+      "retraining_environment_steps": 2048,
+      "before_held_out_task_success": 0.0,
+      "after_held_out_task_success": 0.0,
+      "delta_held_out_task_success": 0.0,
+      "status": "negative_result_preserved"
     }
   }
 }

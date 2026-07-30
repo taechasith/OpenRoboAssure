@@ -1,0 +1,537 @@
+{
+  "counterexample_count": 10,
+  "experiment_id": "EXP-FALSIFICATION-REPLAY-001",
+  "replay_count": 30,
+  "replay_seeds": [
+    101,
+    202,
+    303
+  ],
+  "replayed_failure_rate": 0.9333333333333333,
+  "report_hash": "3e994b2bbebb3fc35e6cc46702db194837f60412c5727017398550c12a77e11d",
+  "rows": [
+    {
+      "counterexample_id": "CE-000001",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.31606585810983395,
+        "robustness": -1.2683032902883435,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "cd5d10a7cf44c1b6372073cee2e8ecf29595ebd4eb876c854b18de3d1325bbf4",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000001",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.3189056645771563,
+        "robustness": -1.271143096755666,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "a54174142f2944fb1d9d8d247138b37ff055d6ad6afcd29b8f9304a4a8c5ab28",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000001",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.037137238999421035,
+        "robustness": -1.9893746711779308,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object",
+        "timeout"
+      ],
+      "scenario_hash": "2a302e507e48f1fb55a293b5097eee6f294abea9592aacd5a100defff4b6e54b",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000002",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.01645138994980655,
+        "robustness": -1.9686888221283163,
+        "steps": 72,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "78aec51d6305abd6f54bd518c1290632663bc33e3b5301c87e179664aa2eb999",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000002",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.3305658103070899,
+        "robustness": -1.2828032424855995,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "f3bd1c21b6b9f687edc49f1b952e31f942d12c49ea06c617fe5533fddc2dbca2",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000002",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.32871303430871474,
+        "robustness": -1.2809504664872244,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "52ee5f641783edf5dac6151d71d2785b764be6971d81a7f21f7085484026fc29",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000003",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.03829938091274114,
+        "robustness": -1.9850313339772636,
+        "steps": 86,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "7e890d3cbc465656ee4d7ffeaea671db729b9c0dc5684dedd78a03a69f3fe4cf",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000003",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.027044545036282775,
+        "robustness": -0.9737764981008054,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout"
+      ],
+      "scenario_hash": "8034588259476a79588f6f2ac61b0d6aab4d98a623723c04f33b94d49bf64b8a",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000003",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.16826388026164368,
+        "robustness": -1.1149958333261663,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "52ae1745dd9f745c2cad0470f32569f52f64814ae39c60d978ce8438439ac05f",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000004",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.020983272251031783,
+        "robustness": -1.9732207044295416,
+        "steps": 71,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "778171ab23b1f8e0e48b603e2c6c12f46007880791ada35c1631ac19148da13b",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000004",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.33035309848442496,
+        "robustness": -1.2825905306629346,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "b53a6e4e11e6e323d17171875617d25127d1205d6d3e4c81d1202230d178a4d6",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000004",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.32867897994775863,
+        "robustness": -1.2809164121262684,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "94b3558f4d67e80a034dc34571af2b529c028241322b4c70d8fe1655a03291fe",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000005",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.30369386996555525,
+        "robustness": -1.255931302144065,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "35b9996804a3f5cbc4a78411c4ddc3742c08cc09c0187a6b6a78bec59af77671",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000005",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.015824726115748016,
+        "robustness": 1.0319378417057423,
+        "steps": 69,
+        "success": true
+      },
+      "predicate_hits": [],
+      "scenario_hash": "caeda0336f395f65f687935aacc172557548cd2f200cfb479dc9727900d870cc",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000005",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.02681645112947809,
+        "robustness": -1.9790538833079878,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object",
+        "timeout"
+      ],
+      "scenario_hash": "ef23de72aca4419e3192b2d3c96e23518c60c80927c605d0e7c3038bdfa002b1",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000006",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.022514775015758298,
+        "robustness": -1.974752207194268,
+        "steps": 71,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "b9c3abf38600bf15057d0eb7016aa9633b0c9a4d3f0f90676299e5c08c69e44b",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000006",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.3248587104274427,
+        "robustness": -1.2770961426059524,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "784a99aebb4e08cc0b17946874c74a4e744d1fbced0e6e5f9a1400abe9c9720e",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000006",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.3230067333694702,
+        "robustness": -1.27524416554798,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "37ce03e0daa857a7011a98a049fbf47872d69e2cf7c079d5d2e385fdcdc95da7",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000007",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.3145014611311822,
+        "robustness": -1.266738893309692,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "40d5a144312710f92805fd7625efd227ab8c04ebbb2fba5a78a4932f198a5680",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000007",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.021546167454225693,
+        "robustness": -1.9737835996327353,
+        "steps": 69,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "ae71f538bc03e44d938dc4a7dab5f6cda6ce146231288ef61cfef3da6cfbca6f",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000007",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.31510707373995483,
+        "robustness": -1.2673445059184645,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "a1e3c30390461c991286f775e8161a1029d66b0940400a2d7e3b738972c542d2",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000008",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.01859029603797531,
+        "robustness": -1.9711535884578024,
+        "steps": 73,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "d0c8a9d8f14c4a0973b9c3559b1bfccf75e6f71416e79c5c115b7dff3b680a46",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000008",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.33230721717275213,
+        "robustness": -1.2848705095925792,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "d9e10585f3e4e566ba2bb04476405dff054bc90237be2791055bbb85ba7247c3",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000008",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.33100624411828083,
+        "robustness": -1.283569536538108,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "4745c00368f628f9b7f7cd757c7b0f9d62faea21c5ba564578cc4ad70cdae4e3",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000009",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.3195716402773067,
+        "robustness": -1.2718090724558164,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "f00ef70f0e947b28846b8ccc64e96f6cb6665821aaaab935fee9383abd13f6d5",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000009",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.015589042824792265,
+        "robustness": -1.9678264750033019,
+        "steps": 75,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "897ef3abc12cd1cad07d1ea9006e799183aaad13787b76676227a3101c4305ce",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000009",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.012986254812706976,
+        "robustness": 1.0347763130087833,
+        "steps": 79,
+        "success": true
+      },
+      "predicate_hits": [],
+      "scenario_hash": "7fcb13ca0c7635281f62f7838c40e49ccc5799e59f9963727e36db0e8b74f080",
+      "seed": 303
+    },
+    {
+      "counterexample_id": "CE-000010",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.022425968376460756,
+        "robustness": -1.9753546632429957,
+        "steps": 72,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "041ed241649f2de493199b8f65edcbbb4369f3f1d9930dddb9f673688328e3e1",
+      "seed": 101
+    },
+    {
+      "counterexample_id": "CE-000010",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": true,
+        "final_goal_distance_m": 0.014080243528136374,
+        "robustness": -1.9670089383946714,
+        "steps": 68,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "dropped_object"
+      ],
+      "scenario_hash": "aa5f4e799fe80e6894a57d0cb0591f2de47b6f1b75f8d75e0b785f1c9fe47935",
+      "seed": 202
+    },
+    {
+      "counterexample_id": "CE-000010",
+      "outcome": {
+        "collision_count": 0,
+        "dropped": false,
+        "final_goal_distance_m": 0.32867897994775863,
+        "robustness": -1.2816076748142937,
+        "steps": 90,
+        "success": false
+      },
+      "predicate_hits": [
+        "task_failure",
+        "timeout",
+        "goal_distance_above_target_radius"
+      ],
+      "scenario_hash": "9fe4c3fc4721be11d79ca29c82becca91b7af5f442669549d6177f445dd79a17",
+      "seed": 303
+    }
+  ],
+  "scope": "P07 replay of preserved counterexamples across deterministic seeds"
+}

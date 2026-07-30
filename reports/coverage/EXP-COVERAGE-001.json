@@ -1,0 +1,4243 @@
+{
+  "base_scenario_count": 128,
+  "counterexample_scenario_count": 10,
+  "deduplicated_scenario_count": 109,
+  "experiment_id": "EXP-COVERAGE-001",
+  "gap_targeted_scenarios": [
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 0,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.01125,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.125,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260730,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.16,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.045,
+      "vertical_gravity_scale": 1.0
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 1,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.01875,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.125,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260731,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.16,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.045,
+      "vertical_gravity_scale": 1.0
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 2,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.01125,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.08,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260732,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.16,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.045,
+      "vertical_gravity_scale": 0.985
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 3,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.01125,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.08,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260733,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.16,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.045,
+      "vertical_gravity_scale": 1.0150000000000001
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 4,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.01875,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.08,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260734,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.16,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.046,
+      "vertical_gravity_scale": 1.0
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 5,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.02625,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.08,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260735,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.16,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.046,
+      "vertical_gravity_scale": 1.0
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 6,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.00375,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.08,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260736,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.1125,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.045,
+      "vertical_gravity_scale": 1.0
+    },
+    {
+      "action_latency_steps": 0,
+      "action_noise_fraction": 0.0,
+      "family": "S5_adversarial",
+      "frame_delay_steps": 0,
+      "index": 7,
+      "joint_encoder_bias_rad": 0.0,
+      "joint_encoder_noise_rad": 0.01125,
+      "object_half_extent_m": 0.02,
+      "object_mass_kg": 0.05,
+      "object_position": [
+        -0.12,
+        -0.08,
+        0.02
+      ],
+      "object_state_noise_m": 0.0,
+      "observation_dropout_probability": 0.0,
+      "ontology_id": "pick_place_core_v1",
+      "schema_version": 1,
+      "seed": 20260737,
+      "split": "train",
+      "surface_friction": 0.7,
+      "target_position": [
+        0.1125,
+        0.1,
+        0.001
+      ],
+      "target_radius_m": 0.045,
+      "vertical_gravity_scale": 1.0
+    }
+  ],
+  "report_hash": "07dcaad634d1d284859f68b172fcd3a59ccd9637e334a04486d344962b159ac9",
+  "scope": "P07 one-way parameter-bin, pairwise interaction, and family coverage",
+  "summary": {
+    "continuous_bins": 4,
+    "coverage_gap_queue": [
+      {
+        "bins": [
+          0,
+          1
+        ],
+        "gap_id": "pairwise:object_y_m:bin_0__joint_encoder_noise_rad:bin_1",
+        "kind": "pairwise",
+        "parameters": [
+          "object_y_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.625
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:object_y_m:bin_0__joint_encoder_noise_rad:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "object_y_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.625
+      },
+      {
+        "bins": [
+          1,
+          0
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_1__vertical_gravity_scale:bin_0",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "vertical_gravity_scale"
+        ],
+        "priority": 0.5625
+      },
+      {
+        "bins": [
+          1,
+          3
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_1__vertical_gravity_scale:bin_3",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "vertical_gravity_scale"
+        ],
+        "priority": 0.5625
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:target_radius_m:bin_0__joint_encoder_noise_rad:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "target_radius_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.5625
+      },
+      {
+        "bins": [
+          0,
+          3
+        ],
+        "gap_id": "pairwise:target_radius_m:bin_0__joint_encoder_noise_rad:bin_3",
+        "kind": "pairwise",
+        "parameters": [
+          "target_radius_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.5625
+      },
+      {
+        "bins": [
+          0,
+          0
+        ],
+        "gap_id": "pairwise:target_x_m:bin_0__joint_encoder_noise_rad:bin_0",
+        "kind": "pairwise",
+        "parameters": [
+          "target_x_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.5625
+      },
+      {
+        "bins": [
+          0,
+          1
+        ],
+        "gap_id": "pairwise:target_x_m:bin_0__joint_encoder_noise_rad:bin_1",
+        "kind": "pairwise",
+        "parameters": [
+          "target_x_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.5625
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:action_noise_fraction:bin_0__joint_encoder_noise_rad:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "action_noise_fraction",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.5
+      },
+      {
+        "bins": [
+          0,
+          3
+        ],
+        "gap_id": "pairwise:action_noise_fraction:bin_0__joint_encoder_noise_rad:bin_3",
+        "kind": "pairwise",
+        "parameters": [
+          "action_noise_fraction",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.5
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:object_y_m:bin_0__vertical_gravity_scale:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "object_y_m",
+          "vertical_gravity_scale"
+        ],
+        "priority": 0.5
+      },
+      {
+        "bins": [
+          1,
+          0
+        ],
+        "gap_id": "pairwise:object_y_m:bin_1__vertical_gravity_scale:bin_0",
+        "kind": "pairwise",
+        "parameters": [
+          "object_y_m",
+          "vertical_gravity_scale"
+        ],
+        "priority": 0.5
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:action_latency_steps:bin_0__joint_encoder_noise_rad:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "action_latency_steps",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.44999999999999996
+      },
+      {
+        "bins": [
+          0,
+          3
+        ],
+        "gap_id": "pairwise:action_latency_steps:bin_0__joint_encoder_noise_rad:bin_3",
+        "kind": "pairwise",
+        "parameters": [
+          "action_latency_steps",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.44999999999999996
+      },
+      {
+        "bins": [
+          2,
+          0
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_2__frame_delay_steps:bin_0",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "frame_delay_steps"
+        ],
+        "priority": 0.44999999999999996
+      },
+      {
+        "bins": [
+          2,
+          1
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_2__frame_delay_steps:bin_1",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "frame_delay_steps"
+        ],
+        "priority": 0.44999999999999996
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:joint_encoder_bias_rad:bin_0__joint_encoder_noise_rad:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          0,
+          3
+        ],
+        "gap_id": "pairwise:joint_encoder_bias_rad:bin_0__joint_encoder_noise_rad:bin_3",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          2,
+          0
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_2__object_state_noise_m:bin_0",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "object_state_noise_m"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          2,
+          1
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_2__object_state_noise_m:bin_1",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "object_state_noise_m"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          2,
+          0
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_2__observation_dropout_probability:bin_0",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "observation_dropout_probability"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          2,
+          1
+        ],
+        "gap_id": "pairwise:joint_encoder_noise_rad:bin_2__observation_dropout_probability:bin_1",
+        "kind": "pairwise",
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "observation_dropout_probability"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          0,
+          2
+        ],
+        "gap_id": "pairwise:object_half_extent_m:bin_0__joint_encoder_noise_rad:bin_2",
+        "kind": "pairwise",
+        "parameters": [
+          "object_half_extent_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.4375
+      },
+      {
+        "bins": [
+          0,
+          3
+        ],
+        "gap_id": "pairwise:object_half_extent_m:bin_0__joint_encoder_noise_rad:bin_3",
+        "kind": "pairwise",
+        "parameters": [
+          "object_half_extent_m",
+          "joint_encoder_noise_rad"
+        ],
+        "priority": 0.4375
+      }
+    ],
+    "coverage_scores": {
+      "combined": 0.9243958447780104,
+      "one_way": 0.9848484848484849,
+      "pairwise": 0.7883390494855463,
+      "scenario_family": 1.0
+    },
+    "one_way_parameter_coverage": [
+      {
+        "category": "physics",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "object_mass_kg",
+        "total_bins": 4
+      },
+      {
+        "category": "physics",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "surface_friction",
+        "total_bins": 4
+      },
+      {
+        "category": "geometry",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "object_half_extent_m",
+        "total_bins": 4
+      },
+      {
+        "category": "geometry",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "object_x_m",
+        "total_bins": 4
+      },
+      {
+        "category": "geometry",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "object_y_m",
+        "total_bins": 4
+      },
+      {
+        "category": "geometry",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "target_radius_m",
+        "total_bins": 4
+      },
+      {
+        "category": "geometry",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "target_x_m",
+        "total_bins": 4
+      },
+      {
+        "category": "geometry",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "target_y_m",
+        "total_bins": 4
+      },
+      {
+        "category": "control",
+        "coverage": 1.0,
+        "covered_bins": 5,
+        "missing_bins": [],
+        "parameter": "action_latency_steps",
+        "total_bins": 5
+      },
+      {
+        "category": "control",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "action_noise_fraction",
+        "total_bins": 4
+      },
+      {
+        "category": "sensors",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "joint_encoder_bias_rad",
+        "total_bins": 4
+      },
+      {
+        "category": "sensors",
+        "coverage": 0.75,
+        "covered_bins": 3,
+        "missing_bins": [
+          2
+        ],
+        "parameter": "joint_encoder_noise_rad",
+        "total_bins": 4
+      },
+      {
+        "category": "sensors",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "object_state_noise_m",
+        "total_bins": 4
+      },
+      {
+        "category": "sensors",
+        "coverage": 1.0,
+        "covered_bins": 5,
+        "missing_bins": [],
+        "parameter": "frame_delay_steps",
+        "total_bins": 5
+      },
+      {
+        "category": "sensors",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "observation_dropout_probability",
+        "total_bins": 4
+      },
+      {
+        "category": "environment",
+        "coverage": 1.0,
+        "covered_bins": 4,
+        "missing_bins": [],
+        "parameter": "vertical_gravity_scale",
+        "total_bins": 4
+      }
+    ],
+    "pairwise_interaction_coverage": [
+      {
+        "categories": [
+          "control",
+          "control"
+        ],
+        "coverage": 0.85,
+        "covered_interactions": 17,
+        "parameters": [
+          "action_latency_steps",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.68,
+        "covered_interactions": 17,
+        "parameters": [
+          "action_latency_steps",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "total_interactions": 25
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "action_latency_steps",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            2,
+            0
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.55,
+        "covered_interactions": 11,
+        "parameters": [
+          "action_latency_steps",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.9,
+        "covered_interactions": 18,
+        "parameters": [
+          "action_latency_steps",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.8,
+        "covered_interactions": 16,
+        "parameters": [
+          "action_latency_steps",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "environment"
+        ],
+        "coverage": 0.65,
+        "covered_interactions": 13,
+        "parameters": [
+          "action_latency_steps",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.85,
+        "covered_interactions": 17,
+        "parameters": [
+          "action_noise_fraction",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "action_noise_fraction",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.5,
+        "covered_interactions": 8,
+        "parameters": [
+          "action_noise_fraction",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "action_noise_fraction",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "control",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "action_noise_fraction",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "control",
+          "environment"
+        ],
+        "coverage": 0.625,
+        "covered_interactions": 10,
+        "parameters": [
+          "action_noise_fraction",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.6,
+        "covered_interactions": 12,
+        "parameters": [
+          "frame_delay_steps",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "sensors",
+          "environment"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 15,
+        "parameters": [
+          "frame_delay_steps",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 20,
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "environment"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "joint_encoder_bias_rad",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.55,
+        "covered_interactions": 11,
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "environment"
+        ],
+        "coverage": 0.4375,
+        "covered_interactions": 7,
+        "parameters": [
+          "joint_encoder_noise_rad",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "object_half_extent_m",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_half_extent_m",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "object_half_extent_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "object_half_extent_m",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "object_half_extent_m",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "object_half_extent_m",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 16,
+        "parameters": [
+          "object_half_extent_m",
+          "object_x_m"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_half_extent_m",
+          "object_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_half_extent_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "object_half_extent_m",
+          "target_radius_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_half_extent_m",
+          "target_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_half_extent_m",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "environment"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "object_half_extent_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "control"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "object_mass_kg",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "physics",
+          "control"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "object_mass_kg",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "object_mass_kg",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 16,
+        "parameters": [
+          "object_mass_kg",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "object_mass_kg",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_mass_kg",
+          "object_half_extent_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 16,
+        "parameters": [
+          "object_mass_kg",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_mass_kg",
+          "object_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "object_mass_kg",
+          "object_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_mass_kg",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "physics"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "object_mass_kg",
+          "surface_friction"
+        ],
+        "sample_missing_bins": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_mass_kg",
+          "target_radius_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_mass_kg",
+          "target_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_mass_kg",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "environment"
+        ],
+        "coverage": 0.625,
+        "covered_interactions": 10,
+        "parameters": [
+          "object_mass_kg",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.9,
+        "covered_interactions": 18,
+        "parameters": [
+          "object_state_noise_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "sensors",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_state_noise_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "environment"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "object_state_noise_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.85,
+        "covered_interactions": 17,
+        "parameters": [
+          "object_x_m",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_x_m",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.9,
+        "covered_interactions": 18,
+        "parameters": [
+          "object_x_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_x_m",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "object_x_m",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "object_x_m",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_x_m",
+          "object_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_x_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_x_m",
+          "target_radius_m"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "object_x_m",
+          "target_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "object_x_m",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "environment"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "object_x_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.65,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_y_m",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "object_y_m",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.7,
+        "covered_interactions": 14,
+        "parameters": [
+          "object_y_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "object_y_m",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.375,
+        "covered_interactions": 6,
+        "parameters": [
+          "object_y_m",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "object_y_m",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "object_y_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "object_y_m",
+          "target_radius_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.625,
+        "covered_interactions": 10,
+        "parameters": [
+          "object_y_m",
+          "target_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "object_y_m",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "environment"
+        ],
+        "coverage": 0.5,
+        "covered_interactions": 8,
+        "parameters": [
+          "object_y_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "sensors",
+          "environment"
+        ],
+        "coverage": 0.625,
+        "covered_interactions": 10,
+        "parameters": [
+          "observation_dropout_probability",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "control"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "surface_friction",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "physics",
+          "control"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "surface_friction",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.9,
+        "covered_interactions": 18,
+        "parameters": [
+          "surface_friction",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "surface_friction",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "surface_friction",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "surface_friction",
+          "object_half_extent_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "surface_friction",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "surface_friction",
+          "object_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "surface_friction",
+          "object_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "sensors"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 16,
+        "parameters": [
+          "surface_friction",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "surface_friction",
+          "target_radius_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "surface_friction",
+          "target_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "geometry"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 16,
+        "parameters": [
+          "surface_friction",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "physics",
+          "environment"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "surface_friction",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.8,
+        "covered_interactions": 16,
+        "parameters": [
+          "target_radius_m",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "target_radius_m",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8,
+        "covered_interactions": 16,
+        "parameters": [
+          "target_radius_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_radius_m",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.4375,
+        "covered_interactions": 7,
+        "parameters": [
+          "target_radius_m",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_radius_m",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_radius_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.625,
+        "covered_interactions": 10,
+        "parameters": [
+          "target_radius_m",
+          "target_x_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "target_radius_m",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "environment"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "target_radius_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.8,
+        "covered_interactions": 16,
+        "parameters": [
+          "target_x_m",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "target_x_m",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8,
+        "covered_interactions": 16,
+        "parameters": [
+          "target_x_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_x_m",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.4375,
+        "covered_interactions": 7,
+        "parameters": [
+          "target_x_m",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.75,
+        "covered_interactions": 12,
+        "parameters": [
+          "target_x_m",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_x_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "geometry"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_x_m",
+          "target_y_m"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "environment"
+        ],
+        "coverage": 0.6875,
+        "covered_interactions": 11,
+        "parameters": [
+          "target_x_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.95,
+        "covered_interactions": 19,
+        "parameters": [
+          "target_y_m",
+          "action_latency_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "control"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "target_y_m",
+          "action_noise_fraction"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.85,
+        "covered_interactions": 17,
+        "parameters": [
+          "target_y_m",
+          "frame_delay_steps"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 20
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.875,
+        "covered_interactions": 14,
+        "parameters": [
+          "target_y_m",
+          "joint_encoder_bias_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.5625,
+        "covered_interactions": 9,
+        "parameters": [
+          "target_y_m",
+          "joint_encoder_noise_rad"
+        ],
+        "sample_missing_bins": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 0.9375,
+        "covered_interactions": 15,
+        "parameters": [
+          "target_y_m",
+          "object_state_noise_m"
+        ],
+        "sample_missing_bins": [
+          [
+            3,
+            3
+          ]
+        ],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "sensors"
+        ],
+        "coverage": 1.0,
+        "covered_interactions": 16,
+        "parameters": [
+          "target_y_m",
+          "observation_dropout_probability"
+        ],
+        "sample_missing_bins": [],
+        "total_interactions": 16
+      },
+      {
+        "categories": [
+          "geometry",
+          "environment"
+        ],
+        "coverage": 0.8125,
+        "covered_interactions": 13,
+        "parameters": [
+          "target_y_m",
+          "vertical_gravity_scale"
+        ],
+        "sample_missing_bins": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "total_interactions": 16
+      }
+    ],
+    "scenario_count": 109,
+    "scenario_family_coverage": [
+      {
+        "covered": true,
+        "family": "S0_nominal",
+        "scenario_count": 1
+      },
+      {
+        "covered": true,
+        "family": "S1_in_distribution",
+        "scenario_count": 16
+      },
+      {
+        "covered": true,
+        "family": "S2_boundary",
+        "scenario_count": 2
+      },
+      {
+        "covered": true,
+        "family": "S3_unseen_combinations",
+        "scenario_count": 16
+      },
+      {
+        "covered": true,
+        "family": "S4_out_of_distribution",
+        "scenario_count": 16
+      },
+      {
+        "covered": true,
+        "family": "S5_adversarial",
+        "scenario_count": 26
+      },
+      {
+        "covered": true,
+        "family": "S6_fault_injection",
+        "scenario_count": 16
+      },
+      {
+        "covered": true,
+        "family": "S7_cross_simulator",
+        "scenario_count": 16
+      }
+    ]
+  }
+}

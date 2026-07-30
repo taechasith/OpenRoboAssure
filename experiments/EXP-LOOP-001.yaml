@@ -1,0 +1,29 @@
+experiment_id: EXP-LOOP-001
+phase: P07
+status: completed_negative_result_preserved
+objective: Execute System E from evidence collection through randomization revision and retraining.
+task: pick_place_v1
+robot: ora_4a
+inputs:
+  - reports/sensitivity/EXP-SENS-001.json
+  - reports/calibration/EXP-CALIBRATION-001.json
+  - reports/counterexamples/EXP-FALSIFICATION-001.json
+  - reports/counterexamples/EXP-FALSIFICATION-REPLAY-001.json
+  - reports/coverage/EXP-COVERAGE-001.json
+revision_rule: include approved P05 variables supported by sensitivity, calibration, counterexample, or coverage-gap evidence
+retraining:
+  method: p06_state_only_trainer
+  system: E_closed_loop_revision
+  seed: 77
+  environment_steps: 2048
+  note: CPU-sized P07 loop demonstration, not a P08 pilot budget
+comparison:
+  primary_metric: held_out_task_success
+  baseline_model: reports/models/p06_d_11.npz
+  system_e_model: reports/models/p07_system_e_d_77.npz
+outputs:
+  - reports/benchmarks/EXP-LOOP-001.json
+  - reports/models/p07_system_e_d_77.npz
+  - reports/tracking/p07_events.jsonl
+reproduction:
+  - uv run --locked ora loop run --output-directory reports --retrain-steps 2048

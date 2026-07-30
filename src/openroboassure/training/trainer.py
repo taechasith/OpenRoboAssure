@@ -45,10 +45,13 @@ def train_policy(
     *,
     model_directory: Path,
     tracking_path: Path,
+    artifact_prefix: str = "p06",
 ) -> dict[str, object]:
     """Train an exact-step stochastic policy and persist model/config hashes."""
     if configuration.environment_steps <= 0:
         raise ValueError("Training environment_steps must be positive")
+    if not artifact_prefix.replace("_", "").replace("-", "").isalnum():
+        raise ValueError("Training artifact_prefix must be filesystem-safe")
     sampler = ScenarioSampler(
         configuration.system, configuration.seed, configuration.selected_variables
     )
@@ -84,8 +87,8 @@ def train_policy(
             episodes += 1
     finally:
         environment.close()
-    model_path = (
-        model_directory / f"p06_{configuration.system.value.lower()}_{configuration.seed}.npz"
+    model_path = model_directory / (
+        f"{artifact_prefix}_{configuration.system.value.lower()}_{configuration.seed}.npz"
     )
     model_hash = policy.save(model_path)
     configuration_hash = _canonical_hash(configuration.to_dict())

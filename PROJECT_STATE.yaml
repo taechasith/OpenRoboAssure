@@ -1,10 +1,10 @@
 project: OpenRoboAssure
-current_phase: P06
-current_version: 0.6.0
-status: completed
+current_phase: P07
+current_version: 0.7.0
+status: completed_negative_result_preserved
 validation_level: none
-latest_commit: 38c5626
-active_branch: phase/p06-policies-sensitivity
+latest_commit: ef3f868
+active_branch: phase/p07-closed-loop
 protected_benchmark_frozen: false
 licence_audit: passed
 last_completed_gate: GATE-P06-BASELINES
@@ -16,6 +16,9 @@ known_limitations:
   - kinematic_scripted_baseline
   - learned_policy_baselines_have_zero_held_out_success_in_p06
   - p06_sensitivity_is_based_on_scripted_reference_returns
+  - p07_system_e_retraining_did_not_improve_held_out_success
+  - p07_falsification_uses_internal_verifai_compatible_api_not_external_verifai
+  - p07_retraining_budget_is_demonstration_scale
   - cross_simulator_dynamic_equivalence_not_established
   - scenario_validity_is_not_dynamic_equivalence
 protected_files:
