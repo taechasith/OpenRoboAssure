@@ -1,14 +1,14 @@
 project: OpenRoboAssure
-current_phase: P07
-current_version: 0.7.0
+current_phase: P08
+current_version: 0.8.0
 status: completed_negative_result_preserved
 validation_level: none
-latest_commit: ef3f868
-active_branch: phase/p07-closed-loop
-protected_benchmark_frozen: false
+latest_commit: 6f89074
+active_branch: phase/p08-pilot
+protected_benchmark_frozen: true
 licence_audit: passed
-last_completed_gate: GATE-P06-BASELINES
-next_required_gate: GATE-P08-PILOT
+last_completed_gate: GATE-P08-PILOT
+next_required_gate: GATE-P09-PREREGISTRATION
 open_blockers: []
 known_limitations:
   - simulation_only
@@ -19,6 +19,9 @@ known_limitations:
   - p07_system_e_retraining_did_not_improve_held_out_success
   - p07_falsification_uses_internal_verifai_compatible_api_not_external_verifai
   - p07_retraining_budget_is_demonstration_scale
+  - p08_conservative_pilot_scope_excludes_panda_and_push_to_target
+  - p08_all_five_pilot_methods_have_zero_held_out_success
+  - p08_training_budget_is_cpu_bounded
   - cross_simulator_dynamic_equivalence_not_established
   - scenario_validity_is_not_dynamic_equivalence
 protected_files:

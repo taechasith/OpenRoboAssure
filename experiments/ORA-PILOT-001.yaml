@@ -1,0 +1,41 @@
+experiment_id: ORA-PILOT-001
+phase: P08
+gate: GATE-P08-PILOT
+status: completed_negative_result_preserved
+approval: governance/approvals/GATE-P08-PILOT.yaml
+scope:
+  option: A_conservative_pilot
+  robots:
+    - ORA-4A
+  tasks:
+    - pick_place_v1
+  excluded:
+    - Panda task execution
+    - Push-to-Target
+    - physical robot validation
+methods:
+  A: no_randomization
+  B: independent_broad_uniform_p05_variables
+  C: automatic_curriculum
+  D: morris_sobol_guided_randomization
+  E: p07_closed_loop_revision
+training:
+  seeds: [11, 22, 33]
+  environment_steps_per_seed: 2048
+  total_environment_steps: 30720
+evaluation:
+  scenarios_per_method_seed: 2000
+  total_scheduled_evaluations: 30000
+  scenario_source: existing_p05_and_p07_families
+hidden_catalogue:
+  true_labels_revealed_after_results_freeze: true
+  leakage_check: required
+acceptance:
+  classified_job_rate_threshold: 0.95
+  operational_success_required: true
+outputs:
+  - reports/benchmarks/ORA-PILOT-001.json
+  - reports/models/p08_a_a_11.npz
+  - reports/tracking/p08_events.jsonl
+reproduction:
+  - uv run --locked ora benchmark pilot --output-directory reports --training-steps 2048 --evaluation-scenarios 2000 --protected-ref 2bd188e

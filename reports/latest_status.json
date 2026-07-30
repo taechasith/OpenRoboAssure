@@ -1,10 +1,10 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-30T20:17:39+07:00",
-  "current_phase": "P07",
-  "current_version": "0.7.0",
+  "generated_at": "2026-07-31T00:45:00+07:00",
+  "current_phase": "P08",
+  "current_version": "0.8.0",
   "status": "completed_negative_result_preserved",
-  "next_required_gate": "GATE-P08-PILOT",
+  "next_required_gate": "GATE-P09-PREREGISTRATION",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
@@ -16,36 +16,32 @@
     "p07_system_e_retraining_did_not_improve_held_out_success",
     "p07_falsification_uses_internal_verifai_compatible_api_not_external_verifai",
     "p07_retraining_budget_is_demonstration_scale",
+    "p08_conservative_pilot_scope_excludes_panda_and_push_to_target",
+    "p08_all_five_pilot_methods_have_zero_held_out_success",
+    "p08_training_budget_is_cpu_bounded",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],
   "latest_experiment": {
-    "experiment_id": "EXP-LOOP-001",
-    "calibration": {
-      "experiment_id": "EXP-CALIBRATION-001",
-      "status": "improved",
-      "nominal_observation_rmse": 0.03634922672861493,
-      "calibrated_map_observation_rmse": 0.0049006065045380095,
-      "relative_improvement": 0.8651798966419239
+    "experiment_id": "ORA-PILOT-001",
+    "gate": "GATE-P08-PILOT",
+    "scope": "conservative_ora_4a_pick_place_only",
+    "scheduled_evaluations": 30000,
+    "training_environment_steps": 30720,
+    "classified_job_rate": 1.0,
+    "operationally_successful": true,
+    "leakage": {
+      "passed": true,
+      "overlap_count": 0
     },
-    "falsification": {
-      "experiment_id": "EXP-FALSIFICATION-001",
-      "trials": 96,
-      "counterexamples": 10,
-      "failure_rate": 0.8645833333333334,
-      "replayed_failure_rate": 0.9333333333333333
+    "methods": {
+      "A": { "held_out_task_success": 0.0, "seed_count": 3 },
+      "B": { "held_out_task_success": 0.0, "seed_count": 3 },
+      "C": { "held_out_task_success": 0.0, "seed_count": 3 },
+      "D": { "held_out_task_success": 0.0, "seed_count": 3 },
+      "E": { "held_out_task_success": 0.0, "seed_count": 3 }
     },
-    "coverage": {
-      "experiment_id": "EXP-COVERAGE-001",
-      "combined_coverage_score": 0.9243958447780104,
-      "coverage_gap_count": 24
-    },
-    "system_e": {
-      "retraining_environment_steps": 2048,
-      "before_held_out_task_success": 0.0,
-      "after_held_out_task_success": 0.0,
-      "delta_held_out_task_success": 0.0,
-      "status": "negative_result_preserved"
-    }
+    "benchmark_defect_count": 6,
+    "report_hash": "c75cd65bfc8d65959fb46c88a0f4274d664cb0eedb19043fe5586031277a0416"
   }
 }

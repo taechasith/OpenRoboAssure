@@ -1,0 +1,62 @@
+approval_id: GATE-P08-PILOT
+project_version: 0.8.0
+decision: approved
+approved_by: taechasith
+approved_at: "2026-07-31T00:34:19+07:00"
+approval_source: user_conversation
+selected_option: A_conservative_pilot
+scope:
+  robot_task_set:
+    robots:
+      - ORA-4A
+    tasks:
+      - pick_place_v1
+    exclusions:
+      - Panda task execution adapter
+      - Push-to-Target task
+      - physical robot validation
+  methods:
+    A: no_randomization
+    B: independent_broad_uniform_p05_variables
+    C: automatic_curriculum
+    D: morris_sobol_guided_randomization
+    E: p07_closed_loop_revision
+  training:
+    seeds: [11, 22, 33]
+    failed_runs: retained_and_classified
+    method_specific_hyperparameter_tuning: prohibited
+  evaluation:
+    scenarios_per_method_seed: 2000
+    total_scheduled_evaluations: 30000
+    scenario_source: p05_p07_existing_families
+    split: evaluation
+  hidden_catalogue:
+    source: existing_p05_families_and_p07_counterexample_procedure
+    label_visibility: true_labels_revealed_only_after_result_freeze
+    leakage_check: required
+  compute_ceiling:
+    runtime: local_cpu_only
+    gpu_required: false
+    stop_rule: stop_if_projected_runtime_or_storage_exceeds_local_machine_practicality
+    storage_target: under_250_mb_new_pilot_artifacts
+acceptance_criteria:
+  - all_methods_run_for_all_approved_configurations
+  - at_least_95_percent_scheduled_jobs_terminate_with_classified_outcome
+  - licence_audit_passes
+  - no_evaluation_leakage_detected
+  - generated_data_can_be_regenerated
+  - result_package_can_be_reproduced_on_clean_environment
+  - benchmark_flaws_are_documented
+expires_when:
+  - robot_or_task_set_changes
+  - method_definitions_change
+  - seed_count_changes
+  - evaluation_count_changes
+  - hidden_catalogue_procedure_changes
+  - compute_ceiling_changes
+notes: >-
+  The project owner selected option A, the conservative pilot. This approval
+  intentionally exercises the full five-method pilot machinery on the currently
+  implemented ORA-4A Pick-and-Place stack before adding Panda task execution or
+  Push-to-Target scope. The pilot may report negative scientific results; P08
+  success is operational, not hypothesis support.

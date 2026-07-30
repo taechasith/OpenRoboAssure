@@ -14,8 +14,8 @@ gate has been satisfied.
 | P05 | Scenario and uncertainty engine | Completed — v0.5.0 released | `GATE-P05-SCENARIO-ONTOLOGY` |
 | P06 | Policies, baselines, and sensitivity | Completed — v0.6.0; preliminary learned-policy result is negative | `GATE-P06-BASELINES` |
 | P07 | Calibration, falsification, and coverage | Completed - v0.7.0; closed-loop learned-policy result remains negative | None |
-| P08 | Pilot benchmark | Not started - requires approval before implementation | `GATE-P08-PILOT` |
-| P09 | Full benchmark preregistration | Not started | `GATE-P09-PREREGISTRATION` |
+| P08 | Pilot benchmark | Completed - v0.8.0; operational pilot passed and learned-policy result remains negative | `GATE-P08-PILOT` |
+| P09 | Full benchmark preregistration | Not started - requires approval before implementation | `GATE-P09-PREREGISTRATION` |
 | P10 | Full benchmark execution | Not started | `GATE-P10-FULL-BENCHMARK` |
 | P11 | Ablation and interpretation | Not started | `GATE-P11-INTERPRETATION` |
 | P12 | Independent reproduction | Not started | `GATE-P12-REPRODUCTION` |

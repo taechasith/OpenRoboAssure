@@ -6,6 +6,7 @@ import argparse
 import json
 from pathlib import Path
 
+from openroboassure.benchmark.pilot import run_pilot_benchmark
 from openroboassure.calibration.hidden_target import run_hidden_target_calibration
 from openroboassure.coverage.reports import run_coverage_report
 from openroboassure.doctor import run_doctor
@@ -192,6 +193,14 @@ def build_parser() -> argparse.ArgumentParser:
     loop_run.add_argument("--output-directory", type=Path, default=Path("reports"))
     loop_run.add_argument("--retrain-steps", type=int, default=2048)
     loop_run.add_argument("--seed", type=int, default=20260730)
+    benchmark = subparsers.add_parser("benchmark", help="run preregistered benchmark tools")
+    benchmark_commands = benchmark.add_subparsers(dest="benchmark_command", required=True)
+    pilot = benchmark_commands.add_parser("pilot", help="run ORA-PILOT-001")
+    pilot.add_argument("--output-directory", type=Path, default=Path("reports"))
+    pilot.add_argument("--training-steps", type=int, default=2048)
+    pilot.add_argument("--evaluation-scenarios", type=int, default=2000)
+    pilot.add_argument("--root-seed", type=int, default=20260801)
+    pilot.add_argument("--protected-ref", default="2bd188e")
     doctor.add_argument(
         "--output",
         type=Path,
@@ -356,5 +365,18 @@ def main(argv: list[str] | None = None) -> int:
         if not isinstance(comparison, dict):
             raise AssertionError("Loop comparison is malformed")
         print(f"System E loop status: {comparison['status']}")
+        return 0
+    if args.command == "benchmark" and args.benchmark_command == "pilot":
+        report = run_pilot_benchmark(
+            args.output_directory,
+            training_steps=args.training_steps,
+            evaluation_scenarios_per_config=args.evaluation_scenarios,
+            root_seed=args.root_seed,
+            protected_ref=args.protected_ref,
+        )
+        acceptance = report["operational_acceptance"]
+        if not isinstance(acceptance, dict):
+            raise AssertionError("Pilot acceptance summary is malformed")
+        print(f"P08 pilot operational success: {acceptance['operationally_successful']}")
         return 0
     raise AssertionError(f"Unhandled command: {args.command}")
