@@ -1,0 +1,20 @@
+experiment_id: EXP-COVERAGE-001
+phase: P07
+status: completed
+objective: Measure scenario-family, one-way parameter-bin, and pairwise interaction coverage.
+task: pick_place_v1
+robot: ora_4a
+coverage:
+  base_scenarios: 128
+  continuous_bins: 4
+  scenario_families: all_declared_families
+  counterexamples_included: true
+metrics:
+  - one_way_parameter_bin_coverage
+  - pairwise_interaction_coverage
+  - scenario_family_coverage
+  - combined_coverage_score
+outputs:
+  - reports/coverage/EXP-COVERAGE-001.json
+reproduction:
+  - uv run --locked ora coverage report --counterexamples reports/counterexamples/EXP-FALSIFICATION-001.json

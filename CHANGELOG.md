@@ -4,6 +4,36 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [0.7.0] - 2026-07-30
+
+### Added
+
+- P07 hidden-target calibration with fixed excitation policies, observable
+  trajectory discrepancy metrics, Gaussian-error posterior fitting, prediction
+  freeze hashing, reveal-stage posterior coverage, and `ora calibrate
+  hidden-target`.
+- P07 constrained falsification search using an internal VerifAI-compatible
+  black-box API, preserved counterexample JSON files, replay across seeds, and
+  `ora falsify search` / `ora falsify replay`.
+- P07 one-way parameter-bin coverage, pairwise interaction coverage,
+  scenario-family coverage, prioritized coverage-gap queue, gap-targeted
+  scenario generation, and `ora coverage report`.
+- P07 System E closed-loop runner that combines sensitivity, calibration,
+  counterexample, and coverage evidence into a revised randomization plan, then
+  retrains and compares a CPU-sized demonstration policy.
+
+### Results
+
+- `EXP-CALIBRATION-001` improved observable trajectory RMSE from `0.036349` to
+  `0.004901`, while preserving the hidden-target reveal order.
+- `EXP-FALSIFICATION-001` found 10 preserved counterexamples in 96 trials;
+  `EXP-FALSIFICATION-REPLAY-001` replayed failures at 93.3% across three seeds.
+- `EXP-COVERAGE-001` reported a 92.4% combined coverage score and 24 prioritized
+  coverage gaps.
+- `EXP-LOOP-001` completed System E and retained the negative learned-policy
+  result: held-out task success stayed `0.0% -> 0.0%` after P07 demonstration
+  retraining.
+
 ## [0.6.0] - 2026-07-26
 
 ### Added

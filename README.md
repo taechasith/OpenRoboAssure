@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.6.0`
-- Current phase: `P06 — policies, baselines, and sensitivity`
-- Status: P06 is complete; its learned-policy result is preliminary and negative
+- Current version: `v0.7.0`
+- Current phase: `P07 - calibration, falsification, coverage, and closed loop`
+- Status: P07 is complete; System E executed and preserved a negative learned-policy result
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -47,7 +47,8 @@ The project charter, free-data policy, P04 robot/simulator set, P05 core
 scenario ontology, and P06 baseline campaign have been approved. P05 generated
 one million deterministic, constrained scenarios without external data. P06 is
 limited to ORA-4A Pick-and-Place, four fixed comparable systems, and CPU-first
-training; the next directional gate is `GATE-P08-PILOT`.
+training. P07 adds the closed-loop evidence path without introducing a new
+directional gate; the next required gate is `GATE-P08-PILOT`.
 
 The active charter materials are:
 
@@ -76,8 +77,9 @@ general allow-list.
 ## Current limitation
 
 The deterministic scripted controller succeeds in the current kinematic task,
-but every P06 learned-policy seed achieved 0% held-out task success. Therefore
-P06 does not establish learned-policy robustness, sensitivity-guided improvement,
+but every P06 learned-policy seed achieved 0% held-out task success. P07 System
+E retraining also stayed at 0% held-out success. Therefore the project does not
+establish learned-policy robustness, sensitivity-guided improvement,
 physical-robot performance, or safety. The P04 report measures identical
 canonical state mapping for ORA-4A in MuJoCo and PyBullet; it does not establish
 contact-physics fidelity or dynamic equivalence.
@@ -140,6 +142,41 @@ Reproduce the full fixed campaign locally:
 ```text
 uv sync --locked
 ora policy campaign
+```
+
+## P07 calibration, falsification, coverage, and closed loop
+
+P07 adds hidden-target calibration, an internal VerifAI-compatible black-box
+search API, counterexample replay, scenario coverage measurement, gap-targeted
+scenario generation, and a System E closed-loop runner.
+
+`EXP-CALIBRATION-001` used two limited target trajectories and 128 source
+candidates. True hidden target values were not available to the fitting method;
+predictions were hashed before reveal. Observable trajectory RMSE improved from
+`0.036349` to `0.004901` m-equivalent canonical units, an 86.5% relative
+improvement.
+
+`EXP-FALSIFICATION-001` ran 96 constrained adversarial trials against the
+scripted reference and preserved 10 counterexamples. `EXP-FALSIFICATION-REPLAY-001`
+replayed those counterexamples across three seeds each, with a 93.3% replayed
+failure rate.
+
+`EXP-COVERAGE-001` measured one-way parameter-bin, pairwise interaction, and
+scenario-family coverage over the generated scenario set plus preserved
+counterexamples. The combined coverage score was 92.4%, and the report records
+24 prioritized coverage gaps plus generated gap-targeted scenarios.
+
+`EXP-LOOP-001` revised randomization from sensitivity, calibration,
+counterexample, and coverage evidence, then trained a P07 System E policy for
+2,048 CPU demonstration steps. The before/after held-out learned-policy success
+comparison remained 0.0% -> 0.0%. This negative result is preserved and is not a
+reason to retune, discard, or selectively rerun.
+
+Reproduce the P07 loop locally:
+
+```text
+uv sync --locked
+ora loop run --output-directory reports --retrain-steps 2048
 ```
 
 ## Development quick start

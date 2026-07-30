@@ -1,0 +1,158 @@
+{
+  "candidate_search": {
+    "candidate_count": 128,
+    "observation_sigma_m": 0.015,
+    "prior": "uniform over approved P05 training bounds for calibration variables"
+  },
+  "discrepancy": {
+    "calibrated_map_observation_rmse": 0.0049006065045380095,
+    "calibrated_map_outcome_mismatch_rate": 0.0,
+    "metric": "observable trajectory RMSE over canonical state observations",
+    "nominal_observation_rmse": 0.03634922672861493,
+    "nominal_outcome_mismatch_rate": 0.0,
+    "relative_improvement": 0.8651798966419239,
+    "status": "improved"
+  },
+  "excitation_policies": [
+    "scripted_pick_place",
+    "axis_sweep"
+  ],
+  "experiment_id": "EXP-CALIBRATION-001",
+  "limited_target_trajectories": {
+    "digest": "5594e3ab7c1abf30cf15ed6ca3cf6f76b2144f60dfbfccd62e4c67bd32e9d6c1",
+    "samples": 180,
+    "trajectory_count": 2
+  },
+  "map_estimate": {
+    "candidate_id": "CAND-0078",
+    "scenario_hash": "19f5934d65171fe56a691577757c3c8b87bee544f034086e91677c6648e5eccf",
+    "values": {
+      "action_latency_steps": 2.0,
+      "frame_delay_steps": 0.0,
+      "object_x_m": -0.1247771288864582,
+      "object_y_m": -0.06173890447044811,
+      "target_x_m": 0.1537113682587047,
+      "target_y_m": 0.08670704136715258
+    }
+  },
+  "posterior": {
+    "action_latency_steps": {
+      "credible_interval_90": [
+        2.0,
+        2.0
+      ],
+      "mean": 2.0,
+      "standard_deviation": 8.764730304561316e-46
+    },
+    "frame_delay_steps": {
+      "credible_interval_90": [
+        0.0,
+        0.0
+      ],
+      "mean": 7.682049729743198e-91,
+      "standard_deviation": 8.764730304561316e-46
+    },
+    "object_x_m": {
+      "credible_interval_90": [
+        -0.1247771288864582,
+        -0.1247771288864582
+      ],
+      "mean": -0.1247771288864582,
+      "standard_deviation": 6.3699205664279225e-18
+    },
+    "object_y_m": {
+      "credible_interval_90": [
+        -0.06173890447044811,
+        -0.06173890447044811
+      ],
+      "mean": -0.06173890447044811,
+      "standard_deviation": 2.003897354903649e-18
+    },
+    "target_x_m": {
+      "credible_interval_90": [
+        0.1537113682587047,
+        0.1537113682587047
+      ],
+      "mean": 0.1537113682587047,
+      "standard_deviation": 4.5747001232410676e-18
+    },
+    "target_y_m": {
+      "credible_interval_90": [
+        0.08670704136715258,
+        0.08670704136715258
+      ],
+      "mean": 0.08670704136715258,
+      "standard_deviation": 2.4679792188520694e-18
+    }
+  },
+  "posterior_coverage_after_reveal": {
+    "coverage_rate": 0.0,
+    "covered_parameters": 0,
+    "rows": [
+      {
+        "covered": false,
+        "interval_high": 2.0,
+        "interval_low": 2.0,
+        "parameter": "action_latency_steps",
+        "true_value_after_freeze": 0.0
+      },
+      {
+        "covered": false,
+        "interval_high": 0.0,
+        "interval_low": 0.0,
+        "parameter": "frame_delay_steps",
+        "true_value_after_freeze": 2.0
+      },
+      {
+        "covered": false,
+        "interval_high": -0.1247771288864582,
+        "interval_low": -0.1247771288864582,
+        "parameter": "object_x_m",
+        "true_value_after_freeze": -0.11562324901069625
+      },
+      {
+        "covered": false,
+        "interval_high": -0.06173890447044811,
+        "interval_low": -0.06173890447044811,
+        "parameter": "object_y_m",
+        "true_value_after_freeze": -0.058436131320060786
+      },
+      {
+        "covered": false,
+        "interval_high": 0.1537113682587047,
+        "interval_low": 0.1537113682587047,
+        "parameter": "target_x_m",
+        "true_value_after_freeze": 0.15648129691577728
+      },
+      {
+        "covered": false,
+        "interval_high": 0.08670704136715258,
+        "interval_low": 0.08670704136715258,
+        "parameter": "target_y_m",
+        "true_value_after_freeze": 0.08434240678240401
+      }
+    ],
+    "total_parameters": 6
+  },
+  "report_hash": "c609426c4dc1a16849f63cd0a713b216653d46c95ea48330cf2ee53e55faf2d6",
+  "scope": "P07 hidden-target sim-to-sim calibration for ORA-4A Pick-and-Place",
+  "target_handling": {
+    "hidden_values_available_to_method": false,
+    "prediction_freeze_hash": "e70ab28eb634cce48bcd38c6aa4e6ec7552b1f6307d3fba60a07437685dbc157",
+    "reveal_order": "predictions_frozen_before_true_parameters_are_written"
+  },
+  "target_policy_transfer": {
+    "claim": "simulation_only_target_transfer_no_real_world_validation",
+    "policy": "deterministic_scripted_state_only",
+    "target_episode_steps": 90,
+    "target_episode_success": false
+  },
+  "true_hidden_parameters_after_freeze": {
+    "action_latency_steps": 0.0,
+    "frame_delay_steps": 2.0,
+    "object_x_m": -0.11562324901069625,
+    "object_y_m": -0.058436131320060786,
+    "target_x_m": 0.15648129691577728,
+    "target_y_m": 0.08434240678240401
+  }
+}

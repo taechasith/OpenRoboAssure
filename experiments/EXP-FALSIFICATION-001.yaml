@@ -1,0 +1,28 @@
+experiment_id: EXP-FALSIFICATION-001
+phase: P07
+status: completed
+objective: Search approved P05 scenario values for policy counterexamples and replay failures.
+task: pick_place_v1
+robot: ora_4a
+backend: internal_verifai_compatible_black_box_v1
+external_verifai_dependency: not_used_internal_compatible_api
+policy: deterministic_scripted_state_only
+search:
+  trials: 96
+  scenario_family: S5_adversarial
+  constraints: approved_p05_scenario_validator
+failure_predicates:
+  - task_failure
+  - dropped_object
+  - timeout
+  - collision
+  - goal_distance_above_target_radius
+replay:
+  seeds: [101, 202, 303]
+outputs:
+  - reports/counterexamples/EXP-FALSIFICATION-001.json
+  - reports/counterexamples/EXP-FALSIFICATION-REPLAY-001.json
+  - reports/counterexamples/CE-000001.json
+reproduction:
+  - uv run --locked ora falsify search
+  - uv run --locked ora falsify replay
