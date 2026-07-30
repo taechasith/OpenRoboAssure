@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.7.0`
-- Current phase: `P07 - calibration, falsification, coverage, and closed loop`
-- Status: P07 is complete; System E executed and preserved a negative learned-policy result
+- Current version: `v0.8.0`
+- Current phase: `P08 - conservative pilot benchmark`
+- Status: P08 is complete; the pilot passed operational criteria and preserved a negative learned-policy result
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -44,11 +44,12 @@ support for arbitrary robots without adapters.
 ## Governance
 
 The project charter, free-data policy, P04 robot/simulator set, P05 core
-scenario ontology, and P06 baseline campaign have been approved. P05 generated
-one million deterministic, constrained scenarios without external data. P06 is
-limited to ORA-4A Pick-and-Place, four fixed comparable systems, and CPU-first
-training. P07 adds the closed-loop evidence path without introducing a new
-directional gate; the next required gate is `GATE-P08-PILOT`.
+scenario ontology, P06 baseline campaign, and P08 conservative pilot have been
+approved. P05 generated one million deterministic, constrained scenarios
+without external data. P06 is limited to ORA-4A Pick-and-Place, four fixed
+comparable systems, and CPU-first training. P07 adds the closed-loop evidence
+path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot; the
+next required gate is `GATE-P09-PREREGISTRATION`.
 
 The active charter materials are:
 
@@ -78,11 +79,12 @@ general allow-list.
 
 The deterministic scripted controller succeeds in the current kinematic task,
 but every P06 learned-policy seed achieved 0% held-out task success. P07 System
-E retraining also stayed at 0% held-out success. Therefore the project does not
-establish learned-policy robustness, sensitivity-guided improvement,
-physical-robot performance, or safety. The P04 report measures identical
-canonical state mapping for ORA-4A in MuJoCo and PyBullet; it does not establish
-contact-physics fidelity or dynamic equivalence.
+E retraining also stayed at 0% held-out success. P08 completed the conservative
+pilot operationally, but all five pilot methods again achieved 0% held-out task
+success. Therefore the project does not establish learned-policy robustness,
+sensitivity-guided improvement, physical-robot performance, or safety. The P04
+report measures identical canonical state mapping for ORA-4A in MuJoCo and
+PyBullet; it does not establish contact-physics fidelity or dynamic equivalence.
 
 ## Scenario and uncertainty engine
 
@@ -177,6 +179,42 @@ Reproduce the P07 loop locally:
 ```text
 uv sync --locked
 ora loop run --output-directory reports --retrain-steps 2048
+```
+
+## P08 conservative pilot benchmark
+
+P08 uses the approved option A conservative pilot: ORA-4A Pick-and-Place only,
+methods A-E, three seeds per method, 2,000 evaluation scenarios per method/seed,
+and hidden catalogue labels revealed only after result freeze. Panda task
+execution and Push-to-Target remain outside this pilot scope.
+
+`ORA-PILOT-001` scheduled and completed 30,000 evaluation episodes after 30,720
+CPU-bounded training environment steps. All 15 method/seed jobs terminated with
+a classified outcome, the classified job rate was 100%, generated data
+regenerated deterministically, and no training/evaluation parameter-hash leakage
+was detected.
+
+The operational pilot succeeded, but every method recorded 0% held-out task
+success:
+
+| Method | Seeds | Evaluation episodes | Held-out success |
+|---|---:|---:|---:|
+| A - no randomization | 3 | 6,000 | 0% |
+| B - broad independent uniform | 3 | 6,000 | 0% |
+| C - automatic curriculum | 3 | 6,000 | 0% |
+| D - Morris/Sobol guided | 3 | 6,000 | 0% |
+| E - P07 closed-loop revision | 3 | 6,000 | 0% |
+
+The report records six benchmark defects: zero learned-policy success for all
+five methods and the deliberately conservative scope excluding Panda and
+Push-to-Target. These are preserved results and should inform the P09
+preregistration decision.
+
+Reproduce the P08 pilot locally:
+
+```text
+uv sync --locked
+ora benchmark pilot --output-directory reports --training-steps 2048 --evaluation-scenarios 2000 --protected-ref 2bd188e
 ```
 
 ## Development quick start

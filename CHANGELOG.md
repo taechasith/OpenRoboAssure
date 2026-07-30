@@ -4,6 +4,33 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [0.8.0] - 2026-07-31
+
+### Added
+
+- `GATE-P08-PILOT` approval record for conservative option A: ORA-4A
+  Pick-and-Place only, methods A-E, three seeds per method, 2,000 evaluations
+  per method/seed, hidden catalogue reveal after result freeze, and local
+  CPU-only compute ceiling.
+- `ora benchmark pilot` and the `openroboassure.benchmark` package for
+  preregistered pilot execution, protected-file hashing from committed blobs,
+  frozen evaluation seeds, hidden-catalogue reveal, leakage checks,
+  operational acceptance reporting, benchmark-defect reporting, and full
+  benchmark change proposals.
+- `ORA-PILOT-001` manifest, report, tracking events, and 15 P08 pilot model
+  artifacts.
+
+### Results
+
+- `ORA-PILOT-001` completed 15 method/seed jobs and 30,000 scheduled evaluation
+  episodes with a 100% classified job rate.
+- No training/evaluation parameter-hash leakage was detected, and the frozen
+  evaluation catalogue regenerated deterministically.
+- The pilot passed operational criteria, but all five methods recorded 0%
+  held-out task success. This negative result is retained.
+- Benchmark defects recorded: zero learned-policy success for methods A-E, plus
+  the deliberately conservative scope excluding Panda and Push-to-Target.
+
 ## [0.7.0] - 2026-07-30
 
 ### Added

@@ -17,6 +17,11 @@ remain agent-autonomous as defined in the master build guide.
   and Push-to-Target remain outside the approved pilot scope. The pilot success
   criterion is operational reproducibility and benchmark-defect discovery, not
   support for the research hypotheses.
+- **Evidence:** `ORA-PILOT-001` completed 30,000 scheduled evaluation episodes
+  with a 100% classified job rate, deterministic catalogue regeneration, and
+  zero detected training/evaluation parameter-hash leakage. All five methods
+  recorded 0% held-out task success; the negative result and benchmark defects
+  are preserved for P09 preregistration.
 
 ## Recorded — P07 closed-loop implementation
 
