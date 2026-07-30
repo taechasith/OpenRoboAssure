@@ -1,14 +1,14 @@
 project: OpenRoboAssure
-current_phase: P07
-current_version: 0.7.0
-status: completed_negative_result_preserved
+current_phase: P08
+current_version: 0.8.0
+status: gate_approved
 validation_level: none
-latest_commit: ef3f868
-active_branch: phase/p07-closed-loop
+latest_commit: pending_p08_gate_commit
+active_branch: phase/p08-pilot
 protected_benchmark_frozen: false
 licence_audit: passed
-last_completed_gate: GATE-P06-BASELINES
-next_required_gate: GATE-P08-PILOT
+last_completed_gate: GATE-P08-PILOT
+next_required_gate: GATE-P09-PREREGISTRATION
 open_blockers: []
 known_limitations:
   - simulation_only

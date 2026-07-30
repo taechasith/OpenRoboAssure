@@ -4,6 +4,20 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Approved — GATE-P08-PILOT
+
+- **Status:** approved on 2026-07-31
+- **Scope:** conservative pilot option A: ORA-4A Pick-and-Place only; methods
+  A-E; three training seeds per method; 2,000 evaluation scenarios per
+  method/seed for 30,000 scheduled evaluations; hidden catalogue labels revealed
+  only after result freeze; local CPU-only compute ceiling.
+- **Decision record:**
+  [GATE-P08-PILOT.yaml](approvals/GATE-P08-PILOT.yaml)
+- **Consequence:** P08 pilot implementation may proceed. Panda task execution
+  and Push-to-Target remain outside the approved pilot scope. The pilot success
+  criterion is operational reproducibility and benchmark-defect discovery, not
+  support for the research hypotheses.
+
 ## Recorded — P07 closed-loop implementation
 
 - **Status:** implemented on 2026-07-30 without a new directional gate.
