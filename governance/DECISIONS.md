@@ -4,6 +4,23 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Recorded — P10 full benchmark execution
+
+- **Status:** completed on 2026-08-02, pending `GATE-P11-INTERPRETATION`
+- **Scope:** executed frozen `ORA-BENCH-001` exactly under the P09 conservative
+  scope: ORA-4A Pick-and-Place only; methods A-E; five seeds per method;
+  10,000 hidden evaluation scenarios per method/seed; 250,000 scheduled
+  evaluation episodes.
+- **Result package:** `reports/benchmarks/ORA-BENCH-001.json`
+- **GitHub graph:** `reports/benchmarks/ORA-BENCH-001.github.md`
+- **Evidence:** all 25 method/seed jobs completed and classified; protected
+  hashes verified; licence audit passed; hidden catalogue revealed only after
+  result freeze; no training/evaluation parameter-hash leakage was detected.
+- **Outcome:** methods A-E all recorded 0% mean held-out task success. This is a
+  preserved negative result, not evidence of learned-policy robustness.
+- **Consequence:** final interpretation, supported claims, and limitations must
+  be approved under `GATE-P11-INTERPRETATION` before public claims are merged.
+
 ## Approved — GATE-P09-PREREGISTRATION
 
 - **Status:** approved on 2026-08-01

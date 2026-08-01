@@ -12,8 +12,8 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 ## Project status
 
 - Current version: `v0.9.0`
-- Current phase: `P09 - full benchmark preregistration`
-- Status: P09 is preregistered; full evaluation has not been run
+- Current phase: `P10 - full benchmark execution`
+- Status: P10 completed; negative learned-policy result preserved pending interpretation
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -45,7 +45,8 @@ support for arbitrary robots without adapters.
 
 The project charter, free-data policy, P04 robot/simulator set, P05 core
 scenario ontology, P06 baseline campaign, P08 conservative pilot, and P09 full
-benchmark preregistration have been approved. P05 generated one million deterministic, constrained scenarios
+benchmark preregistration have been approved. P10 full benchmark execution is
+complete pending interpretation. P05 generated one million deterministic, constrained scenarios
 without external data. P06 is limited to ORA-4A Pick-and-Place, four fixed
 comparable systems, and CPU-first training. P07 adds the closed-loop evidence
 path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot; the
@@ -82,7 +83,8 @@ The deterministic scripted controller succeeds in the current kinematic task,
 but every P06 learned-policy seed achieved 0% held-out task success. P07 System
 E retraining also stayed at 0% held-out success. P08 completed the conservative
 pilot operationally, but all five pilot methods again achieved 0% held-out task
-success. Therefore the project does not establish learned-policy robustness,
+success. P10 completed the preregistered full benchmark, and methods A-E again
+recorded 0% mean held-out task success. Therefore the project does not establish learned-policy robustness,
 sensitivity-guided improvement, physical-robot performance, or safety. The P04
 report measures identical canonical state mapping for ORA-4A in MuJoCo and
 PyBullet; it does not establish contact-physics fidelity or dynamic equivalence.
@@ -238,6 +240,29 @@ method-development code until result freeze. Protected hashes are recorded in
 
 Run P10 only after verifying the frozen hashes and licence audit. P09 does not
 claim improved policy performance, physical validation, or real-world safety.
+
+## P10 full benchmark execution
+
+`ORA-BENCH-001` completed the frozen conservative full benchmark: methods A-E,
+five seeds per method, and 10,000 hidden evaluation scenarios per method/seed.
+All 25 method/seed jobs completed and classified, for 250,000 scheduled
+evaluation episodes. The protected-hash preflight passed, the licence audit
+passed, the hidden catalogue was revealed only after result freeze, and no
+training/evaluation parameter-hash leakage was detected.
+
+Every method recorded 0% mean held-out task success:
+
+| Method | Seeds | Evaluation episodes | Held-out success |
+|---|---:|---:|---:|
+| A - no randomization | 5 | 50,000 | 0% |
+| B - broad independent uniform | 5 | 50,000 | 0% |
+| C - automatic curriculum | 5 | 50,000 | 0% |
+| D - Morris/Sobol guided | 5 | 50,000 | 0% |
+| E - P07 closed-loop revision | 5 | 50,000 | 0% |
+
+The GitHub-readable benchmark graph is
+[`reports/benchmarks/ORA-BENCH-001.github.md`](reports/benchmarks/ORA-BENCH-001.github.md).
+Interpretation and final claims require `GATE-P11-INTERPRETATION`.
 
 ## Development quick start
 

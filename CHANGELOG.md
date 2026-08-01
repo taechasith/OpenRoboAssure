@@ -4,6 +4,22 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+### Added
+
+- P10 `ORA-BENCH-001` full benchmark result package, execution logs, tracking
+  events, 25 model artifacts, and GitHub-renderable Mermaid benchmark graph.
+
+### Results
+
+- `ORA-BENCH-001` completed all 25 method/seed jobs and 250,000 scheduled
+  evaluation episodes with a 100% classified job rate.
+- Protected-hash verification, licence audit, and training/evaluation leakage
+  checks passed; leakage overlap count was 0.
+- The hidden catalogue was revealed after result freeze and archived in the
+  result package with 10,000 entries.
+- All five preregistered methods recorded 0% mean held-out task success. This
+  negative result is preserved pending `GATE-P11-INTERPRETATION`.
+
 ## [0.9.0] - 2026-08-01
 
 ### Added
