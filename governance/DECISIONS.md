@@ -4,6 +4,28 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Approved — GATE-P09-PREREGISTRATION
+
+- **Status:** approved on 2026-08-01
+- **Scope:** conservative option A preregistration for `ORA-BENCH-001`: ORA-4A
+  Pick-and-Place only; methods A-E; five training seeds; 100,000 training
+  environment steps per method/seed; 10,000 hidden evaluation scenarios per
+  method/seed for 250,000 scheduled evaluations; hidden seed and failure
+  catalogue values committed by digest only until result freeze; local or
+  approved free-compute ceiling.
+- **Decision record:**
+  [GATE-P09-PREREGISTRATION.yaml](approvals/GATE-P09-PREREGISTRATION.yaml)
+- **Manifest:**
+  [ORA-BENCH-001.yaml](../experiments/preregistered/ORA-BENCH-001.yaml)
+- **Consequence:** P10 full benchmark execution may proceed only if protected
+  hashes verify and no frozen benchmark file changes. Panda, UR5e,
+  Push-to-Target, insertion, physical validation, and cross-simulator dynamic
+  equivalence claims remain outside the preregistered benchmark.
+- **Evidence basis:** P08 completed operationally but all five methods had 0%
+  held-out success. The preregistration therefore prioritizes a rigorous,
+  hidden, simulation-only quantification of the validated ORA-4A scope over
+  unsupported breadth.
+
 ## Approved — GATE-P08-PILOT
 
 - **Status:** approved on 2026-07-31

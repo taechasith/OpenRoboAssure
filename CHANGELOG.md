@@ -4,6 +4,29 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [0.9.0] - 2026-08-01
+
+### Added
+
+- `GATE-P09-PREREGISTRATION` approval record for conservative option A:
+  ORA-4A Pick-and-Place only, methods A-E, five training seeds, 10,000 hidden
+  evaluation scenarios per method/seed, and a local/free-compute ceiling.
+- `experiments/preregistered/ORA-BENCH-001.yaml` as the frozen full benchmark
+  manifest for the validated conservative scope.
+- Public SHA-256 commitments for the hidden evaluation set and hidden failure
+  catalogue without committing hidden seeds, scenario hashes, parameter hashes,
+  labels, or catalogue entries.
+- Frozen `analysis/statistical_plan.py` helpers and P09 contract tests for
+  commitment isolation, deterministic catalogue construction, Holm correction,
+  bootstrap intervals, and lower-tail CVaR.
+
+### Governance
+
+- P09 preserves the P08 all-zero learned-policy result and prohibits claims of
+  method superiority, physical validation, real-world safety, or regulatory
+  compliance unless later preregistered evidence supports them.
+- P10 may execute only against the frozen manifest and protected hashes.
+
 ## [0.8.0] - 2026-07-31
 
 ### Added

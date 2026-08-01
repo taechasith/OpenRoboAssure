@@ -1,0 +1,18 @@
+benchmark_id: ORA-BENCH-001
+gate: GATE-P09-PREREGISTRATION
+schema_version: 1
+hidden_material_status: withheld_until_results_freeze
+evaluation_scope:
+  robots:
+    - ORA-4A
+  tasks:
+    - pick_place_v1
+  hidden_scenarios_per_robot_task: 10000
+  common_hidden_set_for_all_methods: true
+commitments:
+  evaluation_scenario_set_sha256: 78c923242d3156fe37b38156b9aa1df4541c9cf11fb4204997412e753d636d68
+  evaluation_parameter_set_sha256: d41aa89b80f77a51b125b552e174671fff19bd9dbe058d2dcda32831973e92c8
+isolation:
+  contains_hidden_seed_values: false
+  contains_scenario_hashes: false
+  contains_parameter_hashes: false

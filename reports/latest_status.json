@@ -1,10 +1,10 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-07-31T00:45:00+07:00",
-  "current_phase": "P08",
-  "current_version": "0.8.0",
-  "status": "completed_negative_result_preserved",
-  "next_required_gate": "GATE-P09-PREREGISTRATION",
+  "generated_at": "2026-08-01T19:56:19+07:00",
+  "current_phase": "P09",
+  "current_version": "0.9.0",
+  "status": "preregistered_pending_full_evaluation",
+  "next_required_gate": "GATE-P11-INTERPRETATION",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
@@ -19,29 +19,21 @@
     "p08_conservative_pilot_scope_excludes_panda_and_push_to_target",
     "p08_all_five_pilot_methods_have_zero_held_out_success",
     "p08_training_budget_is_cpu_bounded",
+    "p09_preregistration_keeps_full_benchmark_scope_to_ora4a_pick_place",
+    "p09_hidden_evaluation_values_are_committed_by_digest_only_until_result_freeze",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],
   "latest_experiment": {
-    "experiment_id": "ORA-PILOT-001",
-    "gate": "GATE-P08-PILOT",
+    "experiment_id": "ORA-BENCH-001",
+    "gate": "GATE-P09-PREREGISTRATION",
     "scope": "conservative_ora_4a_pick_place_only",
-    "scheduled_evaluations": 30000,
-    "training_environment_steps": 30720,
-    "classified_job_rate": 1.0,
-    "operationally_successful": true,
-    "leakage": {
-      "passed": true,
-      "overlap_count": 0
-    },
-    "methods": {
-      "A": { "held_out_task_success": 0.0, "seed_count": 3 },
-      "B": { "held_out_task_success": 0.0, "seed_count": 3 },
-      "C": { "held_out_task_success": 0.0, "seed_count": 3 },
-      "D": { "held_out_task_success": 0.0, "seed_count": 3 },
-      "E": { "held_out_task_success": 0.0, "seed_count": 3 }
-    },
-    "benchmark_defect_count": 6,
-    "report_hash": "c75cd65bfc8d65959fb46c88a0f4274d664cb0eedb19043fe5586031277a0416"
+    "status": "preregistered_pending_full_evaluation",
+    "scheduled_evaluations": 250000,
+    "training_environment_steps": 2500000,
+    "hidden_material_status": "withheld_until_results_freeze",
+    "public_commitment": "benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml",
+    "protected_hashes": "benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml",
+    "full_evaluation_results_exist": false
   }
 }

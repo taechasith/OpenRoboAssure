@@ -1,0 +1,51 @@
+benchmark_id: ORA-BENCH-001
+gate: GATE-P09-PREREGISTRATION
+schema_version: 1
+hash_source: git_index
+hash_algorithm: SHA-256
+generated_at: "2026-08-01T19:56:19+07:00"
+self_hash_file_excluded: benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml
+combined_hash: 610310521a7cb6f9c8007417a54671602dd1e521ef7aba80f644c7d5211ca858
+files:
+  - path: DATA_LICENSE
+    sha256: 67cfbf1e6b7ba2d5464f07c42fbaec79331423da0a54e1e89e9b7f97fcaf472b
+  - path: DATA_POLICY.md
+    sha256: 1ccffdecf87086ff3e6e0325c81d397a826c5d1493e55727b5ea866a5736aecb
+  - path: LICENSE
+    sha256: 50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a
+  - path: MASTER_BUILD_GUIDE.md
+    sha256: 4c0032b9045e4dd19f6dbe0c62d88570c21f8b0945423f308d295944f93c6fcf
+  - path: PROJECT_STATE.yaml
+    sha256: aa00d3452a562752ba5e11a964612a0a3bc431daf0ad31a9a32c6ef59f139518
+  - path: README.md
+    sha256: f73ef4cf80394cbd4de47d02d3ba878bebed9c6083d86747d20a3504dd8c55ee
+  - path: analysis/statistical_plan.py
+    sha256: 8a74d4af31f5200fc0bf5edd4ec7d60a1d6a141d13777f7223bd40df7a5ede57
+  - path: benchmarks/evaluation_sets/ORA-BENCH-001.commitment.yaml
+    sha256: 6db66d32adaea67b3f510081726878cb819a4b867230e78a3f6533dcc405793b
+  - path: benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml
+    sha256: a5d266a4cb8c348915dbcebd9d2955e12cfa1bb622575c22965ea55dfc08079d
+  - path: experiments/preregistered/ORA-BENCH-001.yaml
+    sha256: 48481d225f54248d179ae451ed2cccf87f18a3f705d77ade9e25322caa23eafc
+  - path: governance/DECISIONS.md
+    sha256: 6a1cec3bd57be64cc5dada4428d1b290deb3bddcc84d99e0227c5d93ce8352a3
+  - path: governance/approvals/GATE-P00-CHARTER.yaml
+    sha256: 5727e6c81de35a9a09293085667ded7d26aa2ac1cd8e7f94e038f26456ea7119
+  - path: governance/approvals/GATE-P02-DATA-POLICY.yaml
+    sha256: 1790ddce16ff4d7a67fe2a374c0b4b614a1135c849218f5eebfd6673389d218e
+  - path: governance/approvals/GATE-P04-ROBOT-SET.yaml
+    sha256: eaa29f179579e56e4f08eb49a4bd5e01dc445674198eff5d16a8242ef4041bef
+  - path: governance/approvals/GATE-P05-SCENARIO-ONTOLOGY.yaml
+    sha256: ab747025058935de2660d0922e1c8dd8c40f3335bc95c9645aa6182941f9d70d
+  - path: governance/approvals/GATE-P06-BASELINES.yaml
+    sha256: f6ee483be6313f62d815bbc70e8c371c581b29659a84938ccd7761469f52ab5c
+  - path: governance/approvals/GATE-P08-PILOT.yaml
+    sha256: 3f3348cef88d59a7851f33018bfaf959b0b46bc625fa0afa980e13a63c59bb77
+  - path: governance/approvals/GATE-P09-PREREGISTRATION.yaml
+    sha256: 9d6922cb99b89c9809010efe5f34feaf3463bf4f7b657b782ff067f901999b43
+  - path: pyproject.toml
+    sha256: a1340a3f6eb2fefa4f1c5551d84c628cd2ed0cd31e97465e1e1bd68a004566ca
+  - path: src/openroboassure/benchmark/preregistration.py
+    sha256: d0d6c34b9829f5900d891d8ca06b833c3894167bc5ffe152902d3454c37dc54e
+  - path: uv.lock
+    sha256: 293a067fe83eed33aa4ee0fc000c3404f774841b3987297b191057b8754e9403
