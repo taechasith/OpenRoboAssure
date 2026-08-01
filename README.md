@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.8.0`
-- Current phase: `P08 - conservative pilot benchmark`
-- Status: P08 is complete; the pilot passed operational criteria and preserved a negative learned-policy result
+- Current version: `v0.9.0`
+- Current phase: `P09 - full benchmark preregistration`
+- Status: P09 is preregistered; full evaluation has not been run
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -44,12 +44,13 @@ support for arbitrary robots without adapters.
 ## Governance
 
 The project charter, free-data policy, P04 robot/simulator set, P05 core
-scenario ontology, P06 baseline campaign, and P08 conservative pilot have been
-approved. P05 generated one million deterministic, constrained scenarios
+scenario ontology, P06 baseline campaign, P08 conservative pilot, and P09 full
+benchmark preregistration have been approved. P05 generated one million deterministic, constrained scenarios
 without external data. P06 is limited to ORA-4A Pick-and-Place, four fixed
 comparable systems, and CPU-first training. P07 adds the closed-loop evidence
 path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot; the
-next required gate is `GATE-P09-PREREGISTRATION`.
+P09 freezes `ORA-BENCH-001` before full evaluation. The next interpretation
+gate after execution is `GATE-P11-INTERPRETATION`.
 
 The active charter materials are:
 
@@ -216,6 +217,27 @@ Reproduce the P08 pilot locally:
 uv sync --locked
 ora benchmark pilot --output-directory reports --training-steps 2048 --evaluation-scenarios 2000 --protected-ref 2bd188e
 ```
+
+## P09 full benchmark preregistration
+
+P09 freezes `ORA-BENCH-001` under conservative option A. The full benchmark is
+simulation-only and limited to ORA-4A Pick-and-Place, methods A-E, five
+training seeds per method, and 10,000 hidden evaluation scenarios per
+method/seed. This schedules 250,000 evaluation episodes and up to 2,500,000
+training environment steps.
+
+The hidden evaluation set and hidden failure catalogue are committed by digest
+only:
+
+- `benchmarks/evaluation_sets/ORA-BENCH-001.commitment.yaml`
+- `benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml`
+
+The private seed package is intentionally not committed and must remain outside
+method-development code until result freeze. Protected hashes are recorded in
+`benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml`.
+
+Run P10 only after verifying the frozen hashes and licence audit. P09 does not
+claim improved policy performance, physical validation, or real-world safety.
 
 ## Development quick start
 

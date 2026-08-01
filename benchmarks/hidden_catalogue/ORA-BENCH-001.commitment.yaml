@@ -1,0 +1,28 @@
+benchmark_id: ORA-BENCH-001
+gate: GATE-P09-PREREGISTRATION
+schema_version: 1
+hidden_material_status: withheld_until_results_freeze
+scope:
+  robots:
+  - ORA-4A
+  tasks:
+  - pick_place_v1
+  methods:
+  - A
+  - B
+  - C
+  - D
+  - E
+  training_seeds: 5
+  evaluation_scenarios_per_robot_task: 10000
+commitments:
+  hidden_seed_package_sha256: 34e28508bc361ad08ccd1f1f6ebbcc0bfb673cebc081b1a7764f57b5cecbcff7
+  evaluation_scenario_set_sha256: 78c923242d3156fe37b38156b9aa1df4541c9cf11fb4204997412e753d636d68
+  evaluation_parameter_set_sha256: d41aa89b80f77a51b125b552e174671fff19bd9dbe058d2dcda32831973e92c8
+  hidden_failure_catalogue_sha256: cb55398231e49d7f2f88892aa695117d7d583f6f80d932a96b6c4111de4248ac
+isolation:
+  contains_hidden_seed_values: false
+  contains_scenario_hashes: false
+  contains_parameter_hashes: false
+  contains_hidden_failure_labels: false
+  private_seed_package_committed: false

@@ -1,0 +1,166 @@
+benchmark_id: ORA-BENCH-001
+phase: P09
+gate: GATE-P09-PREREGISTRATION
+status: preregistered_pending_full_evaluation
+approval: governance/approvals/GATE-P09-PREREGISTRATION.yaml
+decision:
+  selected_option: A_conservative_preregistration
+  approved_at: "2026-08-01T19:56:19+07:00"
+  rationale:
+    - P08 completed operationally but all five pilot methods had 0% held-out success.
+    - Expanding to additional robot/task claims before method success improves would weaken interpretability.
+    - A larger hidden ORA-4A Pick-and-Place evaluation can quantify the current negative result rigorously.
+scope:
+  validation_level: simulation_only
+  robots:
+    - ORA-4A
+  tasks:
+    - pick_place_v1
+  included_scenario_families:
+    - S1_in_distribution
+    - S2_boundary
+    - S3_unseen_combinations
+    - S4_out_of_distribution
+    - S5_adversarial
+    - S6_fault_injection
+  excluded:
+    - Panda task execution
+    - UR5e task execution
+    - Push-to-Target
+    - precision insertion
+    - physical robot validation
+    - real-world safety or reliability claims
+    - cross-simulator dynamic equivalence claims
+hypotheses:
+  - id: H1
+    title: closed_loop_revision_improves_primary_success
+    preregistered_rule: >
+      Method E may be claimed better than A-D only if paired comparisons on the
+      common hidden evaluation set show a strictly positive primary-success
+      effect against each comparator after Holm correction, with the bootstrap
+      95% confidence interval for each effect excluding zero.
+    fallback_interpretation: negative_or_inconclusive_result_preserved
+  - id: H2
+    title: guided_randomization_improves_worst_case_success
+    preregistered_rule: >
+      Methods D or E may be claimed better for worst-case behavior only if lower-tail
+      CVaR and fifth-percentile scenario-family success both improve over A and B
+      under the same hidden evaluation set.
+    fallback_interpretation: negative_or_inconclusive_result_preserved
+  - id: H3
+    title: benchmark_pipeline_reproducibility
+    preregistered_rule: >
+      The software benchmark succeeds operationally only if all completed and failed
+      runs are classified, protected hashes verify, hidden catalogues can be revealed
+      from the sealed material, and outputs reproduce from committed code and seeds.
+methods:
+  included:
+    - A
+    - B
+    - C
+    - D
+    - E
+  definitions:
+    A: no_randomization
+    B: independent_broad_uniform_p05_variables
+    C: automatic_curriculum_p05_variables
+    D: morris_sobol_guided_randomization
+    E: p07_closed_loop_revision
+  frozen_policy_class: state_only_64x64_numpy_mlp
+  no_method_tuning_after_evaluation_starts: true
+training:
+  seeds:
+    - 11
+    - 22
+    - 33
+    - 44
+    - 55
+  environment_steps_per_method_seed: 100000
+  total_max_environment_steps: 2500000
+  equal_budget_required: true
+evaluation:
+  hidden_scenarios_per_robot_task: 10000
+  total_scheduled_evaluations: 250000
+  common_hidden_set_for_all_methods: true
+  max_episode_steps: 90
+  total_max_evaluation_environment_steps: 22500000
+  hidden_material:
+    public_commitment: benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml
+    evaluation_set_commitment: benchmarks/evaluation_sets/ORA-BENCH-001.commitment.yaml
+    private_seed_package: private/p09/ORA-BENCH-001-sealed-seed-package.json
+    private_seed_package_committed: false
+    reveal_after_results_freeze: true
+  leakage_controls:
+    require_train_evaluation_parameter_hash_disjointness: true
+    hidden_values_unavailable_to_method_development_code: true
+primary_outcome:
+  name: primary_held_out_task_success
+  unit: binary_success_rate
+  success_definition: task_success_true_at_episode_termination
+secondary_outcomes:
+  - drop_rate
+  - collision_rate
+  - mean_completion_steps
+  - fifth_percentile_scenario_family_success
+  - failure_discovery_rate_after_hidden_catalogue_reveal
+statistical_plan:
+  frozen_file: analysis/statistical_plan.py
+  confidence_interval: bootstrap_95_percent
+  planned_pairwise_comparisons:
+    - E_vs_A
+    - E_vs_B
+    - E_vs_C
+    - E_vs_D
+    - D_vs_A
+    - D_vs_B
+    - D_vs_C
+  multiple_comparison_correction: holm
+  effect_sizes:
+    - percentage_point_difference
+    - odds_ratio_when_estimable
+  additional_summaries:
+    - lower_tail_cvar
+    - scenario_family_success
+    - classified_job_rate
+exclusion_policy:
+  legitimate_poor_performance: never_exclude_or_retry_for_score_improvement
+  infrastructure_failure: classify_and_retry_only_under_failure_recovery_policy
+  invalid_generated_scenario: stop_if_global_validity_bounds_are_violated
+  missing_data: report_as_classified_failure_unless_recovery_policy_allows_retry
+  protected_hash_mismatch: stop_full_benchmark
+compute_ceiling:
+  allowed_profile: local_or_approved_free_compute
+  gpu_required: false
+  max_training_environment_steps: 2500000
+  max_evaluation_episodes: 250000
+  max_evaluation_environment_steps: 22500000
+  max_new_artifact_storage_gb: 2
+  stop_if_projected_to_exceed_ceiling: true
+storage_plan:
+  benchmark_results_root: reports/benchmarks
+  model_artifacts_root: reports/models
+  tracking_root: reports/tracking
+  hidden_material_root: private/p09
+  preserve_failed_runs: true
+failure_recovery_plan:
+  max_retries_per_infrastructure_failure: 1
+  max_total_infrastructure_failure_rate: 0.05
+  retry_requires_same_method_seed_and_hidden_scenario_set: true
+  retry_legitimate_poor_performance: false
+analysis_validation_tests:
+  - tests/unit/test_p09_preregistration.py
+integrity:
+  protected_hashes: benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml
+  evaluator_isolation_verified: true
+  full_evaluation_results_exist_before_approval: false
+  benchmark_id_fixed: true
+permitted_claims:
+  - simulation_only_benchmark_preregistered
+  - operational_reproducibility_claim_if_p10_hashes_and_reproduction_pass
+  - statistical_method_comparison_claims_only_if_preregistered_tests_support_them
+prohibited_claims:
+  - physical_robot_validation
+  - real_world_safety
+  - regulatory_compliance
+  - sim_to_real_reliability
+  - unqualified_method_superiority_without_preregistered_support

@@ -10,3 +10,4 @@ build/
 reports/environment/*.json
 !reports/environment/.gitkeep
 MUJOCO_LOG.TXT
+private/

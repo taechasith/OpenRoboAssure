@@ -1,0 +1,76 @@
+approval_id: GATE-P09-PREREGISTRATION
+project_version: 0.9.0
+decision: approved
+approved_by: project_owner
+approved_at: "2026-08-01T19:56:19+07:00"
+selected_option: A_conservative_preregistration
+scope:
+  experiment_manifest: experiments/preregistered/ORA-BENCH-001.yaml
+  benchmark_id: ORA-BENCH-001
+  robots:
+    - ORA-4A
+  tasks:
+    - pick_place_v1
+  methods:
+    - A
+    - B
+    - C
+    - D
+    - E
+  training_seeds:
+    - 11
+    - 22
+    - 33
+    - 44
+    - 55
+  max_training_steps: 2500000
+  max_simulation_evaluations: 250000
+  max_evaluation_environment_steps: 22500000
+  allowed_compute_profile: local_or_approved_free_compute
+  public_commitment: benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml
+  protected_hashes: benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml
+approved_outcomes:
+  primary:
+    - primary_held_out_task_success
+  secondary:
+    - drop_rate
+    - collision_rate
+    - mean_completion_steps
+    - fifth_percentile_scenario_family_success
+    - failure_discovery_rate_after_hidden_catalogue_reveal
+approved_statistical_plan:
+  frozen_file: analysis/statistical_plan.py
+  confidence_interval: bootstrap_95_percent
+  multiple_comparison_correction: holm
+  planned_pairwise_comparisons:
+    - E_vs_A
+    - E_vs_B
+    - E_vs_C
+    - E_vs_D
+    - D_vs_A
+    - D_vs_B
+    - D_vs_C
+exclusion_policy:
+  legitimate_poor_performance: never_exclude_or_retry_for_score_improvement
+  infrastructure_failure: retry_once_then_classify_if_unresolved
+  protected_hash_mismatch: stop_full_benchmark
+  unplanned_methodological_decision: stop_for_human_review
+permitted_claims:
+  - simulation_only_benchmark_preregistered
+  - operational_reproducibility_claim_if_p10_hashes_and_reproduction_pass
+  - statistical_method_comparison_claims_only_if_preregistered_tests_support_them
+prohibited_claims:
+  - physical_robot_validation
+  - real_world_safety
+  - regulatory_compliance
+  - sim_to_real_reliability
+expires_when:
+  - protected_manifest_changes
+  - evaluation_code_changes
+  - hidden_catalogue_commitment_changes
+  - statistical_plan_changes
+  - protected_hashes_fail_verification
+notes: >
+  Approval records the owner's choice of option A. Hidden seeds and hidden failure
+  labels are committed only by SHA-256 digest before full evaluation; they must be
+  revealed only after result freeze.
