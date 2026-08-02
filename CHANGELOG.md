@@ -6,6 +6,25 @@ All notable project changes will be documented here.
 
 ### Added
 
+- `ora reproduce smoke` for clean software reproduction certificates covering
+  offline doctor, licence audit, deterministic baseline, scenario validity, and
+  public P10 smoke benchmark execution without private seed material.
+- `ora reproduce pilot` for one-command public P08 pilot reproduction.
+- `reproduce-smoke` and `reproduce-pilot` Make targets.
+- P12 reproduction tutorial with exact clone, sync, offline run, data checksum,
+  and known-failure references.
+
+### Changed
+
+- CI now runs `ora reproduce smoke` with `uv run --offline` on Ubuntu after
+  dependency sync.
+- P10 smoke mode no longer requires the private P09 seed package; full P10 mode
+  remains strict.
+
+## [0.11.0] - 2026-08-02
+
+### Added
+
 - `GATE-P11-INTERPRETATION` approval record for the conservative
   negative-result interpretation of `ORA-BENCH-001`.
 - P11 interpretation and limitation analysis report, including supported,

@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help setup lint typecheck test smoke build pre-commit
+.PHONY: help setup lint typecheck test smoke reproduce-smoke reproduce-pilot build pre-commit
 
 help:
-	@echo "Targets: setup lint typecheck test smoke build pre-commit"
+	@echo "Targets: setup lint typecheck test smoke reproduce-smoke reproduce-pilot build pre-commit"
 
 setup:
 	uv sync --all-groups
@@ -19,6 +19,12 @@ test:
 
 smoke:
 	uv run ora doctor --offline --output reports/environment/smoke.json
+
+reproduce-smoke:
+	uv run --offline ora reproduce smoke
+
+reproduce-pilot:
+	uv run --offline ora reproduce pilot
 
 build:
 	uv build

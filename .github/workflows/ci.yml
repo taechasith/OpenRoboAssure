@@ -26,4 +26,5 @@ jobs:
       - run: uv run pytest
       - run: uv run ora licence audit
       - run: uv run ora doctor --offline --output reports/environment/ci.json
+      - run: uv run --offline ora reproduce smoke --output-directory reports/reproduction/ci
       - run: uv build

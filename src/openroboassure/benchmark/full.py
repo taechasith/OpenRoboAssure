@@ -34,6 +34,14 @@ from openroboassure.training.trainer import TrainingConfiguration, train_policy
 
 BenchmarkMode = Literal["preflight", "smoke", "full"]
 
+_PUBLIC_SMOKE_OPTIONAL_PREFLIGHT_CHECKS = frozenset(
+    {
+        "private_seed_package_exists",
+        "hidden_commitment_matches_private_seed_package",
+        "evaluation_commitment_matches_private_seed_package",
+    }
+)
+
 
 @dataclass(frozen=True)
 class FullBenchmarkMethod:
@@ -80,8 +88,10 @@ def run_full_benchmark(
         preflight_report["report_hash"] = stable_digest(preflight_report)
         _write_result_package(preflight_report, output_directory, mode=mode)
         return preflight_report
-    if not bool(preflight["passed"]):
-        raise RuntimeError("P10 preflight failed; full benchmark execution is blocked")
+    blocking_preflight_checks = _blocking_preflight_checks(preflight, mode)
+    if blocking_preflight_checks:
+        failed = ", ".join(blocking_preflight_checks)
+        raise RuntimeError(f"P10 preflight failed; blocking checks: {failed}")
     if mode == "full" and preflight["dirty_protected_paths"]:
         raise RuntimeError("P10 full execution requires a clean protected-file worktree")
 
@@ -94,11 +104,11 @@ def run_full_benchmark(
         method_limit=method_limit,
         seed_limit=seed_limit,
     )
-    seed_package = load_hidden_seed_package(_private_seed_path(manifest, manifest_path.parent))
     if mode == "smoke":
         root_seed = 20260901
         hidden_catalogue_salt = "smoke-only-not-preregistered"
     else:
+        seed_package = load_hidden_seed_package(_private_seed_path(manifest, manifest_path.parent))
         root_seed = _required_int(seed_package, "evaluation_root_seed")
         hidden_catalogue_salt = _required_string(seed_package, "hidden_catalogue_salt")
     scenarios = build_p09_evaluation_scenarios(scenario_count, root_seed=root_seed)
@@ -273,6 +283,14 @@ def run_p10_preflight(
         "container": container_definition_digest(),
         "licence_audit": licence_report,
     }
+
+
+def _blocking_preflight_checks(preflight: dict[str, object], mode: BenchmarkMode) -> list[str]:
+    checks = _mapping(preflight.get("checks"), "preflight checks")
+    failed = [name for name, passed in checks.items() if passed is not True]
+    if mode == "smoke":
+        failed = [name for name in failed if name not in _PUBLIC_SMOKE_OPTIONAL_PREFLIGHT_CHECKS]
+    return sorted(failed)
 
 
 def load_manifest(path: Path) -> dict[str, object]:

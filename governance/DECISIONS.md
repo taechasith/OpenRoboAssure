@@ -4,6 +4,21 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Recorded — P12 clean reproduction implementation
+
+- **Status:** implemented pending `GATE-P12-REPRODUCTION`
+- **Scope:** public clean-software smoke reproduction, one-command pilot
+  reproduction, offline-after-sync execution, Linux CI smoke reproduction, and
+  machine-readable reproduction certificates.
+- **Evidence path:** `ora reproduce smoke` runs an offline doctor check, strict
+  licence audit, deterministic scripted baseline, scenario validity sample, and
+  public P10 smoke benchmark without requiring the private P09 seed package.
+- **Tutorial:** [docs/reproduction.md](../docs/reproduction.md)
+- **Pending gate:** the owner must still approve whether the reproduction
+  evidence is sufficient for v1.0 under `GATE-P12-REPRODUCTION`.
+- **Boundary:** P12 smoke reproduction is not a full 250,000-episode P10 rerun
+  and does not change the P11 negative-result interpretation.
+
 ## Approved — GATE-P11-INTERPRETATION
 
 - **Status:** approved on 2026-08-02

@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('help', 'setup', 'lint', 'typecheck', 'test', 'smoke', 'build', 'pre-commit')]
+    [ValidateSet('help', 'setup', 'lint', 'typecheck', 'test', 'smoke', 'reproduce-smoke', 'reproduce-pilot', 'build', 'pre-commit')]
     [string]$Target
 )
 
@@ -15,12 +15,14 @@ function Invoke-Uv {
 }
 
 switch ($Target) {
-    'help' { Write-Output 'Targets: setup lint typecheck test smoke build pre-commit' }
+    'help' { Write-Output 'Targets: setup lint typecheck test smoke reproduce-smoke reproduce-pilot build pre-commit' }
     'setup' { Invoke-Uv sync --all-groups }
     'lint' { Invoke-Uv run ruff check . }
     'typecheck' { Invoke-Uv run mypy src tests }
     'test' { Invoke-Uv run pytest }
     'smoke' { Invoke-Uv run ora doctor --offline --output reports/environment/smoke.json }
+    'reproduce-smoke' { Invoke-Uv run --offline ora reproduce smoke }
+    'reproduce-pilot' { Invoke-Uv run --offline ora reproduce pilot }
     'build' { Invoke-Uv build }
     'pre-commit' { Invoke-Uv run pre-commit run --all-files }
 }
