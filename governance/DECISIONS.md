@@ -4,16 +4,21 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
-## Recorded — P13 v1.0.0 release candidate
+## Approved — GATE-P13-RELEASE
 
-- **Status:** packaged pending `GATE-P13-RELEASE`
-- **Scope:** final release-candidate package for `v1.0.0`, including citation
-  metadata, release manifest, benchmark card, learned-policy model card,
-  limitations statement, public seed/evidence ledger, result tables, and final
-  README/status updates.
+- **Status:** approved on 2026-08-02; `v1.0.0` released for the documented
+  simulation-only scope.
+- **Selected option:** A, simulation benchmark validated for the documented
+  scope.
+- **Decision record:**
+  [GATE-P13-RELEASE.yaml](approvals/GATE-P13-RELEASE.yaml)
+- **Scope:** final `v1.0.0` release package, including citation metadata,
+  release manifest, benchmark card, learned-policy model card, limitations
+  statement, public seed/evidence ledger, result tables, final README/status
+  updates, and the preserved development-only `pathspec` MPL-2.0 notice.
 - **Release manifest:**
   [v1.0.0-manifest.json](../reports/release/v1.0.0-manifest.json)
-- **Permitted claims proposed:** open-source, local, simulation-only software
+- **Permitted claims:** open-source, local, simulation-only software
   package; no paid training dataset or secret credentials required for public
   smoke reproduction; procedural synthetic benchmark data; reproducible
   counterexample-search, coverage, and hidden-target calibration evidence; and a
@@ -22,9 +27,12 @@ remain agent-autonomous as defined in the master build guide.
   certification, universal robot/task support, complete failure discovery,
   proven sim-to-real transfer, guaranteed robust learned policies, and
   cross-simulator dynamic equivalence.
-- **Pending gate:** final version, README, benchmark tables, permitted claims,
-  licences/notices, data publication, and publication/preprint choices require
-  `GATE-P13-RELEASE`.
+- **Public-data boundary:** the release publishes repository-contained
+  commitments, revealed failure-catalogue labels and hashes, numeric results,
+  result tables, and public smoke-reproduction material. The sealed P09 seed
+  package remains private, so a full independent P10 rerun is not claimed.
+- **Publication choice:** GitHub `v1.0.0` release approved. No preprint
+  submission is authorized by this decision.
 
 ## Approved — GATE-P12-REPRODUCTION
 

@@ -12,8 +12,8 @@ def test_p13_release_manifest_references_existing_files() -> None:
     manifest_path = Path("reports/release/v1.0.0-manifest.json")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
-    assert manifest["release"] == "v1.0.0-candidate"
-    assert manifest["status"] == "release_candidate_pending_GATE-P13-RELEASE"
+    assert manifest["release"] == "v1.0.0"
+    assert manifest["status"] == "released_simulation_scope_validated"
     package_items = manifest["package_items"]
     assert isinstance(package_items, dict)
 
@@ -22,6 +22,9 @@ def test_p13_release_manifest_references_existing_files() -> None:
         for raw_path in paths:
             path = Path(raw_path)
             assert path.exists(), raw_path
+
+    assert manifest["approval"]["gate"] == "GATE-P13-RELEASE"
+    assert manifest["public_data_boundary"]["full_p10_rerun_publicly_reproducible"] is False
 
 
 def test_p13_citation_and_seed_ledger_parse() -> None:
@@ -32,7 +35,7 @@ def test_p13_citation_and_seed_ledger_parse() -> None:
 
     assert citation["version"] == "1.0.0"
     assert citation["license"] == "Apache-2.0"
-    assert seed_ledger["release"] == "v1.0.0-candidate"
+    assert seed_ledger["release"] == "v1.0.0"
     entries = seed_ledger["entries"]
     assert isinstance(entries, list)
     assert {entry["id"] for entry in entries} >= {

@@ -1,12 +1,15 @@
 {
-  "release": "v1.0.0-candidate",
+  "release": "v1.0.0",
   "phase": "P13",
-  "status": "release_candidate_pending_GATE-P13-RELEASE",
-  "generated_at": "2026-08-02T21:00:00+07:00",
+  "status": "released_simulation_scope_validated",
+  "generated_at": "2026-08-02T21:16:00+07:00",
   "package_items": {
     "source_code": ["src/", "tests/", "analysis/"],
     "licence_files": ["LICENSE", "DATA_LICENSE", "DATA_POLICY.md"],
-    "third_party_notices": ["THIRD_PARTY_NOTICES.md"],
+    "third_party_notices": [
+      "THIRD_PARTY_NOTICES.md",
+      "third_party_licenses/pathspec-MPL-2.0.txt"
+    ],
     "asset_manifests": ["assets/manifest.yaml"],
     "container_recipe": ["Dockerfile", "compose.yaml"],
     "locked_dependencies": ["pyproject.toml", "uv.lock"],
@@ -69,5 +72,21 @@
     "guaranteed_robust_learned_policies",
     "cross_simulator_dynamic_equivalence"
   ],
-  "next_gate": "GATE-P13-RELEASE"
+  "approval": {
+    "gate": "GATE-P13-RELEASE",
+    "selected_option": "A_simulation_benchmark_validated_for_documented_scope",
+    "record": "governance/approvals/GATE-P13-RELEASE.yaml",
+    "preprint_submission": "not_authorized"
+  },
+  "public_data_boundary": {
+    "full_p10_rerun_publicly_reproducible": false,
+    "private_p09_seed_package": "not_published",
+    "public_evidence": [
+      "commitments",
+      "revealed_failure_catalogue_labels_and_hashes",
+      "numeric_results",
+      "public_clean_smoke_reproduction"
+    ]
+  },
+  "next_gate": null
 }

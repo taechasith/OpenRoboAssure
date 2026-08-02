@@ -15,11 +15,11 @@ gate has been satisfied.
 | P06 | Policies, baselines, and sensitivity | Completed — v0.6.0; preliminary learned-policy result is negative | `GATE-P06-BASELINES` |
 | P07 | Calibration, falsification, and coverage | Completed - v0.7.0; closed-loop learned-policy result remains negative | None |
 | P08 | Pilot benchmark | Completed - v0.8.0; operational pilot passed and learned-policy result remains negative | `GATE-P08-PILOT` |
-| P09 | Full benchmark preregistration | Not started - requires approval before implementation | `GATE-P09-PREREGISTRATION` |
-| P10 | Full benchmark execution | Not started | `GATE-P10-FULL-BENCHMARK` |
-| P11 | Ablation and interpretation | Not started | `GATE-P11-INTERPRETATION` |
-| P12 | Independent reproduction | Not started | `GATE-P12-REPRODUCTION` |
-| P13 | v1.0 release | Not started | `GATE-P13-RELEASE` |
+| P09 | Full benchmark preregistration | Completed — v0.9.0 released; preregistration approved | `GATE-P09-PREREGISTRATION` |
+| P10 | Full benchmark execution | Completed — v0.10.0 released; full benchmark operational with preserved negative result | `GATE-P10-FULL-BENCHMARK` |
+| P11 | Ablation and interpretation | Completed — v0.11.0 released; conservative interpretation approved | `GATE-P11-INTERPRETATION` |
+| P12 | Independent reproduction | Completed — v0.12.0 released; clean software reproduction approved | `GATE-P12-REPRODUCTION` |
+| P13 | v1.0 release | Completed — v1.0.0 released; simulation scope validation approved | `GATE-P13-RELEASE` |
 
 ## P00 exit criteria
 

@@ -21,10 +21,12 @@ checksums.
 
 ## Development-only exception
 
-`pathspec` is a transitive dependency of the required `mypy` development tool.
-It is licensed under MPL-2.0 and is approved only as a development-only
-exception. Its MPL-2.0 notice must be preserved; OpenRoboAssure must not copy
-or modify MPL-covered files. See `dependencies/license_exceptions.yaml`.
+`pathspec` 1.1.1 is a transitive dependency of the required `mypy` development
+tool. It is licensed under MPL-2.0 and is approved only as a development-only
+exception. Its full MPL-2.0 notice is preserved at
+[`third_party_licenses/pathspec-MPL-2.0.txt`](third_party_licenses/pathspec-MPL-2.0.txt).
+OpenRoboAssure does not copy or modify MPL-covered files. See
+`dependencies/license_exceptions.yaml`.
 
 `PyOpenGL` is a MuJoCo runtime dependency with verified PyPI BSD metadata. It
 is a package-specific exception, not a general approval for ambiguous BSD

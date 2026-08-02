@@ -15,6 +15,13 @@
       "status": "approved"
     },
     {
+      "identifier": "pathspec",
+      "licence": "MPL-2.0",
+      "message": "Preserved exception notice: third_party_licenses\\pathspec-MPL-2.0.txt",
+      "source": "exception_notice",
+      "status": "approved"
+    },
+    {
       "identifier": "absl-py",
       "licence": "Apache-2.0",
       "message": "Package metadata licence",
@@ -424,7 +431,7 @@
   "passed": true,
   "schema_version": 1,
   "summary": {
-    "approved": 60,
+    "approved": 61,
     "blocked": 0,
     "unknown": 0
   }

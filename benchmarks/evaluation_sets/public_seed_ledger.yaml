@@ -1,5 +1,5 @@
 schema_version: 1
-release: v1.0.0-candidate
+release: v1.0.0
 purpose: public_seed_and_evaluation_reference_ledger
 notes:
   - Public deterministic seeds and commitments are listed for reproducibility.

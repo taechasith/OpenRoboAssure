@@ -3,7 +3,7 @@
 ## Identity
 
 - Benchmark id: `ORA-BENCH-001`
-- Release package: `v1.0.0` release candidate
+- Release package: `v1.0.0`
 - Scope: simulation-only ORA-4A Pick-and-Place
 - Frozen preregistration: `experiments/preregistered/ORA-BENCH-001.yaml`
 - Result package: `reports/benchmarks/ORA-BENCH-001.json`
