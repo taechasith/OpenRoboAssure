@@ -6,6 +6,7 @@ import argparse
 import json
 from pathlib import Path
 
+from openroboassure.benchmark.full import run_full_benchmark
 from openroboassure.benchmark.pilot import run_pilot_benchmark
 from openroboassure.calibration.hidden_target import run_hidden_target_calibration
 from openroboassure.coverage.reports import run_coverage_report
@@ -201,6 +202,26 @@ def build_parser() -> argparse.ArgumentParser:
     pilot.add_argument("--evaluation-scenarios", type=int, default=2000)
     pilot.add_argument("--root-seed", type=int, default=20260801)
     pilot.add_argument("--protected-ref", default="2bd188e")
+    full = benchmark_commands.add_parser("full", help="run ORA-BENCH-001 P10 tools")
+    full.add_argument(
+        "--manifest",
+        type=Path,
+        default=Path("experiments/preregistered/ORA-BENCH-001.yaml"),
+    )
+    full.add_argument("--output-directory", type=Path, default=Path("reports"))
+    full.add_argument(
+        "--mode",
+        choices=["preflight", "smoke", "full"],
+        default="full",
+        help="preflight only, labelled smoke run, or full preregistered execution",
+    )
+    full.add_argument("--require-approval", default="GATE-P09-PREREGISTRATION")
+    full.add_argument("--verify-protected-hashes", action="store_true")
+    full.add_argument("--protected-ref", default="HEAD")
+    full.add_argument("--training-steps", type=int, default=None)
+    full.add_argument("--evaluation-scenarios", type=int, default=None)
+    full.add_argument("--method-limit", type=int, default=None)
+    full.add_argument("--seed-limit", type=int, default=None)
     doctor.add_argument(
         "--output",
         type=Path,
@@ -379,4 +400,22 @@ def main(argv: list[str] | None = None) -> int:
             raise AssertionError("Pilot acceptance summary is malformed")
         print(f"P08 pilot operational success: {acceptance['operationally_successful']}")
         return 0
+    if args.command == "benchmark" and args.benchmark_command == "full":
+        report = run_full_benchmark(
+            args.manifest,
+            output_directory=args.output_directory,
+            mode=args.mode,
+            require_approval=args.require_approval,
+            verify_hashes=args.verify_protected_hashes,
+            protected_ref=args.protected_ref,
+            training_steps=args.training_steps,
+            evaluation_scenarios=args.evaluation_scenarios,
+            method_limit=args.method_limit,
+            seed_limit=args.seed_limit,
+        )
+        status = report["status"]
+        if not isinstance(status, str):
+            raise AssertionError("Full benchmark report status is malformed")
+        print(f"P10 {args.mode} status: {status}")
+        return 0 if status in {"passed", "completed", "completed_with_classified_failures"} else 1
     raise AssertionError(f"Unhandled command: {args.command}")
