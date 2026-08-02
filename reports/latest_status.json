@@ -1,10 +1,11 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-08-02T00:29:51+07:00",
-  "current_phase": "P10",
-  "current_version": "0.9.0",
-  "status": "completed_negative_result_preserved_pending_interpretation",
-  "next_required_gate": "GATE-P11-INTERPRETATION",
+  "generated_at": "2026-08-02T19:26:00+07:00",
+  "current_phase": "P11",
+  "current_version": "0.11.0",
+  "status": "interpretation_approved_negative_result_preserved_pending_release",
+  "last_completed_gate": "GATE-P11-INTERPRETATION",
+  "next_required_gate": "GATE-P12-REPRODUCTION",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
@@ -22,15 +23,18 @@
     "p09_preregistration_keeps_full_benchmark_scope_to_ora4a_pick_place",
     "p09_hidden_evaluation_values_are_committed_by_digest_only_until_result_freeze",
     "p10_all_five_full_benchmark_methods_have_zero_held_out_success",
-    "p10_interpretation_requires_GATE-P11-INTERPRETATION",
+    "p11_no_method_superiority_or_robustness_claim_supported",
+    "p11_component_value_cannot_be_attributed_from_all_zero_success",
+    "p12_independent_reproduction_pending",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],
   "latest_experiment": {
     "experiment_id": "ORA-BENCH-001",
     "gate": "GATE-P09-PREREGISTRATION",
+    "interpretation_gate": "GATE-P11-INTERPRETATION",
     "scope": "conservative_ora_4a_pick_place_only",
-    "status": "completed_negative_result_preserved_pending_interpretation",
+    "status": "completed_negative_result_interpreted_conservatively",
     "scheduled_evaluations": 250000,
     "training_environment_steps": 2500000,
     "completed_runs": 25,
@@ -51,7 +55,23 @@
       "D": { "held_out_task_success": 0.0, "seed_count": 5 },
       "E": { "held_out_task_success": 0.0, "seed_count": 5 }
     },
+    "supported_claims": [
+      "valid_negative_result_for_preregistered_simulation_scope",
+      "operational_full_benchmark_completion",
+      "no_detected_training_evaluation_parameter_hash_leakage"
+    ],
+    "rejected_claims": [
+      "learned_policy_robustness",
+      "method_superiority",
+      "sensitivity_guided_learned_policy_improvement",
+      "physical_robot_validation",
+      "real_world_safety",
+      "sim_to_real_reliability",
+      "cross_simulator_dynamic_equivalence"
+    ],
     "github_graph": "reports/benchmarks/ORA-BENCH-001.github.md",
+    "interpretation_report": "reports/interpretation/ORA-BENCH-001-P11-interpretation.md",
+    "paper_draft": "docs/paper_draft.md",
     "report_hash": "98db58c72436a2d626d91f209d8a505ffcaac9fe4a019f015276ffcedc367d0d"
   }
 }

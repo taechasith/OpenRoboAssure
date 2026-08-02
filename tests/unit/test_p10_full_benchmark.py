@@ -20,9 +20,14 @@ from openroboassure.benchmark.preregistration import (
     write_public_commitment,
 )
 
+FROZEN_P09_PROTECTED_REF = "f9654a4f3a871401d8d1677a409337d5485ced98"
+
 
 def test_protected_hashes_verify_from_committed_p09_files() -> None:
-    report = verify_protected_hashes(Path("experiments/preregistered/ORA-BENCH-001.yaml"))
+    report = verify_protected_hashes(
+        Path("experiments/preregistered/ORA-BENCH-001.yaml"),
+        ref=FROZEN_P09_PROTECTED_REF,
+    )
 
     assert report["passed"] is True
     assert report["mismatches"] == []

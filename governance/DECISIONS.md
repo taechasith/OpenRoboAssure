@@ -4,6 +4,32 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Approved — GATE-P11-INTERPRETATION
+
+- **Status:** approved on 2026-08-02
+- **Selected option:** A, conservative negative-result interpretation.
+- **Decision record:**
+  [GATE-P11-INTERPRETATION.yaml](approvals/GATE-P11-INTERPRETATION.yaml)
+- **Evidence basis:** `ORA-BENCH-001` completed all 25 method/seed jobs and
+  250,000 scheduled evaluation episodes with a 100% classified job rate. The
+  protected-hash preflight passed, the licence audit passed, the hidden
+  catalogue was revealed only after result freeze, and no training/evaluation
+  parameter-hash leakage was detected.
+- **Interpretation:** all methods A-E recorded 0% mean held-out task success.
+  This is a valid negative result for the approved simulation-only ORA-4A
+  Pick-and-Place scope, not evidence of learned-policy robustness or method
+  superiority.
+- **Claims supported:** operational completion of the full benchmark package,
+  preservation of a negative result, and no detected train/evaluation
+  parameter-hash leakage under the implemented check.
+- **Claims rejected:** learned-policy robustness, System E superiority, System D
+  or E worst-case superiority, sensitivity-guided learned-policy improvement,
+  physical-robot validation, real-world safety or reliability, regulatory
+  compliance, sim-to-real reliability, and cross-simulator dynamic equivalence.
+- **Consequence:** P12 independent reproduction may proceed. Public v1.0 claims
+  must remain conservative unless later approved evidence changes the evidence
+  boundary.
+
 ## Approved — GATE-P09-PREREGISTRATION
 
 - **Status:** approved on 2026-08-01
