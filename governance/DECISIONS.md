@@ -4,10 +4,13 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
-## Recorded — P12 clean reproduction evidence
+## Approved — GATE-P12-REPRODUCTION
 
-- **Status:** clean software reproduction passed pending
-  `GATE-P12-REPRODUCTION`
+- **Status:** approved on 2026-08-02
+- **Selected option:** A, clean software reproduction evidence sufficient for
+  the v1.0 reproduction gate.
+- **Decision record:**
+  [GATE-P12-REPRODUCTION.yaml](approvals/GATE-P12-REPRODUCTION.yaml)
 - **Scope:** public clean-software smoke reproduction, one-command pilot
   reproduction, offline-after-sync execution, Linux CI smoke reproduction, and
   machine-readable reproduction certificates.
@@ -17,10 +20,11 @@ remain agent-autonomous as defined in the master build guide.
 - **Certificate:**
   [P12-CLEAN-SOFTWARE-REPRODUCTION.json](../reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json)
 - **Tutorial:** [docs/reproduction.md](../docs/reproduction.md)
-- **Pending gate:** the owner must still approve whether the reproduction
-  evidence is sufficient for v1.0 under `GATE-P12-REPRODUCTION`.
 - **Boundary:** P12 smoke reproduction is not a full 250,000-episode P10 rerun
   and does not change the P11 negative-result interpretation.
+- **Consequence:** P13 release packaging may proceed. P13 must still approve
+  final release claims, README, result tables, notices, data publication, and
+  version 1.0 release scope.
 
 ## Approved — GATE-P11-INTERPRETATION
 

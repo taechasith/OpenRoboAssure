@@ -118,5 +118,6 @@ P12 reproduction does not change the scientific result:
 - no real-world safety, reliability, regulatory, sim-to-real, or
   cross-simulator dynamic-equivalence claim is supported.
 
-`GATE-P12-REPRODUCTION` is still required before declaring the reproduction
-evidence sufficient for v1.0.
+`GATE-P12-REPRODUCTION` approved the clean software reproduction evidence as
+sufficient for the v1.0 reproduction gate. P13 still controls final public
+release claims and version 1.0 packaging.

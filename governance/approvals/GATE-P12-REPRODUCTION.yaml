@@ -1,0 +1,52 @@
+approval_id: GATE-P12-REPRODUCTION
+project_version: 0.12.0
+decision: approved
+approved_by: project_owner
+approved_at: "2026-08-02T20:37:23+07:00"
+approval_source: user_conversation
+selected_option: A_clean_software_reproduction_sufficient
+scope:
+  reproduction_level: clean_software_smoke
+  tutorial: docs/reproduction.md
+  certificate: reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json
+  branch: phase/p12-reproduction
+  certificate_source_commit: 2570b7ed782d82ab8f24fdc2af0482b862d1d4c7
+  certificate_status: passed
+approved_evidence:
+  clean_clone:
+    private_seed_package_present: false
+    private_seed_package_tracked: false
+    source_dirty_before_reproduction: false
+  commands:
+    - uv sync --all-groups --locked --offline
+    - uv run --offline ora reproduce smoke
+  checks:
+    - offline_doctor_passed
+    - strict_licence_audit_passed
+    - deterministic_scripted_baseline_100_percent_success
+    - deterministic_replay_100_percent
+    - scenario_validity_sample_100_percent
+    - public_p10_smoke_benchmark_completed
+    - hidden_values_not_revealed
+    - p09_protected_hashes_verified_against_frozen_ref
+    - no_private_p09_seed_package_present_or_tracked
+  ci:
+    ubuntu_offline_smoke_reproduction: passed
+approved_claims:
+  - clean_software_reproduction_sufficient_for_v1_0_gate
+  - no_paid_data_services_or_secret_credentials_required_for_smoke_reproduction
+  - no_private_seed_package_required_for_public_smoke_reproduction
+  - p09_protected_hashes_verify_against_frozen_ref
+deferred_or_rejected_claims:
+  - full_250000_episode_p10_rerun_not_required_by_this_gate
+  - physical_robot_validation_not_claimed
+  - learned_policy_robustness_not_claimed
+  - method_superiority_not_claimed
+  - sim_to_real_reliability_not_claimed
+  - cross_simulator_dynamic_equivalence_not_claimed
+next_gate: GATE-P13-RELEASE
+notes: >-
+  The owner selected option A. P12 sufficiency approval is based on the clean
+  public smoke reproduction certificate and CI reproduction step. The approval
+  does not change the P11 negative-result interpretation or authorize stronger
+  public claims.

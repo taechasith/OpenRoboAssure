@@ -14,6 +14,8 @@ All notable project changes will be documented here.
 - P12 reproduction tutorial with exact clone, sync, offline run, data checksum,
   and known-failure references.
 - Passed clean-clone P12 smoke reproduction certificate.
+- `GATE-P12-REPRODUCTION` approval record accepting clean software reproduction
+  evidence as sufficient for the v1.0 reproduction gate.
 
 ### Changed
 

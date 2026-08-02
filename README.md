@@ -13,7 +13,7 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 - Current version: `v0.12.0`
 - Current phase: `P12 - independent reproduction`
-- Status: clean software reproduction passed; sufficiency pending `GATE-P12-REPRODUCTION`
+- Status: P12 reproduction sufficiency approved; release packaging pending `GATE-P13-RELEASE`
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -53,8 +53,9 @@ comparable systems, and CPU-first training. P07 adds the closed-loop evidence
 path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot. P09
 froze `ORA-BENCH-001`; P10 executed it; P11 interprets the all-zero result as a
 valid negative benchmark result, not a robustness or safety claim. P12 adds
-public reproduction commands and certificates; the next required gate is
-`GATE-P12-REPRODUCTION`.
+public reproduction commands and certificates; `GATE-P12-REPRODUCTION` approved
+the clean software reproduction evidence as sufficient. The next required gate
+is `GATE-P13-RELEASE`.
 
 The active charter materials are:
 
@@ -280,7 +281,9 @@ The interpretation and limitation analysis is
 ## P12 reproduction
 
 P12 adds public reproduction recipes that require no paid data, paid services,
-secret credentials, or private P09 seed package for the clean smoke path. The
+secret credentials, or private P09 seed package for the clean smoke path.
+`GATE-P12-REPRODUCTION` approved this clean software reproduction evidence as
+sufficient for the v1.0 reproduction gate. The
 recorded clean-clone smoke certificate passed and is stored at
 [`reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json`](reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json).
 
