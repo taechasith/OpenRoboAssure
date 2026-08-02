@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.9.0`
-- Current phase: `P09 - full benchmark preregistration`
-- Status: P09 is preregistered; full evaluation has not been run
+- Current version: `v0.11.0`
+- Current phase: `P11 - interpretation and limitation analysis`
+- Status: P11 conservative interpretation approved; negative P10 result preserved
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -44,13 +44,15 @@ support for arbitrary robots without adapters.
 ## Governance
 
 The project charter, free-data policy, P04 robot/simulator set, P05 core
-scenario ontology, P06 baseline campaign, P08 conservative pilot, and P09 full
-benchmark preregistration have been approved. P05 generated one million deterministic, constrained scenarios
+scenario ontology, P06 baseline campaign, P08 conservative pilot, P09 full
+benchmark preregistration, and P11 conservative interpretation have been
+approved. P05 generated one million deterministic, constrained scenarios
 without external data. P06 is limited to ORA-4A Pick-and-Place, four fixed
 comparable systems, and CPU-first training. P07 adds the closed-loop evidence
-path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot; the
-P09 freezes `ORA-BENCH-001` before full evaluation. The next interpretation
-gate after execution is `GATE-P11-INTERPRETATION`.
+path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot. P09
+froze `ORA-BENCH-001`; P10 executed it; P11 interprets the all-zero result as a
+valid negative benchmark result, not a robustness or safety claim. The next
+required gate is `GATE-P12-REPRODUCTION`.
 
 The active charter materials are:
 
@@ -82,10 +84,13 @@ The deterministic scripted controller succeeds in the current kinematic task,
 but every P06 learned-policy seed achieved 0% held-out task success. P07 System
 E retraining also stayed at 0% held-out success. P08 completed the conservative
 pilot operationally, but all five pilot methods again achieved 0% held-out task
-success. Therefore the project does not establish learned-policy robustness,
-sensitivity-guided improvement, physical-robot performance, or safety. The P04
-report measures identical canonical state mapping for ORA-4A in MuJoCo and
-PyBullet; it does not establish contact-physics fidelity or dynamic equivalence.
+success. P10 completed the preregistered full benchmark with 250,000 scheduled
+evaluation episodes, and methods A-E again recorded 0% mean held-out task
+success. P11 therefore rejects learned-policy robustness, method-superiority,
+sensitivity-guided improvement, physical-robot performance, real-world safety,
+and sim-to-real reliability claims. The P04 report measures identical canonical
+state mapping for ORA-4A in MuJoCo and PyBullet; it does not establish
+contact-physics fidelity or dynamic equivalence.
 
 ## Scenario and uncertainty engine
 
@@ -238,6 +243,37 @@ method-development code until result freeze. Protected hashes are recorded in
 
 Run P10 only after verifying the frozen hashes and licence audit. P09 does not
 claim improved policy performance, physical validation, or real-world safety.
+
+## P10 full benchmark and P11 interpretation
+
+`ORA-BENCH-001` completed the frozen conservative full benchmark: methods A-E,
+five seeds per method, and 10,000 hidden evaluation scenarios per method/seed.
+All 25 method/seed jobs completed and classified, for 250,000 scheduled
+evaluation episodes. The protected-hash preflight passed, the licence audit
+passed, the hidden catalogue was revealed only after result freeze, and no
+training/evaluation parameter-hash leakage was detected.
+
+Every method recorded 0% mean held-out task success:
+
+| Method | Seeds | Evaluation episodes | Held-out success |
+|---|---:|---:|---:|
+| A - no randomization | 5 | 50,000 | 0% |
+| B - broad independent uniform | 5 | 50,000 | 0% |
+| C - automatic curriculum | 5 | 50,000 | 0% |
+| D - Morris/Sobol guided | 5 | 50,000 | 0% |
+| E - P07 closed-loop revision | 5 | 50,000 | 0% |
+
+P11 approves the conservative interpretation: this is a valid negative result
+for the approved simulation-only ORA-4A Pick-and-Place scope. It supports
+operational benchmark-completion and evidence-preservation claims only. It
+rejects learned-policy robustness, method superiority, physical-robot
+validation, real-world safety, sim-to-real reliability, and cross-simulator
+dynamic-equivalence claims.
+
+The GitHub-readable benchmark graph is
+[`reports/benchmarks/ORA-BENCH-001.github.md`](reports/benchmarks/ORA-BENCH-001.github.md).
+The interpretation and limitation analysis is
+[`reports/interpretation/ORA-BENCH-001-P11-interpretation.md`](reports/interpretation/ORA-BENCH-001-P11-interpretation.md).
 
 ## Development quick start
 

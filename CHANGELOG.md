@@ -6,6 +6,25 @@ All notable project changes will be documented here.
 
 ### Added
 
+- `GATE-P11-INTERPRETATION` approval record for the conservative
+  negative-result interpretation of `ORA-BENCH-001`.
+- P11 interpretation and limitation analysis report, including supported,
+  rejected, and deferred claims plus required ablation/omission mapping.
+- Paper draft evidence-boundary section that makes the simulation-only and
+  all-zero learned-policy limitations prominent.
+
+### Governance
+
+- P11 rejects learned-policy robustness, method superiority,
+  sensitivity-guided learned-policy improvement, physical-robot validation,
+  real-world safety, sim-to-real reliability, and cross-simulator dynamic
+  equivalence claims.
+- P12 independent reproduction is the next required gate.
+
+## [0.10.0] - 2026-08-02
+
+### Added
+
 - P10 `ORA-BENCH-001` full benchmark result package, execution logs, tracking
   events, 25 model artifacts, and GitHub-renderable Mermaid benchmark graph.
 

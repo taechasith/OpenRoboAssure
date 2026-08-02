@@ -1,14 +1,14 @@
 project: OpenRoboAssure
-current_phase: P09
-current_version: 0.9.0
-status: preregistered_pending_full_evaluation
+current_phase: P11
+current_version: 0.11.0
+status: interpretation_approved_negative_result_preserved_pending_release
 validation_level: none
-latest_commit: pending_pr_merge
-active_branch: phase/p09-preregistration
+latest_commit: pending_p11_pr_merge
+active_branch: phase/p11-interpretation
 protected_benchmark_frozen: true
 licence_audit: passed
-last_completed_gate: GATE-P09-PREREGISTRATION
-next_required_gate: GATE-P11-INTERPRETATION
+last_completed_gate: GATE-P11-INTERPRETATION
+next_required_gate: GATE-P12-REPRODUCTION
 open_blockers: []
 known_limitations:
   - simulation_only
@@ -24,6 +24,10 @@ known_limitations:
   - p08_training_budget_is_cpu_bounded
   - p09_preregistration_keeps_full_benchmark_scope_to_ora4a_pick_place
   - p09_hidden_evaluation_values_are_committed_by_digest_only_until_result_freeze
+  - p10_all_five_full_benchmark_methods_have_zero_held_out_success
+  - p11_no_method_superiority_or_robustness_claim_supported
+  - p11_component_value_cannot_be_attributed_from_all_zero_success
+  - p12_independent_reproduction_pending
   - cross_simulator_dynamic_equivalence_not_established
   - scenario_validity_is_not_dynamic_equivalence
 protected_files:
