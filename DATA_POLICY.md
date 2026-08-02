@@ -1,6 +1,7 @@
 # OpenRoboAssure data policy
 
-Status: **draft for `GATE-P00-CHARTER` approval**.
+Status: **approved under `GATE-P00-CHARTER`, `GATE-P02-DATA-POLICY`, and
+`GATE-P13-RELEASE` for the published v1.0.0 simulation-only release**.
 
 ## Core rule
 
@@ -11,10 +12,10 @@ subscription, a hosted API after setup, or a physical robot.
 ## Permitted core material
 
 Core data and assets must have an explicit, reproducible provenance and a
-licence compatible with redistribution and machine-learning use. The proposed
+licence compatible with redistribution and machine-learning use. The approved
 default allow-list is Apache-2.0, MIT, BSD-2-Clause, BSD-3-Clause, Zlib, ISC,
 CC0-1.0, CC-BY-4.0, PSF-2.0, and 0BSD. Every imported robot model, texture, mesh, and dataset
-will be recorded with its exact subdirectory or source licence, retrieval
+is recorded with its exact subdirectory or source licence, retrieval
 method, checksum, and review status.
 
 ## Blocked core material
@@ -25,7 +26,7 @@ personal, biometric, scraped-without-permission, or ML-prohibited material.
 
 ## Asset handling
 
-Task objects in the core benchmark will be code-generated primitives: boxes,
+Task objects in the core benchmark are code-generated primitives: boxes,
 cylinders, capsules, pegs, sockets, trays, target zones, planes, and simple
 convex combinations. Optional visual assets may be used only when their licence
 and source are recorded, their terms permit use and redistribution, and the
@@ -37,19 +38,21 @@ the later automated audit and human approval where required.
 
 ## Generated outputs
 
-Original numeric benchmark outputs generated entirely by OpenRoboAssure are
-proposed to use CC BY 4.0. Third-party code, meshes, textures, and documentation
+Original numeric benchmark outputs generated entirely by OpenRoboAssure use
+CC BY 4.0. Third-party code, meshes, textures, and documentation
 remain under their original licences and will be listed in
 `THIRD_PARTY_NOTICES.md` when introduced.
 
 ## Enforcement and exceptions
 
-Phase P02 will implement an automated licence gate that rejects blocked or
+The P02 automated licence gate rejects blocked or
 unknown licences and writes a machine-readable audit report. Automated checks
 are not legal advice. Any exception to this policy requires explicit human
 approval, a documented rationale, and a recorded licence review before the
 material enters the benchmark.
 
-`pathspec` is the sole approved MPL-2.0 exception. It is a development-only
-transitive dependency of the required mypy tool; it must not be copied or
-modified, and its notice is recorded in `THIRD_PARTY_NOTICES.md`.
+`pathspec` 1.1.1 is the sole approved MPL-2.0 exception. It is a
+development-only transitive dependency of the required mypy tool; it must not
+be copied or modified, and its full notice is preserved at
+`third_party_licenses/pathspec-MPL-2.0.txt`. MPL-2.0 is not on the general
+allow-list.

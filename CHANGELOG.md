@@ -4,6 +4,28 @@ All notable project changes will be documented here.
 
 ## Unreleased
 
+## [1.0.0] - 2026-08-02
+
+### Added
+
+- P13 `v1.0.0` release package manifest.
+- Citation metadata, benchmark card, learned-policy model card, limitations
+  statement, public seed/evidence ledger, and ORA-BENCH-001 result tables.
+- `GATE-P13-RELEASE` approval record, including the public-data boundary and
+  no-preprint decision.
+- Preserved MPL-2.0 notice for the development-only `pathspec` exception.
+
+### Changed
+
+- Project/package version released as `1.0.0`; package maturity is conservatively
+  classified as Beta.
+- Release claims are narrowed to simulation-only software and benchmark-package
+  claims consistent with the P11 negative-result interpretation.
+- Data-policy, README, and release status wording now describes the final
+  release rather than a draft or candidate.
+
+## [0.12.0] - 2026-08-02
+
 ### Added
 
 - `ora reproduce smoke` for clean software reproduction certificates covering

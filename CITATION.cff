@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use OpenRoboAssure, cite the v1.0.0 simulation benchmark package."
+title: "OpenRoboAssure: A simulation-only reproducible assurance pipeline for physical-AI experiments"
+version: "1.0.0"
+date-released: "2026-08-02"
+repository-code: "https://github.com/taechasith/OpenRoboAssure"
+url: "https://github.com/taechasith/OpenRoboAssure/releases/tag/v1.0.0"
+license: "Apache-2.0"
+authors:
+  - name: "OpenRoboAssure contributors"
+abstract: >
+  OpenRoboAssure is an open-source, simulation-only pipeline for reproducible
+  physical-AI assurance experiments. The v1.0.0 package includes deterministic
+  scenario generation, simulator adapters, policy benchmark artifacts,
+  counterexample search evidence, coverage reports, hidden-target calibration
+  evidence, and a clean software reproduction certificate. It does not establish
+  physical-robot safety, learned-policy robustness, real-world reliability, or
+  regulatory compliance.

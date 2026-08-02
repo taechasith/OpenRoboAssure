@@ -156,6 +156,71 @@ def audit_python_packages(
     return findings
 
 
+def audit_exception_notices(root: Path) -> list[Finding]:
+    """Audit preserved notices declared by narrowly scoped licence exceptions."""
+    exceptions = _load(root / "dependencies" / "license_exceptions.yaml").get("exceptions", [])
+    if not isinstance(exceptions, list):
+        raise ValueError("Licence exceptions must be a list")
+
+    findings: list[Finding] = []
+    for item in exceptions:
+        if not isinstance(item, dict) or "notice_file" not in item:
+            continue
+        package = str(item.get("package", "<missing package>"))
+        licence = str(item.get("spdx_license", "")) or None
+        relative_path = Path(str(item["notice_file"]))
+        expected_text = str(item.get("notice_contains", "")).strip()
+
+        if relative_path.is_absolute() or ".." in relative_path.parts:
+            findings.append(
+                Finding(
+                    "exception_notice",
+                    package,
+                    "unknown",
+                    licence,
+                    "Exception notice path must be repository-relative",
+                )
+            )
+            continue
+
+        notice_path = root / relative_path
+        if not notice_path.is_file():
+            findings.append(
+                Finding(
+                    "exception_notice",
+                    package,
+                    "unknown",
+                    licence,
+                    f"Required exception notice is missing: {relative_path}",
+                )
+            )
+            continue
+
+        contents = notice_path.read_text(encoding="utf-8", errors="ignore")
+        if expected_text and expected_text not in contents:
+            findings.append(
+                Finding(
+                    "exception_notice",
+                    package,
+                    "unknown",
+                    licence,
+                    f"Exception notice does not contain required text: {expected_text}",
+                )
+            )
+            continue
+
+        findings.append(
+            Finding(
+                "exception_notice",
+                package,
+                "approved",
+                licence,
+                f"Preserved exception notice: {relative_path}",
+            )
+        )
+    return findings
+
+
 def audit_manifest(
     path: Path, approved: set[str], blocked: list[str], terms: list[str]
 ) -> list[Finding]:
@@ -234,6 +299,7 @@ def audit_project(root: Path, *, include_packages: bool = True) -> dict[str, obj
     approved, blocked, terms, exceptions = _policy(root)
     findings = audit_manifest(root / "assets" / "manifest.yaml", approved, blocked, terms)
     findings.extend(audit_headers(root, approved, blocked, terms))
+    findings.extend(audit_exception_notices(root))
     if include_packages:
         findings.extend(audit_python_packages(approved, blocked, terms, exceptions))
     counts = {

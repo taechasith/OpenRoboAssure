@@ -1,0 +1,82 @@
+approval_id: GATE-P13-RELEASE
+project_version: 1.0.0
+decision: approved
+approved_by: project_owner
+approved_at: "2026-08-02T21:16:00+07:00"
+approval_source: user_conversation
+selected_option: A_simulation_benchmark_validated_for_documented_scope
+scope:
+  release: v1.0.0
+  release_manifest: reports/release/v1.0.0-manifest.json
+  readme: README.md
+  benchmark_table: reports/tables/ORA-BENCH-001-results.md
+  benchmark_card: docs/benchmark_card_ora_bench_001.md
+  limitations: docs/limitations.md
+  citation: CITATION.cff
+  branch: phase/p13-release
+approved_evidence:
+  release_package:
+    all_manifest_references_exist: true
+    citation_metadata_present: true
+    benchmark_card_present: true
+    model_card_present: true
+    limitations_statement_present: true
+  benchmark:
+    benchmark_id: ORA-BENCH-001
+    scope: simulation_only_ora4a_pick_place
+    completed_method_seed_jobs: 25
+    scheduled_evaluations: 250000
+    all_methods_mean_held_out_success: 0.0
+    parameter_hash_leakage_overlap_count: 0
+    hidden_catalogue_revealed_after_result_freeze: true
+  reproduction:
+    level: clean_software_smoke
+    certificate: reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json
+    full_p10_rerun_publicly_reproducible: false
+  licences:
+    audit: passed
+    general_allow_list_excludes_mpl_2_0: true
+    pathspec_exception_scope: development_only
+    pathspec_notice: third_party_licenses/pathspec-MPL-2.0.txt
+approved_claims:
+  - simulation_benchmark_validated_for_documented_scope
+  - open_source_simulation_only_software_and_benchmark_package
+  - no_paid_training_dataset_required_for_public_smoke_reproduction
+  - procedurally_generated_benchmark_data
+  - reproducible_counterexample_search_evidence
+  - scenario_coverage_measurement_evidence
+  - hidden_target_sim_to_sim_calibration_evidence
+  - valid_negative_result_for_ora4a_pick_place_simulation_scope
+claims_rejected:
+  - physical_robot_validation
+  - real_world_safety_or_reliability
+  - certification_or_regulatory_compliance
+  - universal_robot_or_task_support
+  - complete_failure_coverage
+  - proven_sim_to_real_performance
+  - guaranteed_robust_learned_policies
+  - cross_simulator_dynamic_equivalence
+public_data_decision:
+  approved_public_material:
+    - procedural_source_and_public_seed_ledger
+    - commitments_and_protected_hashes
+    - revealed_failure_catalogue_labels_and_hashes
+    - raw_or_minimally_processed_numeric_results
+    - result_tables_and_analysis_scripts
+    - public_clean_smoke_reproduction_material
+  retained_private_material:
+    - original_p09_sealed_seed_package
+  boundary: >-
+    The public release supports clean smoke reproduction and audit of the
+    released evidence. It does not claim an independent full P10 rerun because
+    the sealed P09 seed package remains private.
+publication_decision:
+  github_release: approved
+  tag: v1.0.0
+  preprint_submission: not_authorized
+next_gate: none
+notes: >-
+  The owner selected option A. This approval accepts the conservative
+  simulation-only result interpretation, final README/tables, licenses/notices,
+  and described public-data boundary. It does not widen the P11 evidence
+  boundary or authorize a preprint submission.

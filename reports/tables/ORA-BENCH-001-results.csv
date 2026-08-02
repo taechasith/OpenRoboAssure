@@ -1,0 +1,6 @@
+method,description,classified_runs,evaluation_episodes,mean_primary_held_out_task_success,bootstrap_95_lower,bootstrap_95_upper,interpretation
+A,no randomization,5,50000,0.0,0.0,0.0,negative result preserved
+B,broad independent uniform,5,50000,0.0,0.0,0.0,negative result preserved
+C,automatic curriculum,5,50000,0.0,0.0,0.0,negative result preserved
+D,Morris/Sobol guided,5,50000,0.0,0.0,0.0,negative result preserved
+E,P07 closed-loop revision,5,50000,0.0,0.0,0.0,negative result preserved

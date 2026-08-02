@@ -10,6 +10,7 @@ import openroboassure.licensing.audit as audit_module
 from openroboassure.licensing.audit import (
     _metadata_licence,
     _policy,
+    audit_exception_notices,
     audit_manifest,
     audit_python_packages,
     classify_licence,
@@ -78,6 +79,41 @@ def test_policy_accepts_only_documented_exception_scopes(tmp_path: Path) -> None
     )
 
     assert _policy(tmp_path)[3] == {"dev-tool": "MPL-2.0", "runtime-tool": "BSD"}
+
+
+def test_exception_notice_requires_declared_text(tmp_path: Path) -> None:
+    dependencies = tmp_path / "dependencies"
+    notices = tmp_path / "third_party_licenses"
+    dependencies.mkdir()
+    notices.mkdir()
+    (dependencies / "license_exceptions.yaml").write_text(
+        "exceptions:\n"
+        "  - package: dev-tool\n"
+        "    spdx_license: MPL-2.0\n"
+        "    scope: development_only\n"
+        "    notice_file: third_party_licenses/dev-tool.txt\n"
+        "    notice_contains: Mozilla Public License Version 2.0\n",
+        encoding="utf-8",
+    )
+    notice = notices / "dev-tool.txt"
+    notice.write_text("Mozilla Public License Version 2.0\n", encoding="utf-8")
+
+    finding = audit_exception_notices(tmp_path)[0]
+    assert finding.status == "approved"
+    assert finding.licence == "MPL-2.0"
+
+    notice.unlink()
+    missing = audit_exception_notices(tmp_path)[0]
+    assert missing.status == "unknown"
+
+
+def test_repository_pathspec_notice_is_preserved() -> None:
+    root = Path(__file__).resolve().parents[2]
+    findings = audit_exception_notices(root)
+
+    assert [(finding.identifier, finding.status, finding.licence) for finding in findings] == [
+        ("pathspec", "approved", "MPL-2.0")
+    ]
 
 
 def test_metadata_normalizes_zlib_spelling() -> None:
