@@ -13,6 +13,7 @@ All notable project changes will be documented here.
 - `reproduce-smoke` and `reproduce-pilot` Make targets.
 - P12 reproduction tutorial with exact clone, sync, offline run, data checksum,
   and known-failure references.
+- Passed clean-clone P12 smoke reproduction certificate.
 
 ### Changed
 

@@ -13,7 +13,7 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 - Current version: `v0.12.0`
 - Current phase: `P12 - independent reproduction`
-- Status: clean software reproduction implemented; sufficiency pending `GATE-P12-REPRODUCTION`
+- Status: clean software reproduction passed; sufficiency pending `GATE-P12-REPRODUCTION`
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -280,7 +280,9 @@ The interpretation and limitation analysis is
 ## P12 reproduction
 
 P12 adds public reproduction recipes that require no paid data, paid services,
-secret credentials, or private P09 seed package for the clean smoke path.
+secret credentials, or private P09 seed package for the clean smoke path. The
+recorded clean-clone smoke certificate passed and is stored at
+[`reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json`](reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json).
 
 Fresh clone smoke reproduction:
 
