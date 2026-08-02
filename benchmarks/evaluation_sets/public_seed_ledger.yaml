@@ -1,0 +1,48 @@
+schema_version: 1
+release: v1.0.0-candidate
+purpose: public_seed_and_evaluation_reference_ledger
+notes:
+  - Public deterministic seeds and commitments are listed for reproducibility.
+  - The P10 full hidden evaluation catalogue is released after result freeze in
+    reports/benchmarks/ORA-BENCH-001.json.
+  - The original private P09 sealed seed package remains outside the repository;
+    P12 public smoke reproduction does not require it.
+entries:
+  - id: p05_scenario_validity
+    phase: P05
+    command: ora scenario validate --count 1000000 --execution-samples 256
+    root_seed: 20260726
+    output: reports/scenarios/EXP-SCENARIO-VALIDITY-001.json
+  - id: p06_policy_training_seeds
+    phase: P06
+    command: ora policy campaign
+    training_seeds: [11, 22, 33, 44, 55]
+    output: reports/benchmarks/EXP-POLICY-BASELINES-001.json
+  - id: p08_pilot
+    phase: P08
+    command: ora reproduce pilot
+    root_seed: 20260801
+    training_seeds: [11, 22, 33]
+    evaluation_scenarios_per_method_seed: 2000
+    output: reports/benchmarks/ORA-PILOT-001.json
+  - id: p10_full_benchmark_commitments
+    phase: P10
+    manifest: experiments/preregistered/ORA-BENCH-001.yaml
+    training_seeds: [11, 22, 33, 44, 55]
+    hidden_scenarios_per_method_seed: 10000
+    scheduled_evaluations: 250000
+    hidden_catalogue_after_freeze: reports/benchmarks/ORA-BENCH-001.json
+    hidden_catalogue_sha256: cb55398231e49d7f2f88892aa695117d7d583f6f80d932a96b6c4111de4248ac
+    scenario_set_sha256: 78c923242d3156fe37b38156b9aa1df4541c9cf11fb4204997412e753d636d68
+    parameter_set_sha256: d41aa89b80f77a51b125b552e174671fff19bd9dbe058d2dcda32831973e92c8
+    report_hash: 98db58c72436a2d626d91f209d8a505ffcaac9fe4a019f015276ffcedc367d0d
+    note: exact full hidden seed package is not committed; public reproduction uses commitments, revealed catalogue, and smoke reproduction.
+  - id: p12_clean_smoke_reproduction
+    phase: P12
+    command: uv run --offline ora reproduce smoke
+    root_seed: public_smoke_default_20260901
+    baseline_seeds: 20
+    scenario_count: 128
+    benchmark_training_steps: 4
+    benchmark_evaluation_scenarios: 6
+    output: reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json

@@ -6,6 +6,21 @@ All notable project changes will be documented here.
 
 ### Added
 
+- P13 `v1.0.0` release-candidate package manifest.
+- Citation metadata, benchmark card, learned-policy model card, limitations
+  statement, public seed/evidence ledger, and ORA-BENCH-001 result tables.
+- Final release-candidate README/status updates for `GATE-P13-RELEASE` review.
+
+### Changed
+
+- Project/package version prepared as `1.0.0` pending final release approval.
+- Release claims are narrowed to simulation-only software and benchmark-package
+  claims consistent with the P11 negative-result interpretation.
+
+## [0.12.0] - 2026-08-02
+
+### Added
+
 - `ora reproduce smoke` for clean software reproduction certificates covering
   offline doctor, licence audit, deterministic baseline, scenario validity, and
   public P10 smoke benchmark execution without private seed material.

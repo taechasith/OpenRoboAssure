@@ -4,6 +4,28 @@ Decision records preserve project-direction choices and their approval status.
 Directional changes require the project owner's approval; implementation details
 remain agent-autonomous as defined in the master build guide.
 
+## Recorded — P13 v1.0.0 release candidate
+
+- **Status:** packaged pending `GATE-P13-RELEASE`
+- **Scope:** final release-candidate package for `v1.0.0`, including citation
+  metadata, release manifest, benchmark card, learned-policy model card,
+  limitations statement, public seed/evidence ledger, result tables, and final
+  README/status updates.
+- **Release manifest:**
+  [v1.0.0-manifest.json](../reports/release/v1.0.0-manifest.json)
+- **Permitted claims proposed:** open-source, local, simulation-only software
+  package; no paid training dataset or secret credentials required for public
+  smoke reproduction; procedural synthetic benchmark data; reproducible
+  counterexample-search, coverage, and hidden-target calibration evidence; and a
+  valid negative result for the approved ORA-4A Pick-and-Place simulation scope.
+- **Claims kept prohibited:** physical-robot safety, real-world validation,
+  certification, universal robot/task support, complete failure discovery,
+  proven sim-to-real transfer, guaranteed robust learned policies, and
+  cross-simulator dynamic equivalence.
+- **Pending gate:** final version, README, benchmark tables, permitted claims,
+  licences/notices, data publication, and publication/preprint choices require
+  `GATE-P13-RELEASE`.
+
 ## Approved — GATE-P12-REPRODUCTION
 
 - **Status:** approved on 2026-08-02

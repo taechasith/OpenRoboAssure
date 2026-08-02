@@ -1,5 +1,9 @@
 # OpenRoboAssure
 
+![Release candidate](https://img.shields.io/badge/release-v1.0.0--candidate-blue)
+![Validation](https://img.shields.io/badge/validation-simulation--only-orange)
+![Physical robots](https://img.shields.io/badge/physical%20robots-not%20validated-red)
+
 > **OpenRoboAssure v1.0 is validated only in simulation. Its results do not establish physical-robot safety, real-world reliability, or regulatory compliance.**
 
 OpenRoboAssure (ORA) is an open-source orchestration and assurance layer for
@@ -11,22 +15,39 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.12.0`
-- Current phase: `P12 - independent reproduction`
-- Status: P12 reproduction sufficiency approved; release packaging pending `GATE-P13-RELEASE`
-- Validation level: Not validated
+- Current version: `v1.0.0` release candidate
+- Current phase: `P13 - v1.0 release`
+- Status: release candidate packaged; final release pending `GATE-P13-RELEASE`
+- Validation level: Simulation-only software and benchmark reproduction
 - Physical validation: None
 - Required paid data: None
 - Required paid services: None
 - Licence audit: Passed — 60 approved, 0 blocked, 0 unknown
 
-## Scope proposed for v1.0
+## Installation
+
+OpenRoboAssure requires Python 3.12 and `uv`.
+
+```text
+git clone https://github.com/taechasith/OpenRoboAssure.git
+cd OpenRoboAssure
+uv sync --all-groups --locked
+uv run ora doctor --offline
+```
+
+Run the public clean reproduction smoke check:
+
+```text
+uv run --offline ora reproduce smoke
+```
+
+## v1.0 scope
 
 - Fully local, deterministic, simulation-only experiments.
 - Fixed-base rigid-body manipulation with procedural scenes and synthetic data.
-- Three proposed robot embodiments: project-owned ORA-4A, Franka Panda, and
+- Three reference robot embodiments: project-owned ORA-4A, Franka Panda, and
   UR5e; imported models require a separately approved, recorded licence.
-- Three proposed tasks: pick and place, precision insertion, and push to target.
+- Three scoped tasks: pick and place, precision insertion, and push to target.
 - MuJoCo as the primary simulator and PyBullet as a secondary simulator.
 - Policy robustness testing, sensitivity analysis, hidden-target sim-to-sim
   calibration, counterexample search, and coverage measurement.
@@ -41,12 +62,32 @@ ORA does not claim physical-robot validation, safety certification, universal
 sim-to-real transfer, complete failure discovery, guaranteed policy safety, or
 support for arbitrary robots without adapters.
 
+## Release candidate package
+
+The `v1.0.0` release-candidate manifest is
+[`reports/release/v1.0.0-manifest.json`](reports/release/v1.0.0-manifest.json).
+It indexes the source code, licence files, third-party notices, asset manifests,
+container recipe, locked dependencies, benchmark specifications, public
+seed/evidence ledger, revealed hidden catalogue, numeric result files, analysis
+script, result tables, counterexample records, coverage report, reproduction
+guide, model card, benchmark card, limitations statement, and citation metadata.
+
+Release review materials:
+
+- [Benchmark card](docs/benchmark_card_ora_bench_001.md)
+- [Learned-policy model card](docs/model_card_policies.md)
+- [Limitations statement](docs/limitations.md)
+- [Reproduction tutorial](docs/reproduction.md)
+- [ORA-BENCH-001 result table](reports/tables/ORA-BENCH-001-results.md)
+- [Citation metadata](CITATION.cff)
+
 ## Governance
 
 The project charter, free-data policy, P04 robot/simulator set, P05 core
 scenario ontology, P06 baseline campaign, P08 conservative pilot, P09 full
 benchmark preregistration, and P11 conservative interpretation have been
-approved. P12 clean software reproduction is implemented pending sufficiency
+approved. P12 clean software reproduction sufficiency has been approved. P13
+packages the `v1.0.0` release candidate pending final release
 approval. P05 generated one million deterministic, constrained scenarios
 without external data. P06 is limited to ORA-4A Pick-and-Place, four fixed
 comparable systems, and CPU-first training. P07 adds the closed-loop evidence
@@ -80,6 +121,12 @@ MPL-2.0, runtime-only `PyOpenGL` with verified BSD package metadata,
 runtime-only `Pillow` under MIT-CMU, and runtime-only `tqdm` under MPL-2.0 AND
 MIT. The latter two retain their notices and do not add either licence to the
 general allow-list.
+
+## Citation
+
+Use [`CITATION.cff`](CITATION.cff) for citation metadata. The citation describes
+OpenRoboAssure as a simulation-only software and benchmark package; it must not
+be cited as physical-robot validation or safety certification.
 
 ## Current limitation
 

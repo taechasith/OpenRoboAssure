@@ -1,0 +1,73 @@
+{
+  "release": "v1.0.0-candidate",
+  "phase": "P13",
+  "status": "release_candidate_pending_GATE-P13-RELEASE",
+  "generated_at": "2026-08-02T21:00:00+07:00",
+  "package_items": {
+    "source_code": ["src/", "tests/", "analysis/"],
+    "licence_files": ["LICENSE", "DATA_LICENSE", "DATA_POLICY.md"],
+    "third_party_notices": ["THIRD_PARTY_NOTICES.md"],
+    "asset_manifests": ["assets/manifest.yaml"],
+    "container_recipe": ["Dockerfile", "compose.yaml"],
+    "locked_dependencies": ["pyproject.toml", "uv.lock"],
+    "benchmark_specifications": [
+      "experiments/preregistered/ORA-BENCH-001.yaml",
+      "benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml"
+    ],
+    "public_seed_references": ["benchmarks/evaluation_sets/public_seed_ledger.yaml"],
+    "revealed_hidden_catalogue": ["reports/benchmarks/ORA-BENCH-001.json"],
+    "numeric_results": [
+      "reports/benchmarks/EXP-SIM-BASELINE-001.json",
+      "reports/benchmarks/EXP-POLICY-BASELINES-001.json",
+      "reports/benchmarks/EXP-LOOP-001.json",
+      "reports/benchmarks/ORA-PILOT-001.json",
+      "reports/benchmarks/ORA-BENCH-001.json"
+    ],
+    "analysis_scripts": ["analysis/statistical_plan.py"],
+    "result_tables": [
+      "reports/tables/ORA-BENCH-001-results.csv",
+      "reports/tables/ORA-BENCH-001-results.md"
+    ],
+    "counterexample_records": [
+      "reports/counterexamples/EXP-FALSIFICATION-001.json",
+      "reports/counterexamples/EXP-FALSIFICATION-REPLAY-001.json",
+      "reports/counterexamples/CE-000001.json",
+      "reports/counterexamples/CE-000002.json",
+      "reports/counterexamples/CE-000003.json",
+      "reports/counterexamples/CE-000004.json",
+      "reports/counterexamples/CE-000005.json",
+      "reports/counterexamples/CE-000006.json",
+      "reports/counterexamples/CE-000007.json",
+      "reports/counterexamples/CE-000008.json",
+      "reports/counterexamples/CE-000009.json",
+      "reports/counterexamples/CE-000010.json"
+    ],
+    "coverage_reports": ["reports/coverage/EXP-COVERAGE-001.json"],
+    "reproduction_guide": ["docs/reproduction.md"],
+    "model_cards": ["docs/model_card_policies.md"],
+    "benchmark_card": ["docs/benchmark_card_ora_bench_001.md"],
+    "limitations_statement": ["docs/limitations.md"],
+    "citation": ["CITATION.cff"]
+  },
+  "allowed_claims": [
+    "simulation_only_software_and_benchmark_package",
+    "open_source",
+    "no_paid_training_dataset_required",
+    "procedurally_generated_benchmark_data",
+    "reproducible_counterexample_search_evidence",
+    "scenario_coverage_measurement_evidence",
+    "hidden_target_sim_to_sim_calibration_evidence",
+    "valid_negative_result_for_ora4a_pick_place_simulation_scope"
+  ],
+  "prohibited_claims": [
+    "real_world_validated",
+    "physically_safe",
+    "certified",
+    "universal_robot_task_support",
+    "complete_failure_coverage",
+    "proven_sim_to_real_performance",
+    "guaranteed_robust_learned_policies",
+    "cross_simulator_dynamic_equivalence"
+  ],
+  "next_gate": "GATE-P13-RELEASE"
+}
