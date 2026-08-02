@@ -1,0 +1,103 @@
+{
+  "artifacts": {
+    "baseline": {
+      "exists": true,
+      "path": "reports/reproduction/clean-software/benchmarks/EXP-SIM-BASELINE-001-smoke.json",
+      "sha256": "a0d5074c2dd995a821194e11ec93e694b14ca20d28755380ef4f7c21332e1b59"
+    },
+    "benchmark_graph": {
+      "exists": true,
+      "path": "reports/reproduction/clean-software/benchmarks/ORA-BENCH-001-smoke.github.md",
+      "sha256": "8b967c9f270d549e2b91ac947892c06640c768c4e6af2e658016489370984c7f"
+    },
+    "benchmark_smoke": {
+      "exists": true,
+      "path": "reports/reproduction/clean-software/benchmarks/ORA-BENCH-001-smoke.json",
+      "sha256": "fa924268ae49f3324f7165e13d0eb05f0141970b244798defbd018e153579c0a"
+    },
+    "doctor": {
+      "exists": true,
+      "path": "reports/reproduction/clean-software/environment/doctor.json",
+      "sha256": "10beedef8c5393fa20adefea6096da92c02199f5b773c2fa6dac52e116769f01"
+    },
+    "licence_audit": {
+      "exists": true,
+      "path": "reports/reproduction/clean-software/licence_audit/latest.json",
+      "sha256": "1140e005876780016cff71ccbb3e66b2f39651b2e31444a6085a9cf745fe7e38"
+    },
+    "scenario_validity": {
+      "exists": true,
+      "path": "reports/reproduction/clean-software/scenarios/EXP-SCENARIO-VALIDITY-001-smoke.json",
+      "sha256": "6ca856e6c54f880c1a3273770c2b0a5790c8dbb0b0a53c6273b97d08b42dd1aa"
+    }
+  },
+  "certificate_id": "P12-CLEAN-SOFTWARE-REPRODUCTION",
+  "checks": {
+    "baseline_deterministic_replay_is_100_percent": true,
+    "baseline_success_rate_is_100_percent": true,
+    "benchmark_smoke_completed": true,
+    "benchmark_smoke_does_not_reveal_hidden_values": true,
+    "doctor_offline_passed": true,
+    "licence_audit_passed": true,
+    "no_private_seed_package_required_or_present": true,
+    "protected_hashes_verified_against_frozen_p09_ref": true,
+    "scenario_validity_rate_at_least_99_5_percent": true
+  },
+  "commands": [
+    "uv sync --all-groups --locked",
+    "uv run --offline ora reproduce smoke"
+  ],
+  "environment": {
+    "offline_after_dependency_sync": true,
+    "paid_services_required": false,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "secret_credentials_required": false
+  },
+  "generated_at": "2026-08-02T13:17:52.932995+00:00",
+  "limitations": [
+    "smoke_reproduction_not_full_250000_episode_benchmark_rerun",
+    "simulation_only",
+    "no_physical_robot_validation",
+    "learned_policy_success_not_expected_from_smoke_budget"
+  ],
+  "metrics": {
+    "baseline_deterministic_replay_rate": 1.0,
+    "baseline_success_rate": 1.0,
+    "benchmark_hidden_values_revealed": false,
+    "benchmark_scheduled_evaluations": 6,
+    "benchmark_status": "completed",
+    "scenario_validity_rate": 1.0
+  },
+  "mode": "clean_software_smoke",
+  "parameters": {
+    "baseline_seeds": 20,
+    "benchmark_evaluation_scenarios": 6,
+    "benchmark_method_limit": 1,
+    "benchmark_seed_limit": 1,
+    "benchmark_training_steps": 4,
+    "execution_samples": 8,
+    "protected_ref": "f9654a4f3a871401d8d1677a409337d5485ced98",
+    "scenario_count": 128
+  },
+  "phase": "P12",
+  "private_material": {
+    "private_seed_package_path": "private/p09/ORA-BENCH-001-sealed-seed-package.json",
+    "private_seed_package_present": false,
+    "private_seed_package_required_for_smoke_reproduction": false,
+    "private_seed_package_tracked": false
+  },
+  "source": {
+    "git_branch": "phase/p12-reproduction",
+    "git_commit": "2570b7ed782d82ab8f24fdc2af0482b862d1d4c7",
+    "git_dirty": false,
+    "package_version": "0.12.0"
+  },
+  "status": "passed",
+  "tolerances": {
+    "baseline_deterministic_replay_rate": "exactly_1_0",
+    "baseline_success_rate": "exactly_1_0_for_smoke_seeds",
+    "benchmark_smoke_status": "completed_or_completed_with_classified_failures",
+    "scenario_validity_rate": "at_least_0_995"
+  }
+}

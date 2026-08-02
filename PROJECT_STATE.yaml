@@ -1,14 +1,14 @@
 project: OpenRoboAssure
-current_phase: P11
-current_version: 0.11.0
-status: interpretation_approved_negative_result_preserved_pending_release
+current_phase: P12
+current_version: 0.12.0
+status: reproduction_sufficiency_approved_pending_release
 validation_level: none
-latest_commit: pending_p11_pr_merge
-active_branch: phase/p11-interpretation
+latest_commit: pending_p12_pr_merge
+active_branch: phase/p12-reproduction
 protected_benchmark_frozen: true
 licence_audit: passed
-last_completed_gate: GATE-P11-INTERPRETATION
-next_required_gate: GATE-P12-REPRODUCTION
+last_completed_gate: GATE-P12-REPRODUCTION
+next_required_gate: GATE-P13-RELEASE
 open_blockers: []
 known_limitations:
   - simulation_only
@@ -27,7 +27,9 @@ known_limitations:
   - p10_all_five_full_benchmark_methods_have_zero_held_out_success
   - p11_no_method_superiority_or_robustness_claim_supported
   - p11_component_value_cannot_be_attributed_from_all_zero_success
-  - p12_independent_reproduction_pending
+  - p12_clean_smoke_reproduction_is_not_full_benchmark_rerun
+  - p12_clean_smoke_reproduction_passed_on_fresh_clone
+  - p12_reproduction_sufficiency_approved_for_v1_0_gate
   - cross_simulator_dynamic_equivalence_not_established
   - scenario_validity_is_not_dynamic_equivalence
 protected_files:

@@ -1,11 +1,11 @@
 {
   "project": "OpenRoboAssure",
-  "generated_at": "2026-08-02T19:26:00+07:00",
-  "current_phase": "P11",
-  "current_version": "0.11.0",
-  "status": "interpretation_approved_negative_result_preserved_pending_release",
-  "last_completed_gate": "GATE-P11-INTERPRETATION",
-  "next_required_gate": "GATE-P12-REPRODUCTION",
+  "generated_at": "2026-08-02T20:37:23+07:00",
+  "current_phase": "P12",
+  "current_version": "0.12.0",
+  "status": "reproduction_sufficiency_approved_pending_release",
+  "last_completed_gate": "GATE-P12-REPRODUCTION",
+  "next_required_gate": "GATE-P13-RELEASE",
   "validation_level": "none",
   "licence_audit": "passed",
   "known_limitations": [
@@ -25,7 +25,9 @@
     "p10_all_five_full_benchmark_methods_have_zero_held_out_success",
     "p11_no_method_superiority_or_robustness_claim_supported",
     "p11_component_value_cannot_be_attributed_from_all_zero_success",
-    "p12_independent_reproduction_pending",
+    "p12_clean_smoke_reproduction_is_not_full_benchmark_rerun",
+    "p12_clean_smoke_reproduction_passed_on_fresh_clone",
+    "p12_reproduction_sufficiency_approved_for_v1_0_gate",
     "cross_simulator_dynamic_equivalence_not_established",
     "scenario_validity_is_not_dynamic_equivalence"
   ],
@@ -72,6 +74,8 @@
     "github_graph": "reports/benchmarks/ORA-BENCH-001.github.md",
     "interpretation_report": "reports/interpretation/ORA-BENCH-001-P11-interpretation.md",
     "paper_draft": "docs/paper_draft.md",
+    "reproduction_tutorial": "docs/reproduction.md",
+    "clean_reproduction_certificate": "reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json",
     "report_hash": "98db58c72436a2d626d91f209d8a505ffcaac9fe4a019f015276ffcedc367d0d"
   }
 }

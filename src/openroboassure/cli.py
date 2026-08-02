@@ -16,6 +16,12 @@ from openroboassure.falsification.replay import replay_search_report
 from openroboassure.falsification.search import run_falsification_search
 from openroboassure.licensing.audit import add_asset, audit_project, write_report
 from openroboassure.loop import run_closed_loop
+from openroboassure.reproduction import (
+    certificate_exit_code,
+    certificate_name,
+    run_pilot_reproduction,
+    run_smoke_reproduction,
+)
 from openroboassure.scenarios.compiler import SamplingMethod, ScenarioCompiler
 from openroboassure.scenarios.experiment import run_scenario_validity, write_scenarios
 from openroboassure.scenarios.models import ScenarioFamily, ScenarioSplit
@@ -222,6 +228,38 @@ def build_parser() -> argparse.ArgumentParser:
     full.add_argument("--evaluation-scenarios", type=int, default=None)
     full.add_argument("--method-limit", type=int, default=None)
     full.add_argument("--seed-limit", type=int, default=None)
+    reproduce = subparsers.add_parser("reproduce", help="run P12 public reproduction recipes")
+    reproduce_commands = reproduce.add_subparsers(dest="reproduce_command", required=True)
+    reproduce_smoke = reproduce_commands.add_parser(
+        "smoke", help="run the P12 clean-software smoke reproduction"
+    )
+    reproduce_smoke.add_argument(
+        "--output-directory", type=Path, default=Path("reports/reproduction/clean-software")
+    )
+    reproduce_smoke.add_argument("--baseline-seeds", type=int, default=20)
+    reproduce_smoke.add_argument("--scenario-count", type=int, default=128)
+    reproduce_smoke.add_argument("--execution-samples", type=int, default=8)
+    reproduce_smoke.add_argument("--benchmark-training-steps", type=int, default=4)
+    reproduce_smoke.add_argument("--benchmark-evaluation-scenarios", type=int, default=6)
+    reproduce_smoke.add_argument(
+        "--allow-private-files",
+        action="store_true",
+        help="do not fail the smoke certificate when ignored local private files are present",
+    )
+    reproduce_smoke.add_argument(
+        "--skip-protected-hash-check",
+        action="store_true",
+        help="skip P09 frozen protected-hash verification for local debugging only",
+    )
+    reproduce_pilot = reproduce_commands.add_parser(
+        "pilot", help="run the one-command public P08 pilot reproduction"
+    )
+    reproduce_pilot.add_argument(
+        "--output-directory", type=Path, default=Path("reports/reproduction/pilot")
+    )
+    reproduce_pilot.add_argument("--training-steps", type=int, default=2048)
+    reproduce_pilot.add_argument("--evaluation-scenarios", type=int, default=2000)
+    reproduce_pilot.add_argument("--root-seed", type=int, default=20260801)
     doctor.add_argument(
         "--output",
         type=Path,
@@ -418,4 +456,32 @@ def main(argv: list[str] | None = None) -> int:
             raise AssertionError("Full benchmark report status is malformed")
         print(f"P10 {args.mode} status: {status}")
         return 0 if status in {"passed", "completed", "completed_with_classified_failures"} else 1
+    if args.command == "reproduce" and args.reproduce_command == "smoke":
+        certificate = run_smoke_reproduction(
+            args.output_directory,
+            baseline_seeds=args.baseline_seeds,
+            scenario_count=args.scenario_count,
+            execution_samples=args.execution_samples,
+            benchmark_training_steps=args.benchmark_training_steps,
+            benchmark_evaluation_scenarios=args.benchmark_evaluation_scenarios,
+            require_no_private_files=not args.allow_private_files,
+            verify_protected_hashes=not args.skip_protected_hash_check,
+        )
+        print(
+            "P12 smoke reproduction "
+            f"{certificate['status']}: {args.output_directory / certificate_name('smoke')}"
+        )
+        return certificate_exit_code(certificate)
+    if args.command == "reproduce" and args.reproduce_command == "pilot":
+        certificate = run_pilot_reproduction(
+            args.output_directory,
+            training_steps=args.training_steps,
+            evaluation_scenarios=args.evaluation_scenarios,
+            root_seed=args.root_seed,
+        )
+        print(
+            "P12 pilot reproduction "
+            f"{certificate['status']}: {args.output_directory / certificate_name('pilot')}"
+        )
+        return certificate_exit_code(certificate)
     raise AssertionError(f"Unhandled command: {args.command}")

@@ -75,6 +75,31 @@ def test_smoke_run_writes_labelled_report_and_github_circle_graph(tmp_path: Path
     assert "pie title ORA-BENCH-001 classified job outcomes" in text
 
 
+def test_smoke_run_does_not_require_private_seed_package(tmp_path: Path) -> None:
+    manifest, private_package = _write_fixture_manifest(tmp_path)
+    private_package.unlink()
+
+    report = run_full_benchmark(
+        manifest,
+        output_directory=tmp_path / "reports",
+        mode="smoke",
+        verify_hashes=False,
+        training_steps=4,
+        evaluation_scenarios=6,
+        method_limit=1,
+        seed_limit=1,
+    )
+
+    assert report["status"] == "completed"
+    assert report["hidden_values_revealed"] is False
+    preflight = report["preflight"]
+    assert isinstance(preflight, dict)
+    checks = preflight["checks"]
+    assert isinstance(checks, dict)
+    assert checks["private_seed_package_exists"] is False
+    assert checks["hidden_commitment_matches_private_seed_package"] is False
+
+
 def test_github_graph_handles_preflight_without_runs() -> None:
     markdown = build_github_benchmark_markdown(
         {

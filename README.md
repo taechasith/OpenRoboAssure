@@ -11,9 +11,9 @@ search for counterexamples, measure coverage, and preserve auditable evidence.
 
 ## Project status
 
-- Current version: `v0.11.0`
-- Current phase: `P11 - interpretation and limitation analysis`
-- Status: P11 conservative interpretation approved; negative P10 result preserved
+- Current version: `v0.12.0`
+- Current phase: `P12 - independent reproduction`
+- Status: P12 reproduction sufficiency approved; release packaging pending `GATE-P13-RELEASE`
 - Validation level: Not validated
 - Physical validation: None
 - Required paid data: None
@@ -46,13 +46,16 @@ support for arbitrary robots without adapters.
 The project charter, free-data policy, P04 robot/simulator set, P05 core
 scenario ontology, P06 baseline campaign, P08 conservative pilot, P09 full
 benchmark preregistration, and P11 conservative interpretation have been
-approved. P05 generated one million deterministic, constrained scenarios
+approved. P12 clean software reproduction is implemented pending sufficiency
+approval. P05 generated one million deterministic, constrained scenarios
 without external data. P06 is limited to ORA-4A Pick-and-Place, four fixed
 comparable systems, and CPU-first training. P07 adds the closed-loop evidence
 path. P08 runs the five-method conservative ORA-4A Pick-and-Place pilot. P09
 froze `ORA-BENCH-001`; P10 executed it; P11 interprets the all-zero result as a
-valid negative benchmark result, not a robustness or safety claim. The next
-required gate is `GATE-P12-REPRODUCTION`.
+valid negative benchmark result, not a robustness or safety claim. P12 adds
+public reproduction commands and certificates; `GATE-P12-REPRODUCTION` approved
+the clean software reproduction evidence as sufficient. The next required gate
+is `GATE-P13-RELEASE`.
 
 The active charter materials are:
 
@@ -274,6 +277,56 @@ The GitHub-readable benchmark graph is
 [`reports/benchmarks/ORA-BENCH-001.github.md`](reports/benchmarks/ORA-BENCH-001.github.md).
 The interpretation and limitation analysis is
 [`reports/interpretation/ORA-BENCH-001-P11-interpretation.md`](reports/interpretation/ORA-BENCH-001-P11-interpretation.md).
+
+## P12 reproduction
+
+P12 adds public reproduction recipes that require no paid data, paid services,
+secret credentials, or private P09 seed package for the clean smoke path.
+`GATE-P12-REPRODUCTION` approved this clean software reproduction evidence as
+sufficient for the v1.0 reproduction gate. The
+recorded clean-clone smoke certificate passed and is stored at
+[`reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json`](reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json).
+
+Fresh clone smoke reproduction:
+
+```text
+git clone https://github.com/taechasith/OpenRoboAssure.git
+cd OpenRoboAssure
+uv sync --all-groups --locked
+uv run --offline ora reproduce smoke
+```
+
+The smoke certificate is written to
+`reports/reproduction/clean-software/P12-CLEAN-SOFTWARE-REPRODUCTION.json`.
+It checks the offline environment report, strict licence audit, deterministic
+scripted baseline, scenario validity sample, and public P10 smoke benchmark. It
+also verifies P09 protected hashes against frozen commit
+`f9654a4f3a871401d8d1677a409337d5485ced98`.
+
+One-command pilot reproduction:
+
+```text
+uv run --offline ora reproduce pilot
+```
+
+The pilot command regenerates the public P08 pilot recipe with public seeds.
+It is heavier than the smoke certificate and does not rerun the full P10
+250,000-episode benchmark.
+
+Key checksum references:
+
+- P10 report hash:
+  `98db58c72436a2d626d91f209d8a505ffcaac9fe4a019f015276ffcedc367d0d`
+- P09 hidden catalogue commitment:
+  [`benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml`](benchmarks/hidden_catalogue/ORA-BENCH-001.commitment.yaml)
+- P09 evaluation set commitment:
+  [`benchmarks/evaluation_sets/ORA-BENCH-001.commitment.yaml`](benchmarks/evaluation_sets/ORA-BENCH-001.commitment.yaml)
+- P09 protected hashes:
+  [`benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml`](benchmarks/specs/ORA-BENCH-001-protected-hashes.yaml)
+
+Known reproduction boundaries remain: simulation-only evidence, no physical
+robot validation, all-zero learned-policy success, no method-superiority claim,
+and no cross-simulator dynamic-equivalence claim.
 
 ## Development quick start
 
